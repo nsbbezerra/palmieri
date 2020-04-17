@@ -1,0 +1,236 @@
+.newsletter-container {
+    width: 100%;
+    background-color: #edba00;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-left: 80px;
+    margin-top: 30px;
+    padding-right: 80px;
+}
+
+.newsletter-title {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.container-grid {
+    width: 100%;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.newsletter-inputs-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.row-total {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.buttons-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    margin-top: 15px;
+}
+
+.btn-send {
+    height: 60px;
+    background-color: #1a1a1a;
+    border-radius: 3px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f6f6f6;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.btn-send:hover {
+    background-color: #333333;
+}
+
+.btn-send:active {
+    opacity: .8;
+}
+
+.btn-whatsapp {
+    height: 60px;
+    background-color: #388e3c;
+    border-radius: 3px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f6f6f6;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.btn-whatsapp:hover {
+    background-color: #43a047;
+}
+
+.btn-whatsapp:active {
+    opacity: .8;
+}
+
+.background-gray {
+    background-color: #f1f1f1;
+}
+
+.footer {
+    width: 100%;
+    background-color: #1a1a1a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+    padding: 30px 60px;
+}
+
+.container-footer-items, .others-media {
+    width: 100%;
+}
+
+.footer-title {
+    display: block;
+    font-size: 25px;
+    font-weight: 600;
+    color: #edba00;
+    margin-bottom: 15px;
+}
+
+.icons-social:hover{
+    opacity: .8;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    text-decoration: none;
+    color: #f6f6f6;
+    display: block;
+    line-height: 25px;
+}
+
+.obs-footer {
+    color: #f6f6f6;
+    display: block;
+    line-height: 25px;
+}
+
+.footer-links:hover {
+    opacity: .8;
+}
+
+.company {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #f6f6f6;
+    text-align: center;
+    border-top: 1px solid #edba00;
+    padding: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .container-grid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .item-one {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .item-two {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+    .item-three {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .item-four {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .name, .phone, .email {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .item-one {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .item-two {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+    .item-three {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .item-four {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .btn-send, .btn-whatsapp {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .item-one {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .item-two {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .item-three {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .item-four {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .newsletter-container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .item-one, .item-two, .item-three, .item-four {
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+}
