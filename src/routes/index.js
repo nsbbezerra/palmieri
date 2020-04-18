@@ -5,6 +5,7 @@ import Index from '../pages/index/index';
 import ProductsOne from '../pages/products/example-one';
 import ComoFunciona from '../pages/comofunciona/index';
 import QuemSomos from '../pages/quemsomos/index';
+import Depoimentos from '../pages/depoimentos/index';
 
 export default function RoutesApp() {
     return (
@@ -12,7 +13,7 @@ export default function RoutesApp() {
             <Route exact path='/'>
                 <Index />
             </Route>
-            <Route path='/products'>
+            <Route path='/produtos'>
                 <ProductsOne />
             </Route>
             <Route path='/comofunciona'>
@@ -20,6 +21,9 @@ export default function RoutesApp() {
             </Route>
             <Route path='/quemsomos'>
                 <QuemSomos />
+            </Route>
+            <Route path='/depoimentos'>
+                <Depoimentos />
             </Route>
         </Switch>
     )

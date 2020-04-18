@@ -56,6 +56,7 @@ export default function Footer() {
                     <Link to='/quemsomos' className='footer-links'><IoIosShareAlt /> Quem Somos?</Link>
                     <Link to='/' className='footer-links'><IoIosShareAlt /> Tabela de Tamanhos</Link>
                     <Link to='/' className='footer-links'><IoIosShareAlt /> Como Comprar?</Link>
+                    <Link to='/depoimentos' className='footer-links'><IoIosShareAlt /> Depoimentos</Link>
                 </div>
                 <div className='container-footer-items item-four'>
                     <span className='footer-title'>ATENDIMENTO</span>

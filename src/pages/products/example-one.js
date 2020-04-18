@@ -14,45 +14,22 @@ import detailsTwo from './assets/datails-two.png';
 import depoimento from './assets/depoimento.png';
 import portifolio from './assets/poti-art-one.png';
 
+import breakpointsConfig from '../../configs/sliderConfig';
+
 export default function ExampleOne() {
     const settings = {
+        className: "center",
+        centerMode: true,
+        centerPadding: "100px",
         autoplay: true,
         dots: true,
         autoplaySpeed: 4000,
         infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         nextArrow: <MdKeyboardArrowRight color='#666' size={'5em'} />,
         prevArrow: <MdKeyboardArrowLeft color='#666' size={'5em'} />,
-        responsive: [
-            {
-                breakpoint: 1190,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 950,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 685,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            }
-        ]
+        responsive: breakpointsConfig
     };
     const settings2 = {
         dots: true,

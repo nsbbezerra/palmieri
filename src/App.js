@@ -4,8 +4,6 @@ import Footer from './components/footer';
 import { BrowserRouter as Router } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import 'rc-steps/assets/index.css';
-import 'rc-steps/assets/iconfont.css';
 import RoutesApp from './routes/index';
 
 function App() {

@@ -16,45 +16,22 @@ import make from './assets/make.svg';
 import comments from './assets/comments.svg';
 import profissional from './assets/profissional.png';
 
+import breakpoinsConfig from '../../configs/sliderConfig';
+
 export default function IndexApp() {
     const settings = {
+        className: "center",
+        centerMode: true,
+        centerPadding: "100px",
         autoplay: true,
         dots: true,
         autoplaySpeed: 4000,
         infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         nextArrow: <MdKeyboardArrowRight color='#666' size={'5em'} />,
         prevArrow: <MdKeyboardArrowLeft color='#666' size={'5em'} />,
-        responsive: [
-            {
-              breakpoint: 1190,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
-              }
-            },
-            {
-              breakpoint: 950,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                infinite: true,
-                dots: true
-              }
-            },
-            {
-              breakpoint: 685,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true
-              }
-            }
-          ]
+        responsive: breakpoinsConfig
     };
     return (
         <Container>
@@ -197,22 +174,22 @@ export default function IndexApp() {
                 <Title>CONHEÇA NOSSOS PROFISSIONAIS</Title>
                 <RowAround>
                     <CardShadow>
-                        <CardImage src={profissional} alt='Profissional palmieri uniformes'/>
+                        <CardImage src={profissional} alt='Profissional palmieri uniformes' />
                         <CardTitle>THOMÁS</CardTitle>
                         <CardDescription>Proprietário</CardDescription>
                     </CardShadow>
                     <CardShadow>
-                        <CardImage src={profissional} alt='Profissional palmieri uniformes'/>
+                        <CardImage src={profissional} alt='Profissional palmieri uniformes' />
                         <CardTitle>DENISE</CardTitle>
                         <CardDescription>Atendente</CardDescription>
                     </CardShadow>
                     <CardShadow>
-                        <CardImage src={profissional} alt='Profissional palmieri uniformes'/>
+                        <CardImage src={profissional} alt='Profissional palmieri uniformes' />
                         <CardTitle>MARIA PALMIERI</CardTitle>
                         <CardDescription>Vendedora</CardDescription>
                     </CardShadow>
                     <CardShadow>
-                        <CardImage src={profissional} alt='Profissional palmieri uniformes'/>
+                        <CardImage src={profissional} alt='Profissional palmieri uniformes' />
                         <CardTitle>SANTIAGO</CardTitle>
                         <CardDescription>Serigrafo</CardDescription>
                     </CardShadow>

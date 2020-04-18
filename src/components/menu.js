@@ -1,6 +1,7 @@
 import React from 'react';
 import './menu.css';
 import { FaHome, FaTshirt, FaInfo, FaPhoneVolume, FaQuestion, FaTags } from 'react-icons/fa';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 import { Link } from 'react-router-dom';
 
@@ -15,11 +16,13 @@ export default function Menu() {
                 <img alt='Palmieri Uniformes logo' src={logo} className='menu-logo'/>
             </div>
             <div className='menu-right'>
+                <input type='checkbox' id='hamburger-menu'/>
+                <label className='hamburger' for='hamburger-menu'><GiHamburgerMenu /></label>
                 <ul className='app-menu'>
                     <li className='app-menu-items'><Link to='/' className='link'><FaHome style={{marginRight: 5}}/> INÍCIO</Link></li>
-                    <li className='app-menu-items'><a href='/' className='link'><FaTags style={{marginRight: 5}}/> PRODUTOS</a>
+                    <li className='app-menu-items'><span className='link'><FaTags style={{marginRight: 5}}/> PRODUTOS</span>
                         <ul className='app-sub-menu'>
-                            <li className='app-sub-menu-items'><Link to='/products' className='sub-link'><FaTshirt style={{marginRight: 5}}/> CAMISETAS POLO</Link></li>
+                            <li className='app-sub-menu-items'><Link to='/produtos' className='sub-link'><FaTshirt style={{marginRight: 5}}/> CAMISETAS POLO</Link></li>
                             <li className='app-sub-menu-items'><a href='/' className='sub-link'><FaTshirt style={{marginRight: 5}}/> UNIFORME CICLISMO</a></li>
                             <li className='app-sub-menu-items'><a href='/' className='sub-link'><FaTshirt style={{marginRight: 5}}/> UNIFORME FORMANDOS</a></li>
                             <li className='app-sub-menu-items'><a href='/' className='sub-link'><FaTshirt style={{marginRight: 5}}/> PRODUTOS PROMOCIONAIS</a></li>

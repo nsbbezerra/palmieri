@@ -9,6 +9,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+html {
+  font-size: 62.5%;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -37,4 +42,15 @@ body {
 
 .padding-slider {
   padding: 10px;
+}
+
+@media (max-width: 890px) {
+  html { font-size: 58%; }
+}
+@media (max-width: 600px) {
+  html { font-size: 50%; }
+}
+
+@media (max-width: 400px) {
+  html { font-size: 47%; }
 }

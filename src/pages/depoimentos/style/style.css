@@ -1,0 +1,111 @@
+.depoimento-container {
+    padding: 15px;
+}
+
+.depoimentos-img {
+    width: 100%;
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.15);
+}
+
+.video-content {
+    background-color: #1a1a1a;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 80px;
+    padding-left: 80px;
+    margin-top: 20px;
+}
+
+.video-container {
+    display: block;
+    border-radius: 2px;
+    width: 360px;
+    height: 215px;
+    padding: 15px;
+}
+
+.youtube-video {
+    border-radius: 2px;
+    border: 3.5px solid #f6f6f6;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.9);
+}
+
+.title-depoimentos {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #edba00;
+    border-bottom: 2px solid #f6f6f6;
+}
+
+.used-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.used-item {
+    margin-bottom: 50px;
+    width: 250px;
+    height: 250px;
+    background-image: url(../assets/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.15);
+    border-radius: 2px;
+}
+
+.item-img {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.img-item-used {
+    width: 90%;
+    position: relative;
+    border: 2px solid #f6f6f6;
+    border-radius: 2px;
+}
+
+.icone-used {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.logo-used {
+    height: 20px;
+}
+
+.item-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+
+.used-description {
+    display: block;
+    margin-top: 7px;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    padding: 4px;
+}
