@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Content, Banner, Spaced } from '../../styles/styles';
 import './style/style.css';
+import { useLocation } from 'react-router-dom';
 
 import banner from './assets/banner.png';
 import icone from '../../assets/icone.svg';
 
 export default function QuemSomos() {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    },[pathname]);
     return (
         <Container>
             <Banner alt='Banner' src={banner} />

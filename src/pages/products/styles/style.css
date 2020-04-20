@@ -31,7 +31,10 @@
 .depoiments {
     width: 100%;
     background-color: #1a1a1a;
-    padding: 30px 60px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .portifolio {
@@ -68,10 +71,9 @@
 }
 
 .btn-catalog {
-    width: 45%;
     border: none;
     background-color: #edba00;
-    height: 50px;
+    padding: 17px;
     border-radius: 3px;
     cursor: pointer;
     color: #1a1a1a;
@@ -85,4 +87,67 @@
 
 .btn-catalog:active {
     opacity: .8;
+}
+
+.card-product-two {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    max-width: 250px;
+    min-width: 250px;
+    border-radius: 2px;
+}
+
+.card-product-img {
+    width: 100%;
+    height: 250px;
+    transform: skewY(-5deg);
+    z-index: 10;
+    display: block;
+    margin-top: -11.5px;
+    position: relative;
+}
+
+.card-header {
+    width: 100%;
+    display: block;
+    background-color: #bb9200;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    z-index: 1000;
+    position: relative;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: justify;
+    margin-top: 11.5px;
+    height: 150px;
+    text-overflow: ellipsis;
+    color: #444;
+    font-weight: 400;
+}
+
+@media (max-width: 650px) {
+    .photo-left, .photo-right {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+@media (max-width: 414px) {
+    .card-product-two {
+        width: 190px;
+        max-width: 190px;
+        min-width: 190px;
+    }
 }

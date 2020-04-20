@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style/style.css';
 import { Container, Banner, Spaced, Content } from '../../styles/styles';
 import { FaTshirt, FaRulerCombined, FaFileInvoiceDollar, FaCreditCard, FaMoneyBillAlt, FaShoppingCart } from 'react-icons/fa';
 import { AiFillMessage } from 'react-icons/ai';
+import { useLocation } from 'react-router-dom';
 import banner from './assets/banner.png';
 
 export default function ComoFunciona() {
-
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    },[pathname]);
     return (
         <Container>
             <Banner alt='banner' src={banner} />

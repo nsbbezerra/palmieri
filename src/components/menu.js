@@ -23,7 +23,7 @@ export default function Menu() {
                     <li className='app-menu-items'><span className='link'><FaTags style={{marginRight: 5}}/> PRODUTOS</span>
                         <ul className='app-sub-menu'>
                             <li className='app-sub-menu-items'><Link to='/produtos' className='sub-link'><FaTshirt style={{marginRight: 5}}/> CAMISETAS POLO</Link></li>
-                            <li className='app-sub-menu-items'><a href='/' className='sub-link'><FaTshirt style={{marginRight: 5}}/> UNIFORME CICLISMO</a></li>
+                            <li className='app-sub-menu-items'><Link to='/products' className='sub-link'><FaTshirt style={{marginRight: 5}}/> UNIFORME CICLISMO</Link></li>
                             <li className='app-sub-menu-items'><a href='/' className='sub-link'><FaTshirt style={{marginRight: 5}}/> UNIFORME FORMANDOS</a></li>
                             <li className='app-sub-menu-items'><a href='/' className='sub-link'><FaTshirt style={{marginRight: 5}}/> PRODUTOS PROMOCIONAIS</a></li>
                         </ul>

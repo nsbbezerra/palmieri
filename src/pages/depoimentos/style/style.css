@@ -13,7 +13,7 @@
 .video-content {
     background-color: #1a1a1a;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
     padding-right: 80px;
     padding-left: 80px;
     margin-top: 20px;
@@ -56,11 +56,8 @@
 .used-item {
     margin-bottom: 50px;
     width: 250px;
-    height: 250px;
-    background-image: url(../assets/background.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 280px;
+    border: 1px solid #ddd;
     box-shadow: 0px 0px 20px rgba(0,0,0,.15);
     border-radius: 2px;
 }
@@ -71,6 +68,7 @@
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #ddd;
+    background-color: #eee;
 }
 
 .img-item-used {
@@ -108,4 +106,8 @@
     width: 100%;
     text-align: center;
     padding: 4px;
+}
+
+.logo-container-used {
+    margin-top: 5px;
 }

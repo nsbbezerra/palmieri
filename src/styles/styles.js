@@ -219,6 +219,7 @@ export const CardDelivery = styled.div`
     background-color: #fff;
     border-right: 1.5px solid #ccc;
     width: 200px;
+    border-bottom: 1px solid #eee;
 `;
 
 export const CardDeliveryNoBorder = styled.div`

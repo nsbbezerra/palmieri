@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Banner, Container, Title, Card, CardImage, Content, CardTitle, CardDescription, CardAction, Jumbotron, SubTitle, Spaced, TextContainer, Description, RowWrap, CardDelivery, ImageDelivery, ArrowCard, CardDeliveryNoBorder, CardDeliveryDescription, RowActionsCard, ButtonActionRowSecondary, ButtonActionRowPrimary, ButtonActionSecondary, CardDeliveryFooter, RowAround, CardShadow } from '../../styles/styles';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaSearchPlus, FaTshirt, FaClipboardList, FaPhoneVolume } from 'react-icons/fa';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
+import { useLocation } from 'react-router-dom';
+import animationData from '../../animations/loading-one.json';
+import Lottie from 'react-lottie';
 
 import banner from '../../assets/capa.png'
 import camiseta from '../../assets/camiseta.png';
@@ -19,6 +22,30 @@ import profissional from './assets/profissional.png';
 import breakpoinsConfig from '../../configs/sliderConfig';
 
 export default function IndexApp() {
+
+    const [loading, setLoading] = useState(true);
+
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
+
+    useEffect(() => {
+        setTimeout(function finhishLoading() {
+            setLoading(false);
+        }, 3000);
+    },[]);
+
     const settings = {
         className: "center",
         centerMode: true,
@@ -35,167 +62,178 @@ export default function IndexApp() {
     };
     return (
         <Container>
-            <Banner src={banner} alt='Banner Palmieri' />
+            {loading === true ? (
+                <>
+                    <Lottie options={defaultOptions}
+                        width={'50%'}
+                        height={500}
+                    />
+                    <h1 style={{color: '#666', width: '100%', textAlign: 'center', fontSize: '5rem', fontStyle: 'italic', fontWeight: 500, marginBottom: 100}}>Carregando Conteúdo!</h1>
+                </>
+            ) : (
+                    <>
+                        <Banner src={banner} alt='Banner Palmieri' />
 
-            <Content>
-                <Title>NOSSOS PRODUTOS</Title>
+                        <Content>
+                            <Title>NOSSOS PRODUTOS</Title>
 
-                <Slider {...settings}>
-                    <Card>
-                        <CardImage src={camiseta} alt='Camiseta Palmieri' />
-                        <CardTitle>CAMISETAS POLO</CardTitle>
-                        <CardDescription>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
+                            <Slider {...settings}>
+                                <Card>
+                                    <CardImage src={camiseta} alt='Camiseta Palmieri' />
+                                    <CardTitle>CAMISETAS POLO</CardTitle>
+                                    <CardDescription>
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
+                            </CardDescription>
+                                    <CardAction>
+                                        <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
+                            </CardAction>
+                                </Card>
+                                <Card>
+                                    <CardImage src={camiseta} alt='Camiseta Palmieri' />
+                                    <CardTitle>CAMISETAS POLO</CardTitle>
+                                    <CardDescription>
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
                         </CardDescription>
-                        <CardAction>
-                            <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
-                        </CardAction>
-                    </Card>
-                    <Card>
-                        <CardImage src={camiseta} alt='Camiseta Palmieri' />
-                        <CardTitle>CAMISETAS POLO</CardTitle>
-                        <CardDescription>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
-                    </CardDescription>
-                        <CardAction>
-                            <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
-                        </CardAction>
-                    </Card>
-                    <Card>
-                        <CardImage src={camiseta} alt='Camiseta Palmieri' />
-                        <CardTitle>CAMISETAS POLO</CardTitle>
-                        <CardDescription>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
+                                    <CardAction>
+                                        <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
+                            </CardAction>
+                                </Card>
+                                <Card>
+                                    <CardImage src={camiseta} alt='Camiseta Palmieri' />
+                                    <CardTitle>CAMISETAS POLO</CardTitle>
+                                    <CardDescription>
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
+                            </CardDescription>
+                                    <CardAction>
+                                        <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
+                            </CardAction>
+                                </Card>
+                                <Card>
+                                    <CardImage src={camiseta} alt='Camiseta Palmieri' />
+                                    <CardTitle>CAMISETAS POLO</CardTitle>
+                                    <CardDescription>
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
                         </CardDescription>
-                        <CardAction>
-                            <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
-                        </CardAction>
-                    </Card>
-                    <Card>
-                        <CardImage src={camiseta} alt='Camiseta Palmieri' />
-                        <CardTitle>CAMISETAS POLO</CardTitle>
-                        <CardDescription>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
-                    </CardDescription>
-                        <CardAction>
-                            <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
-                        </CardAction>
-                    </Card>
-                    <Card>
-                        <CardImage src={camiseta} alt='Camiseta Palmieri' />
-                        <CardTitle>CAMISETAS POLO</CardTitle>
-                        <CardDescription>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
+                                    <CardAction>
+                                        <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
+                            </CardAction>
+                                </Card>
+                                <Card>
+                                    <CardImage src={camiseta} alt='Camiseta Palmieri' />
+                                    <CardTitle>CAMISETAS POLO</CardTitle>
+                                    <CardDescription>
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
+                            </CardDescription>
+                                    <CardAction>
+                                        <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
+                            </CardAction>
+                                </Card>
+                                <Card>
+                                    <CardImage src={camiseta} alt='Camiseta Palmieri' />
+                                    <CardTitle>CAMISETAS POLO</CardTitle>
+                                    <CardDescription>
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
                         </CardDescription>
-                        <CardAction>
-                            <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
-                        </CardAction>
-                    </Card>
-                    <Card>
-                        <CardImage src={camiseta} alt='Camiseta Palmieri' />
-                        <CardTitle>CAMISETAS POLO</CardTitle>
-                        <CardDescription>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
-                    </CardDescription>
-                        <CardAction>
-                            <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
-                        </CardAction>
-                    </Card>
-                </Slider>
+                                    <CardAction>
+                                        <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
+                            </CardAction>
+                                </Card>
+                            </Slider>
 
-            </Content>
+                        </Content>
 
-            <Spaced />
+                        <Spaced />
 
-            <Jumbotron>
-                <TextContainer>
-                    <SubTitle>PASSO A PASSO</SubTitle>
-                    <Description>DESDE O MOMENTO DA ESCOLHA ATÉ O RECEBIMENTO EM SUA CASA</Description>
-                </TextContainer>
-                <RowWrap>
-                    <CardDelivery>
-                        <ImageDelivery src={tshirt} alt='tshirt palmieri uniformes' />
-                        <ArrowCard src={arrow} />
-                        <CardDeliveryDescription>
-                            Você escolhe o modelo ou nos envia as informações.
-                        </CardDeliveryDescription>
-                        <RowActionsCard>
-                            <ButtonActionRowPrimary>
-                                <FaTshirt style={{ marginRight: 7 }} /> MODELOS
-                            </ButtonActionRowPrimary>
-                            <ButtonActionRowSecondary>
-                                <FaClipboardList style={{ marginRight: 7 }} /> CATÁLOGOS
-                            </ButtonActionRowSecondary>
-                        </RowActionsCard>
-                    </CardDelivery>
-                    <CardDelivery>
-                        <ImageDelivery src={comments} alt='tshirt palmieri uniformes' />
-                        <ArrowCard src={arrow} />
-                        <CardDeliveryDescription>
-                            Alinha seu pedido com um de nossos consultores.
-                        </CardDeliveryDescription>
-                        <ButtonActionSecondary>
-                            <FaPhoneVolume style={{ marginRight: 7 }} /> FALE CONOSCO
-                        </ButtonActionSecondary>
-                    </CardDelivery>
-                    <CardDelivery>
-                        <ImageDelivery src={card} alt='tshirt palmieri uniformes' />
-                        <ArrowCard src={arrow} />
-                        <CardDeliveryDescription>
-                            Efetua o pagamento.
-                        </CardDeliveryDescription>
-                        <CardDeliveryFooter>
-                            Depósito Bancário ou Cartão de Crédito
-                        </CardDeliveryFooter>
-                    </CardDelivery>
-                    <CardDelivery>
-                        <ImageDelivery src={make} alt='tshirt palmieri uniformes' />
-                        <ArrowCard src={arrow} />
-                        <CardDeliveryDescription>
-                            Produzimos e separamos seu pedido.
-                        </CardDeliveryDescription>
-                        <CardDeliveryFooter>
-                            Produzimos com o melhor material e a melhor qualidade.
-                        </CardDeliveryFooter>
-                    </CardDelivery>
-                    <CardDeliveryNoBorder>
-                        <ImageDelivery src={brazil} alt='tshirt palmieri uniformes' />
-                        <CardDeliveryDescription>
-                            Enviamos para todo o Brasil.
-                        </CardDeliveryDescription>
-                        <CardDeliveryFooter>
-                            Entrega via Transportadora.
-                        </CardDeliveryFooter>
-                    </CardDeliveryNoBorder>
-                </RowWrap>
-            </Jumbotron>
+                        <Jumbotron>
+                            <TextContainer>
+                                <SubTitle>PASSO A PASSO</SubTitle>
+                                <Description>DESDE O MOMENTO DA ESCOLHA ATÉ O RECEBIMENTO EM SUA CASA</Description>
+                            </TextContainer>
+                            <RowWrap>
+                                <CardDelivery>
+                                    <ImageDelivery src={tshirt} alt='tshirt palmieri uniformes' />
+                                    <ArrowCard src={arrow} />
+                                    <CardDeliveryDescription>
+                                        Você escolhe o modelo ou nos envia as informações.
+                            </CardDeliveryDescription>
+                                    <RowActionsCard>
+                                        <ButtonActionRowPrimary>
+                                            <FaTshirt style={{ marginRight: 7 }} /> MODELOS
+                                </ButtonActionRowPrimary>
+                                        <ButtonActionRowSecondary>
+                                            <FaClipboardList style={{ marginRight: 7 }} /> CATÁLOGOS
+                                </ButtonActionRowSecondary>
+                                    </RowActionsCard>
+                                </CardDelivery>
+                                <CardDelivery>
+                                    <ImageDelivery src={comments} alt='tshirt palmieri uniformes' />
+                                    <ArrowCard src={arrow} />
+                                    <CardDeliveryDescription>
+                                        Alinha seu pedido com um de nossos consultores.
+                            </CardDeliveryDescription>
+                                    <ButtonActionSecondary>
+                                        <FaPhoneVolume style={{ marginRight: 7 }} /> FALE CONOSCO
+                            </ButtonActionSecondary>
+                                </CardDelivery>
+                                <CardDelivery>
+                                    <ImageDelivery src={card} alt='tshirt palmieri uniformes' />
+                                    <ArrowCard src={arrow} />
+                                    <CardDeliveryDescription>
+                                        Efetua o pagamento.
+                            </CardDeliveryDescription>
+                                    <CardDeliveryFooter>
+                                        Depósito Bancário ou Cartão de Crédito
+                            </CardDeliveryFooter>
+                                </CardDelivery>
+                                <CardDelivery>
+                                    <ImageDelivery src={make} alt='tshirt palmieri uniformes' />
+                                    <ArrowCard src={arrow} />
+                                    <CardDeliveryDescription>
+                                        Produzimos e separamos seu pedido.
+                            </CardDeliveryDescription>
+                                    <CardDeliveryFooter>
+                                        Produzimos com o melhor material e a melhor qualidade.
+                            </CardDeliveryFooter>
+                                </CardDelivery>
+                                <CardDeliveryNoBorder>
+                                    <ImageDelivery src={brazil} alt='tshirt palmieri uniformes' />
+                                    <CardDeliveryDescription>
+                                        Enviamos para todo o Brasil.
+                            </CardDeliveryDescription>
+                                    <CardDeliveryFooter>
+                                        Entrega via Transportadora.
+                            </CardDeliveryFooter>
+                                </CardDeliveryNoBorder>
+                            </RowWrap>
+                        </Jumbotron>
 
-            <Content>
-                <Title>CONHEÇA NOSSOS PROFISSIONAIS</Title>
-                <RowAround>
-                    <CardShadow>
-                        <CardImage src={profissional} alt='Profissional palmieri uniformes' />
-                        <CardTitle>THOMÁS</CardTitle>
-                        <CardDescription>Proprietário</CardDescription>
-                    </CardShadow>
-                    <CardShadow>
-                        <CardImage src={profissional} alt='Profissional palmieri uniformes' />
-                        <CardTitle>DENISE</CardTitle>
-                        <CardDescription>Atendente</CardDescription>
-                    </CardShadow>
-                    <CardShadow>
-                        <CardImage src={profissional} alt='Profissional palmieri uniformes' />
-                        <CardTitle>MARIA PALMIERI</CardTitle>
-                        <CardDescription>Vendedora</CardDescription>
-                    </CardShadow>
-                    <CardShadow>
-                        <CardImage src={profissional} alt='Profissional palmieri uniformes' />
-                        <CardTitle>SANTIAGO</CardTitle>
-                        <CardDescription>Serigrafo</CardDescription>
-                    </CardShadow>
-                </RowAround>
-            </Content>
-
+                        <Content>
+                            <Title>CONHEÇA NOSSOS PROFISSIONAIS</Title>
+                            <RowAround>
+                                <CardShadow>
+                                    <CardImage src={profissional} alt='Profissional palmieri uniformes' />
+                                    <CardTitle>THOMÁS</CardTitle>
+                                    <CardDescription>Proprietário</CardDescription>
+                                </CardShadow>
+                                <CardShadow>
+                                    <CardImage src={profissional} alt='Profissional palmieri uniformes' />
+                                    <CardTitle>DENISE</CardTitle>
+                                    <CardDescription>Atendente</CardDescription>
+                                </CardShadow>
+                                <CardShadow>
+                                    <CardImage src={profissional} alt='Profissional palmieri uniformes' />
+                                    <CardTitle>MARIA PALMIERI</CardTitle>
+                                    <CardDescription>Vendedora</CardDescription>
+                                </CardShadow>
+                                <CardShadow>
+                                    <CardImage src={profissional} alt='Profissional palmieri uniformes' />
+                                    <CardTitle>SANTIAGO</CardTitle>
+                                    <CardDescription>Serigrafo</CardDescription>
+                                </CardShadow>
+                            </RowAround>
+                        </Content>
+                    </>
+                )}
         </Container>
     )
 }
