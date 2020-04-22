@@ -36,8 +36,8 @@ export default function Footer() {
                     </div>
                     <div className="others-media">
                         <span className='footer-title'>INSTITUCIONAL</span>
-                        <Link to='/' className='footer-links'><IoIosShareAlt /> Depoimentos</Link>
-                        <Link to='/' className='footer-links'><IoIosShareAlt /> Onde Estamos?</Link>
+                        <Link to='/depoimentos' className='footer-links'><IoIosShareAlt /> Depoimentos</Link>
+                        <Link to='/contato' className='footer-links'><IoIosShareAlt /> Onde Estamos?</Link>
                         <Link to='/' className='footer-links'><IoIosShareAlt /> Fretes e Entrega</Link>
                     </div>
                 </div>
@@ -52,11 +52,10 @@ export default function Footer() {
                 </div>
                 <div className='container-footer-items item-three'>
                     <span className='footer-title'>PRECISA DE AJUDA?</span>
-                    <Link to='/' className='footer-links'><IoIosShareAlt /> Fale Conosco</Link>
+                    <Link to='/contato' className='footer-links'><IoIosShareAlt /> Fale Conosco</Link>
                     <Link to='/quemsomos' className='footer-links'><IoIosShareAlt /> Quem Somos?</Link>
                     <Link to='/' className='footer-links'><IoIosShareAlt /> Tabela de Tamanhos</Link>
                     <Link to='/' className='footer-links'><IoIosShareAlt /> Como Comprar?</Link>
-                    <Link to='/depoimentos' className='footer-links'><IoIosShareAlt /> Depoimentos</Link>
                 </div>
                 <div className='container-footer-items item-four'>
                     <span className='footer-title'>ATENDIMENTO</span>
@@ -68,7 +67,7 @@ export default function Footer() {
                 </div>
             </footer>
             <div className='company'>
-                <h4>© Palmieri Uniformes - 2020</h4>
+                <h4 style={{fontSize: '2rem'}}>© Palmieri Uniformes - 2020</h4>
             </div>
         </>
     );

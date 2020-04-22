@@ -1,0 +1,22 @@
+.container-contato {
+    width: 100%;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.title-contato {
+    color: #1a1a1a;
+    font-size: 3.5rem;
+    line-height: 80px;
+}
+
+.contato-item {
+    color: #333;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 4rem;
+}

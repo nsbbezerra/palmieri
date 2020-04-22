@@ -107,8 +107,7 @@ export default function Depoimentos() {
             {loading === true ? (
                 <>
                     <Lottie options={defaultOptions}
-                        width={'50%'}
-                        height={500}
+                        width={'40%'}
                     />
                     <h1 style={{ color: '#666', width: '100%', textAlign: 'center', fontSize: '5rem', fontStyle: 'italic', fontWeight: 500, marginBottom: 100 }}>Carregando Conteúdo!</h1>
                 </>

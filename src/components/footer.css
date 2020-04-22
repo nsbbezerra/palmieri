@@ -45,7 +45,7 @@
 }
 
 .btn-send {
-    height: 60px;
+    height: 50px;
     background-color: #1a1a1a;
     border-radius: 3px;
     border: none;
@@ -68,7 +68,7 @@
 }
 
 .btn-whatsapp {
-    height: 60px;
+    height: 50px;
     background-color: #388e3c;
     border-radius: 3px;
     border: none;
@@ -131,14 +131,14 @@
     color: #f6f6f6;
     display: block;
     line-height: 25px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .obs-footer {
     color: #f6f6f6;
     display: block;
     line-height: 25px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .footer-links:hover {

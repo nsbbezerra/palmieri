@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Banner, Content, Spaced, Jumbotron, TextContainer, SubTitle, Description } from '../../styles/styles';
+import { Container, Banner, Content, Spaced, TextContainer, SubTitle, Description } from '../../styles/styles';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './styles/style.css';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
+import { FaCircle } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import animationData from '../../animations/loading-one.json';
@@ -13,10 +14,9 @@ import banner from './assets/banner-two.png';
 import gola from './assets/gola.jpg';
 import fundo from './assets/fundo.jpg';
 import meio from './assets/meio.jpg';
-import detailsOne from './assets/datails-one.png';
-import detailsTwo from './assets/datails-two.png';
 import depoimento from './assets/depoimento.png';
 import portifolio from './assets/tshirt-three.png';
+import tshirt from './assets/tshirt.png';
 
 import breakpointsConfig from '../../configs/sliderConfig';
 
@@ -102,8 +102,7 @@ export default function ExampleTwo() {
             {loading === true ? (
                 <>
                     <Lottie options={defaultOptions}
-                        width={'50%'}
-                        height={500}
+                        width={'40%'}
                     />
                     <h1 style={{ color: '#666', width: '100%', textAlign: 'center', fontSize: '5rem', fontStyle: 'italic', fontWeight: 500, marginBottom: 100 }}>Carregando Conteúdo!</h1>
                 </>
@@ -152,19 +151,55 @@ export default function ExampleTwo() {
                             </Slider>
                         </Content>
                         <Spaced />
-                        <Jumbotron>
-                            <TextContainer>
-                                <SubTitle>Veja todos os detalhes para que seu uniforme seja...</SubTitle>
-                            </TextContainer>
-                            <div className="details-container">
-                                <div className="photo-left">
-                                    <img src={detailsOne} alt="Detalhes Palmieir Uniformes" className="img-photo-left" />
-                                </div>
-                                <div className="photo-right">
-                                    <img src={detailsTwo} alt="Detalhes Palmieir Uniformes" className="img-photo-right" />
+
+                        <div className="container-tecido">
+                            <div className="content-tecido-one">
+                                <h1 className='title-master-tecido'>Opções de Malhas</h1>
+                                <span className='title-tecido'><FaCircle style={{ marginRight: '15px', fontSize: '3.5rem' }} /> Malha Pv Anti Piling </span>
+                                <div className="container-info-tecido">
+                                    <span className='info-tecido'>Malha Pv Anti Piling é entre todas a mais usada tanto para empresas
+                                    quanto principalmente para eventos promocionais por conta de sua durabilidade. Ela
+                                    é uma malha que não desbota a sua cor facilmente e por ser Anti-Pilling
+                                    foi feita para evitar bolinhas após a lavagem, sua composição é de 67%
+                                    poliéster e 33% viscose.
+
+                                    Essa malha não é muito transparente e fica muito bonita com
+                                    diversos tipos de estampas
+
+                                    Se estiver precisando de uma malha para uma grande
+                                    quantidade de pessoas e que seja confortavel e bem fresca
+                                    para usar, essa malha pode ser a sua melhor opção.</span>
+                                    <img src={tshirt} alt="tecido" className="img-tecido" />
                                 </div>
                             </div>
-                        </Jumbotron>
+                            <div className="content-tecido">
+                                <span className='title-tecido'><FaCircle style={{ marginRight: '15px', fontSize: '3.5rem' }} /> Malha 100% Algodão Penteada Fio 30/1</span>
+                                <div className="container-info-tecido">
+                                    <span className='info-tecido'>Na malha Dry Fit é malha leve e agradável de vestir, muito usado e eventos com atividades físicas
+
+                                    A malha Dry fit tem se tornado muito comum para a fabricação de uniformes. Como é usado
+                                    diariamente e por longos períodos, é uma boa opção principalmente em ambientes mais quentes
+                                    que tendem a fazer que o colaborador transpire mais
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="content-tecido">
+                                <span className='title-tecido'><FaCircle style={{ marginRight: '15px', fontSize: '3.5rem' }} /> Piquet</span>
+                            </div>
+                            <div className="content-tecido">
+                                <span className='title-tecido'><FaCircle style={{ marginRight: '15px', fontSize: '3.5rem' }} /> Helanca</span>
+                            </div>
+                            <div className="content-tecido">
+                                <span className='title-tecido'><FaCircle style={{ marginRight: '15px', fontSize: '3.5rem' }} /> Helanquinha</span>
+                            </div>
+                            <div className="content-tecido">
+                                <span className='title-tecido'><FaCircle style={{ marginRight: '15px', fontSize: '3.5rem' }} /> Malha PP</span>
+                            </div>
+                            <div className="content-tecido">
+                                <span className='title-tecido'><FaCircle style={{ marginRight: '15px', fontSize: '3.5rem' }} /> Poliamida</span>
+                            </div>
+                        </div>
+
                         <div className="depoiments">
                             <h2 className='title-depoiments'>DEPOIMENTOS</h2>
                             <Slider {...settings2}>

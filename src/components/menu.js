@@ -29,7 +29,7 @@ export default function Menu() {
                         </ul>
                     </li>
                     <li className='app-menu-items'><Link to='/quemsomos' className='link'><FaInfo style={{marginRight: 5}}/> SOBRE NÓS</Link></li>
-                    <li className='app-menu-items'><a href='/' className='link'><FaPhoneVolume style={{marginRight: 5}}/> FALE CONOSCO</a></li>
+                    <li className='app-menu-items'><Link to='/contato' className='link'><FaPhoneVolume style={{marginRight: 5}}/> FALE CONOSCO</Link></li>
                     <li className='app-menu-items'><Link to='/comofunciona' className='link'><FaQuestion style={{marginRight: 5}}/> COMO FUNCIONA</Link></li>
                 </ul>
             </div>

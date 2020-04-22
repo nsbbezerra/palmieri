@@ -8,6 +8,7 @@ import QuemSomos from '../pages/quemsomos/index';
 import Depoimentos from '../pages/depoimentos/index';
 import NotFound from '../pages/notFound/index';
 import ProductsTwo from '../pages/products/example-two';
+import Contact from '../pages/contacts/index';
 
 export default function RoutesApp() {
     return (
@@ -29,6 +30,9 @@ export default function RoutesApp() {
             </Route>
             <Route path='/products'>
                 <ProductsTwo />
+            </Route>
+            <Route path='/contato'>
+                <Contact />
             </Route>
             <Route path='*'>
                 <NotFound />
