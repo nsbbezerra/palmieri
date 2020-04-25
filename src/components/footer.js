@@ -43,12 +43,12 @@ export default function Footer() {
                 </div>
                 <div className='container-footer-items item-two'>
                     <span className='footer-title'>CATÁLOGOS</span>
-                    <Link to='/' className='footer-links'><IoIosShareAlt /> Camisetas Polo</Link>
-                    <Link to='/' className='footer-links'><IoIosShareAlt /> Camisetas Promocionais</Link>
-                    <Link to='/' className='footer-links'><IoIosShareAlt /> Camisetas Times</Link>
-                    <Link to='/' className='footer-links'><IoIosShareAlt /> Camisetas Formandos</Link>
-                    <Link to='/' className='footer-links'><IoIosShareAlt /> Abadas Personalizados</Link>
-                    <Link to='/' className='footer-links'><IoIosShareAlt /> Coletes Personalizados</Link>
+                    <Link to='/portifolio' className='footer-links'><IoIosShareAlt /> Camisetas Polo</Link>
+                    <Link to='/portifolio' className='footer-links'><IoIosShareAlt /> Camisetas Promocionais</Link>
+                    <Link to='/portifolio' className='footer-links'><IoIosShareAlt /> Camisetas Times</Link>
+                    <Link to='/portifolio' className='footer-links'><IoIosShareAlt /> Camisetas Formandos</Link>
+                    <Link to='/portifolio' className='footer-links'><IoIosShareAlt /> Abadas Personalizados</Link>
+                    <Link to='/portifolio' className='footer-links'><IoIosShareAlt /> Coletes Personalizados</Link>
                 </div>
                 <div className='container-footer-items item-three'>
                     <span className='footer-title'>PRECISA DE AJUDA?</span>

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './menu.css';
 import { FaHome, FaTshirt, FaInfo, FaPhoneVolume, FaQuestion, FaTags } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { MdClose } from 'react-icons/md';
 
 import { Link } from 'react-router-dom';
 
@@ -9,6 +10,9 @@ import icone from '../assets/icone.svg';
 import logo from '../assets/logo.svg';
 
 export default function Menu() {
+
+    const [open, setOpen] = useState(false);
+
     return (
         <nav className='menu'>
             <div className='menu-left'>
@@ -17,7 +21,7 @@ export default function Menu() {
             </div>
             <div className='menu-right'>
                 <input type='checkbox' id='hamburger-menu'/>
-                <label className='hamburger' for='hamburger-menu'><GiHamburgerMenu /></label>
+                <label className='hamburger' for='hamburger-menu' onClick={() => setOpen(!open)}>{open === false ? <GiHamburgerMenu /> : <MdClose />}</label>
                 <ul className='app-menu'>
                     <li className='app-menu-items'><Link to='/' className='link'><FaHome style={{marginRight: 5}}/> INÍCIO</Link></li>
                     <li className='app-menu-items'><span className='link'><FaTags style={{marginRight: 5}}/> PRODUTOS</span>

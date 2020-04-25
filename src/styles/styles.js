@@ -69,6 +69,10 @@ export const Content = styled.div`
         padding-left: 50px;
         padding-right: 50px;
     }
+    @media (max-width: 400px) {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
 `;
 
 export const CardTitle = styled.div`

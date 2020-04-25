@@ -9,6 +9,7 @@ import Depoimentos from '../pages/depoimentos/index';
 import NotFound from '../pages/notFound/index';
 import ProductsTwo from '../pages/products/example-two';
 import Contact from '../pages/contacts/index';
+import Portifolio from '../pages/portifolio/index';
 
 export default function RoutesApp() {
     return (
@@ -33,6 +34,9 @@ export default function RoutesApp() {
             </Route>
             <Route path='/contato'>
                 <Contact />
+            </Route>
+            <Route path='/portifolio'>
+                <Portifolio />
             </Route>
             <Route path='*'>
                 <NotFound />
