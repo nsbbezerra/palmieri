@@ -12,6 +12,7 @@ import facebook from '../assets/facebook.svg';
 export default function Footer() {
     return (
         <>
+            <button className='btn-whatsapp'><IoLogoWhatsapp /></button>
             <div className="newsletter-container">
                 <h1 className='newsletter-title'>ENTRE EM CONTATO CONOSCO</h1>
                 <div className="container-grid">
@@ -20,10 +21,7 @@ export default function Footer() {
                         <SecondaryInput placeholder='Telefone' className='background-gray phone' />
                         <SecondaryInput type='email' placeholder='Email' className='background-gray email' />
                         <SecondaryTextArea className='row-total background-gray' rows={6} placeholder='Sua Mensagem' />
-                    </div>
-                    <div className="buttons-grid">
                         <button className='btn-send'><IoIosSend style={{ marginRight: 15 }} /> ENVIAR MENSAGEM</button>
-                        <button className='btn-whatsapp'><IoLogoWhatsapp style={{ marginRight: 15 }} /> WHATSAPP</button>
                     </div>
                 </div>
             </div>
