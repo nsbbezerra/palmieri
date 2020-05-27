@@ -12,31 +12,33 @@ import Portifolio from "../pages/portifolio/index";
 
 export default function RoutesApp() {
   return (
-    <Switch>
-      <Route exact path="/">
-        <Index />
-      </Route>
-      <Route path="/produtos/:id">
-        <ProductsOne />
-      </Route>
-      <Route path="/comofunciona">
-        <ComoFunciona />
-      </Route>
-      <Route path="/quemsomos">
-        <QuemSomos />
-      </Route>
-      <Route path="/depoimentos">
-        <Depoimentos />
-      </Route>
-      <Route path="/contato">
-        <Contact />
-      </Route>
-      <Route path="/portifolio/:id">
-        <Portifolio />
-      </Route>
-      <Route path="*">
-        <NotFound />
-      </Route>
-    </Switch>
+    <>
+      <Switch>
+        <Route exact path="/">
+          <Index />
+        </Route>
+        <Route path="/produtos/:id">
+          <ProductsOne />
+        </Route>
+        <Route path="/comofunciona">
+          <ComoFunciona />
+        </Route>
+        <Route path="/quemsomos">
+          <QuemSomos />
+        </Route>
+        <Route path="/depoimentos">
+          <Depoimentos />
+        </Route>
+        <Route path="/contato">
+          <Contact />
+        </Route>
+        <Route path="/portifolio/:id">
+          <Portifolio />
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+    </>
   );
 }

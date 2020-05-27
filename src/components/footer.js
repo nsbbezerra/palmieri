@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { SecondaryInput, SecondaryTextArea } from "../styles/styles";
 import {
   IoIosSend,
@@ -13,68 +13,15 @@ import { Link } from "react-router-dom";
 
 import instagram from "../assets/instagram.svg";
 import facebook from "../assets/facebook.svg";
+import globalConf from "../configs/global";
+import globalConfig from "../configs/global";
 
-import api from "../configs/axios";
-import errorData from "../animations/error.json";
-import Modal from "react-modal";
-import Lottie from "react-lottie";
-
-export default function Footer() {
-  const [products, setProducts] = useState([]);
-  const [messageErro, setErroMessage] = useState("");
-  const [erroStatus, setErroStatus] = useState("");
-  const [erroModal, setErroModal] = useState(false);
-
-  const errorOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: errorData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  useEffect(() => {
-    findProducts();
-  }, []);
-
+export default function Footer({ products }) {
   function createLink() {
     let link = document.createElement("a");
-    link.href = `https://api.whatsapp.com/send?phone=5563999711716&text=sua%20mensagem`;
+    link.href = `https://api.whatsapp.com/send?phone=${globalConfig.whatsapp}&text=Olá Palmieri Uniformes, tudo bem?`;
     link.target = "_blank";
     link.click();
-  }
-
-  async function findProducts() {
-    await api
-      .get("/products")
-      .then((response) => {
-        console.log(response);
-        setProducts(response.data.products);
-      })
-      .catch((error) => {
-        if (error.message === "Network Error") {
-          setErroStatus("Sem conexão com o servidor");
-          setErroMessage(
-            "Não foi possível estabelecer uma conexão com o servidor"
-          );
-          setErroModal(true);
-        } else {
-          setErroStatus(error.response.data.erro.message);
-          setErroMessage(error.response.data.erro.type);
-          setErroModal(true);
-        }
-        if (error.response.status) {
-          if (error.response.status === 404) {
-            setErroStatus("Sem conexão com o servidor");
-            setErroMessage(
-              "Não foi possível estabelecer uma conexão com o servidor"
-            );
-            setErroModal(true);
-            return false;
-          }
-        }
-      });
   }
 
   return (
@@ -191,45 +138,6 @@ export default function Footer() {
       <div className="company">
         <h4 style={{ fontSize: "2rem" }}>© Palmieri Uniformes - 2020</h4>
       </div>
-
-      <Modal
-        isOpen={erroModal}
-        contentLabel="Rota para a API"
-        className="modal"
-        overlayClassName="overlay"
-        ariaHideApp={false}
-      >
-        <div className="modal-container">
-          <div className="modal-header">
-            <span>Conexão com Servidor</span>
-          </div>
-          <div className="modal-content">
-            <Lottie options={errorOptions} width={"40%"} />
-            <p
-              style={{
-                fontWeight: "700",
-                width: "100%",
-                textAlign: "center",
-                fontSize: 16,
-                color: "#f44336",
-              }}
-            >
-              {erroStatus}
-            </p>
-            <p
-              style={{
-                fontWeight: "400",
-                width: "100%",
-                textAlign: "center",
-                fontSize: 14,
-                color: "#333",
-              }}
-            >
-              <strong>Erro:</strong> {messageErro}
-            </p>
-          </div>
-        </div>
-      </Modal>
     </>
   );
 }

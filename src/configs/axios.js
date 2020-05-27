@@ -1,6 +1,6 @@
 import axios from "axios";
 
-var url = "http://localhost:3333";
+var url = "https://palmieri-api.herokuapp.com";
 
 const api = axios.create({
   baseURL: url,

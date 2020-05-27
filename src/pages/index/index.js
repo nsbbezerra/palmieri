@@ -50,6 +50,7 @@ import breakpoinsConfig from "../../configs/sliderConfig";
 
 import api from "../../configs/axios";
 import errorData from "../../animations/error.json";
+import globalConfig from "../../configs/global";
 
 export default function IndexApp() {
   const [loading, setLoading] = useState(true);
@@ -162,7 +163,7 @@ export default function IndexApp() {
 
   function createLink() {
     let link = document.createElement("a");
-    link.href = `https://api.whatsapp.com/send?phone=5563999711716&text=sua%20mensagem`;
+    link.href = `https://api.whatsapp.com/send?phone=${globalConfig.whatsapp}&text=Olá Palmieri Uniformes, tudo bem?`;
     link.target = "_blank";
     link.click();
   }

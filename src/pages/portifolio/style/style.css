@@ -16,6 +16,16 @@
   border-radius: 2px;
   margin-bottom: 10px;
   cursor: pointer;
+  padding: 5px;
+  transition: all 0.3s;
+}
+
+.portifolio-card:hover {
+  transform: scale(1.05);
+}
+
+.portifolio-card:active {
+  transform: scale(1);
 }
 
 .portifolio-img {
@@ -23,6 +33,10 @@
   height: 200px;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
+}
+
+.img-modal {
+  height: 550px;
 }
 
 @media (max-width: 414px) {
