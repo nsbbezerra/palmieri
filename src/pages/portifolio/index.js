@@ -60,7 +60,6 @@ export default function Portifolio() {
     await api
       .get(`/portifolio/${id}`)
       .then((response) => {
-        console.log(response);
         setCatalog(response.data.portifolio);
         setUrlPhoto(response.data.urlImage);
         setLoading(false);

@@ -79,27 +79,11 @@ export default function ExampleOne() {
         findCatalog();
       })
       .catch((error) => {
-        if (error.message === "Network Error") {
-          setErroStatus("Sem conexão com o servidor");
-          setErroMessage(
-            "Não foi possível estabelecer uma conexão com o servidor"
-          );
-          setErroModal(true);
-        } else {
-          setErroStatus(error.response.data.erro.message);
-          setErroMessage(error.response.data.erro.type);
-          setErroModal(true);
-        }
-        if (error.response.status) {
-          if (error.response.status === 404) {
-            setErroStatus("Sem conexão com o servidor");
-            setErroMessage(
-              "Não foi possível estabelecer uma conexão com o servidor"
-            );
-            setErroModal(true);
-            return false;
-          }
-        }
+        setErroStatus("Sem conexão com o servidor");
+        setErroMessage(
+          "Não foi possível estabelecer uma conexão com o servidor"
+        );
+        setErroModal(true);
       });
   }
 
@@ -111,27 +95,11 @@ export default function ExampleOne() {
         setLoading(false);
       })
       .catch((error) => {
-        if (error.message === "Network Error") {
-          setErroStatus("Sem conexão com o servidor");
-          setErroMessage(
-            "Não foi possível estabelecer uma conexão com o servidor"
-          );
-          setErroModal(true);
-        } else {
-          setErroStatus(error.response.data.erro.message);
-          setErroMessage(error.response.data.erro.type);
-          setErroModal(true);
-        }
-        if (error.response.status) {
-          if (error.response.status === 404) {
-            setErroStatus("Sem conexão com o servidor");
-            setErroMessage(
-              "Não foi possível estabelecer uma conexão com o servidor"
-            );
-            setErroModal(true);
-            return false;
-          }
-        }
+        setErroStatus("Sem conexão com o servidor");
+        setErroMessage(
+          "Não foi possível estabelecer uma conexão com o servidor"
+        );
+        setErroModal(true);
       });
   }
 

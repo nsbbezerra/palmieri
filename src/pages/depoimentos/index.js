@@ -57,7 +57,6 @@ export default function Depoimentos() {
     await api
       .get("/depoiments")
       .then((response) => {
-        console.log(response);
         setDepoiments(response.data.allDepoiments);
         setUrlPhoto(response.data.urlImages);
         setLoading(false);
