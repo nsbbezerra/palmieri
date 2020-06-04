@@ -57,7 +57,11 @@ export default function Depoimentos() {
     await api
       .get("/depoiments")
       .then((response) => {
-        setDepoiments(response.data.allDepoiments);
+        if (response.data.allDepoiments) {
+          setDepoiments(response.data.allDepoiments);
+        } else {
+          setDepoiments({});
+        }
         setUrlPhoto(response.data.urlImages);
         setLoading(false);
       })
@@ -142,7 +146,7 @@ export default function Depoimentos() {
           <div className="video-content">
             <h2 className="title-depoimentos">DEPOIMENTOS</h2>
             {JSON.stringify(depoiments) === "{}" ? (
-              <h1 style={{ color: "#f6f6f6" }}>
+              <h1 style={{ color: "#1a1a1a" }}>
                 Nenhuma informação encontrada
               </h1>
             ) : (

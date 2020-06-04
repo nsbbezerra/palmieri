@@ -7,59 +7,56 @@ import {
   CardImage,
   Content,
   CardTitle,
-  CardDescription,
-  CardAction,
-  Jumbotron,
+  CardImageContainer,
+  DescProduct,
+  GridHeader,
+  GridItem,
+  GridDesc,
+  GridImg,
+  ContainerProducts,
   SubTitle,
-  Spaced,
-  TextContainer,
-  Description,
-  RowWrap,
-  CardDelivery,
-  ImageDelivery,
-  ArrowCard,
-  CardDeliveryNoBorder,
-  CardDeliveryDescription,
-  RowActionsCard,
-  ButtonActionRowPrimary,
-  ButtonActionSecondary,
-  CardDeliveryFooter,
-  RowAround,
-  CardShadow,
-  CardDescriptionProf,
+  TitleWhite,
+  ContainerMiddle,
+  Middle,
+  ContentMiddle,
+  TitleProduct,
+  AcademyTitle,
+  BtnAcademy,
+  CardAction,
+  CardImageContainerCatalog,
+  TitleSecondary,
 } from "../../styles/styles";
 import Carousel from "@brainhubeu/react-carousel";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { FaSearchPlus, FaTshirt, FaPhoneVolume } from "react-icons/fa";
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation, useHistory, Link } from "react-router-dom";
 import animationData from "../../animations/loading-one.json";
 import Lottie from "react-lottie";
 import Modal from "react-modal";
+import { FaCheck } from "react-icons/fa";
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 import banner from "../../assets/capa.png";
-import tshirt from "./assets/tshirt.svg";
-import arrow from "./assets/arrow.svg";
-import brazil from "./assets/brazil.svg";
-import card from "./assets/card.svg";
-import make from "./assets/make.svg";
-import comments from "./assets/comments.svg";
+import creditCard from "../../assets/card.svg";
+import truck from "../../assets/truck.svg";
+import dollar from "../../assets/dollar.svg";
+import draw from "../../assets/draw.svg";
+import tshirtOne from "../../assets/camisa-one-web.png";
+import tshirtTwo from "../../assets/camiseta-two-web.png";
+import tshirtThree from "../../assets/camiseta-three-web.png";
+import depoiments from "../../assets/depoimento.png";
 
-import breakpoinsConfig from "../../configs/sliderConfig";
+import breakpointsConfig from "../../configs/sliderConfig";
 
 import api from "../../configs/axios";
 import errorData from "../../animations/error.json";
 import globalConfig from "../../configs/global";
 
 export default function IndexApp() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [messageErro, setErroMessage] = useState("");
   const [erroStatus, setErroStatus] = useState("");
   const [erroModal, setErroModal] = useState(false);
   const [products, setProducts] = useState([]);
   const [urlPhoto, setUrlPhoto] = useState("");
-  const [professionals, setProfessionals] = useState([]);
 
   const { pathname } = useLocation();
   const history = useHistory();
@@ -77,7 +74,7 @@ export default function IndexApp() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     admin();
   }, []);
 
@@ -88,39 +85,6 @@ export default function IndexApp() {
       .then((response) => {
         setProducts(response.data.products);
         setUrlPhoto(response.data.urlImg);
-        findPartners();
-      })
-      .catch((error) => {
-        console.log(error.message);
-        if (error.message === "Network Error") {
-          setErroStatus("Sem conexão com o servidor");
-          setErroMessage(
-            "Não foi possível estabelecer uma conexão com o servidor"
-          );
-          setErroModal(true);
-        } else {
-          setErroStatus(error.response.data.erro.message);
-          setErroMessage(error.response.data.erro.type);
-          setErroModal(true);
-        }
-        if (error.response.status) {
-          if (error.response.status === 404) {
-            setErroStatus("Sem conexão com o servidor");
-            setErroMessage(
-              "Não foi possível estabelecer uma conexão com o servidor"
-            );
-            setErroModal(true);
-            return false;
-          }
-        }
-      });
-  }
-
-  async function findPartners() {
-    await api
-      .get("/professional")
-      .then((response) => {
-        setProfessionals(response.data.partners);
         setLoading(false);
       })
       .catch((error) => {
@@ -130,7 +94,7 @@ export default function IndexApp() {
         );
         setErroModal(true);
       });
-  }
+  } */
 
   function goToProducts(id) {
     history.push(`/produtos/${id}`);
@@ -147,7 +111,7 @@ export default function IndexApp() {
 
   function createLink() {
     let link = document.createElement("a");
-    link.href = `https://api.whatsapp.com/send?phone=${globalConfig.whatsapp}&text=Olá Palmieri Uniformes, tudo bem?`;
+    link.href = `https://api.whatsapp.com/send?phone=${globalConfig.whatsapp}&text=${globalConfig.message}`;
     link.target = "_blank";
     link.click();
   }
@@ -173,147 +137,278 @@ export default function IndexApp() {
         </>
       ) : (
         <>
-          <Banner src={banner} alt="Banner Palmieri" />
-
+          <Banner src={banner} alt="Banner Palmieri Uniformes" />
+          <GridHeader>
+            <GridItem>
+              <GridImg src={creditCard} />
+              <GridDesc>Pague no Boleto ou Cartão de Crédito</GridDesc>
+            </GridItem>
+            <GridItem>
+              <GridImg src={truck} />
+              <GridDesc>Entregamos para todo o Brasil</GridDesc>
+            </GridItem>
+            <GridItem>
+              <GridImg src={dollar} />
+              <GridDesc>Cobrimos 40% do valor do Frete</GridDesc>
+            </GridItem>
+            <GridItem>
+              <GridImg src={draw} />
+              <GridDesc>Criamos sua arte 100% grátis</GridDesc>
+            </GridItem>
+          </GridHeader>
           <Content>
-            <Title>NOSSOS PRODUTOS</Title>
-            {products.length ? (
-              <Carousel
-                slidesPerPage={4}
-                arrows
-                arrowLeft={
-                  <MdKeyboardArrowLeft
-                    color="#666"
-                    size={"5em"}
-                    style={{ cursor: "pointer" }}
-                  />
-                }
-                arrowLeftDisabled={
-                  <MdKeyboardArrowLeft
-                    color="#666"
-                    size={"5em"}
-                    style={{ cursor: "pointer" }}
-                  />
-                }
-                arrowRight={
-                  <MdKeyboardArrowRight
-                    color="#666"
-                    size={"5em"}
-                    style={{ cursor: "pointer" }}
-                  />
-                }
-                arrowRightDisabled={
-                  <MdKeyboardArrowRight
-                    color="#666"
-                    size={"5em"}
-                    style={{ cursor: "pointer" }}
-                  />
-                }
-                addArrowClickHandler
-                breakpoints={breakpoinsConfig.products}
-              >
-                {products.map((prod) => (
-                  <Card key={prod._id}>
-                    <CardImage
-                      src={`${urlPhoto}/${prod.image}`}
-                      alt={prod.name}
-                    />
-                    <CardTitle>{prod.name}</CardTitle>
-                    <CardDescription>{prod.description}</CardDescription>
-                    <CardAction onClick={() => goToProducts(prod._id)}>
-                      <FaSearchPlus style={{ marginRight: 15 }} /> Veja Mais
-                    </CardAction>
-                  </Card>
-                ))}
-              </Carousel>
-            ) : (
-              <h1>Nenhum produto cadastrado!</h1>
-            )}
+            <Title>VEJA NOSSOS MODELOS DE UNIFORMES</Title>
+            <SubTitle>
+              Uniformes para diferentes utilidades, Escolha oque melhor lhe
+              atender
+            </SubTitle>
+            <ContainerProducts>
+              <Card>
+                <CardImageContainer>
+                  <CardImage src={tshirtOne} />
+                </CardImageContainer>
+                <CardTitle>CAMISETA FORMANDOS</CardTitle>
+                <Link to="/" className="link-product">
+                  VEJA MAIS
+                </Link>
+              </Card>
+              <Card>
+                <CardImageContainer>
+                  <CardImage src={tshirtOne} />
+                </CardImageContainer>
+                <CardTitle>CAMISETA FORMANDOS</CardTitle>
+                <Link to="/" className="link-product">
+                  VEJA MAIS
+                </Link>
+              </Card>
+              <Card>
+                <CardImageContainer>
+                  <CardImage src={tshirtOne} />
+                </CardImageContainer>
+                <CardTitle>CAMISETA FORMANDOS</CardTitle>
+                <Link to="/" className="link-product">
+                  VEJA MAIS
+                </Link>
+              </Card>
+              <Card>
+                <CardImageContainer>
+                  <CardImage src={tshirtOne} />
+                </CardImageContainer>
+                <CardTitle>CAMISETA FORMANDOS</CardTitle>
+                <Link to="/" className="link-product">
+                  VEJA MAIS
+                </Link>
+              </Card>
+              <Card>
+                <CardImageContainer>
+                  <CardImage src={tshirtOne} />
+                </CardImageContainer>
+                <CardTitle>CAMISETA FORMANDOS</CardTitle>
+                <Link to="/" className="link-product">
+                  VEJA MAIS
+                </Link>
+              </Card>
+            </ContainerProducts>
           </Content>
+          <Middle>
+            <ContentMiddle>
+              <TitleProduct>CONFIRA AQUI</TitleProduct>
+              <TitleWhite>UNIFORME PARA EVENTOS</TitleWhite>
+              <ContainerMiddle>
+                <img src={tshirtTwo} style={{ width: "80%", marginTop: 60 }} />
+                <DescProduct>
+                  TRABALHAMOS PARA LEVAR QUALIDADE COM PREÇO JUSTO AOS NOSSOS
+                  CLIENTES, BUSCAMOS SEMPRE ENTENDER E APRENDER COM CADA PEDIDO
+                  E COM CADA PESSOA, ASSIM SEMPRE MELHORANDO NOSSOS PROCESSOS.
+                </DescProduct>
+              </ContainerMiddle>
+            </ContentMiddle>
+          </Middle>
+          <div
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(252,252,252,1) 0%, rgba(221,221,221,1) 100%)",
+            }}
+          >
+            <ContainerMiddle>
+              <div style={{ width: "100%", padding: 20 }}>
+                <AcademyTitle>UNIFORMES PARA ACADEMIA</AcademyTitle>
+                <FaCheck
+                  style={{ marginLeft: 100, color: "#4caf50" }}
+                  fontSize={25}
+                />{" "}
+                <br />
+                <FaCheck
+                  style={{ marginLeft: 100, color: "#4caf50" }}
+                  fontSize={25}
+                />{" "}
+                <br />
+                <FaCheck
+                  style={{ marginLeft: 100, color: "#4caf50" }}
+                  fontSize={25}
+                />{" "}
+                <br />
+                <FaCheck
+                  style={{ marginLeft: 100, color: "#4caf50" }}
+                  fontSize={25}
+                />{" "}
+                <br />
+                <FaCheck
+                  style={{ marginLeft: 100, color: "#4caf50" }}
+                  fontSize={25}
+                />
+                <BtnAcademy onClick={createLink}>
+                  SOLICITE UM ORÇAMENTO
+                </BtnAcademy>
+              </div>
+              <img src={tshirtThree} style={{ width: "100%" }} />
+            </ContainerMiddle>
+          </div>
 
-          <Spaced />
+          <div className="portifolio">
+            <Title>Portifolio de Artes</Title>
+            <SubTitle>Nosso Portifólio de Artes</SubTitle>
+            <Carousel
+              slidesPerPage={3}
+              arrows
+              arrowLeft={
+                <MdKeyboardArrowLeft
+                  color="#666"
+                  size={"5em"}
+                  style={{ cursor: "pointer" }}
+                />
+              }
+              arrowLeftDisabled={
+                <MdKeyboardArrowLeft
+                  color="#666"
+                  size={"5em"}
+                  style={{ cursor: "pointer" }}
+                />
+              }
+              arrowRight={
+                <MdKeyboardArrowRight
+                  color="#666"
+                  size={"5em"}
+                  style={{ cursor: "pointer" }}
+                />
+              }
+              arrowRightDisabled={
+                <MdKeyboardArrowRight
+                  color="#666"
+                  size={"5em"}
+                  style={{ cursor: "pointer" }}
+                />
+              }
+              addArrowClickHandler
+              breakpoints={breakpointsConfig.products}
+            >
+              <Card>
+                <CardImageContainerCatalog>
+                  <CardImage src={tshirtThree} />
+                </CardImageContainerCatalog>
+                <CardAction>Veja Mais</CardAction>
+              </Card>
+              <Card>
+                <CardImageContainerCatalog>
+                  <CardImage src={tshirtThree} />
+                </CardImageContainerCatalog>
+                <CardAction>Veja Mais</CardAction>
+              </Card>
+              <Card>
+                <CardImageContainerCatalog>
+                  <CardImage src={tshirtThree} />
+                </CardImageContainerCatalog>
+                <CardAction>Veja Mais</CardAction>
+              </Card>
+              <Card>
+                <CardImageContainerCatalog>
+                  <CardImage src={tshirtThree} />
+                </CardImageContainerCatalog>
+                <CardAction>Veja Mais</CardAction>
+              </Card>
+              <Card>
+                <CardImageContainerCatalog>
+                  <CardImage src={tshirtThree} />
+                </CardImageContainerCatalog>
+                <CardAction>Veja Mais</CardAction>
+              </Card>
+              <Card>
+                <CardImageContainerCatalog>
+                  <CardImage src={tshirtThree} />
+                </CardImageContainerCatalog>
+                <CardAction>Veja Mais</CardAction>
+              </Card>
+            </Carousel>
+          </div>
 
-          <Jumbotron>
-            <TextContainer>
-              <SubTitle>PASSO A PASSO</SubTitle>
-              <Description>
-                DESDE O MOMENTO DA ESCOLHA ATÉ O RECEBIMENTO EM SUA CASA
-              </Description>
-            </TextContainer>
-            <RowWrap>
-              <CardDelivery>
-                <ImageDelivery src={tshirt} alt="tshirt palmieri uniformes" />
-                <ArrowCard src={arrow} />
-                <CardDeliveryDescription>
-                  Você escolhe o modelo ou nos envia as informações.
-                </CardDeliveryDescription>
-                <RowActionsCard>
-                  <ButtonActionRowPrimary>
-                    <FaTshirt style={{ marginRight: 7 }} /> MODELOS
-                  </ButtonActionRowPrimary>
-                </RowActionsCard>
-              </CardDelivery>
-              <CardDelivery>
-                <ImageDelivery src={comments} alt="tshirt palmieri uniformes" />
-                <ArrowCard src={arrow} />
-                <CardDeliveryDescription>
-                  Alinha seu pedido com um de nossos consultores.
-                </CardDeliveryDescription>
-                <ButtonActionSecondary onClick={() => createLink()}>
-                  <FaPhoneVolume style={{ marginRight: 7 }} /> FALE CONOSCO
-                </ButtonActionSecondary>
-              </CardDelivery>
-              <CardDelivery>
-                <ImageDelivery src={card} alt="tshirt palmieri uniformes" />
-                <ArrowCard src={arrow} />
-                <CardDeliveryDescription>
-                  Efetua o pagamento.
-                </CardDeliveryDescription>
-                <CardDeliveryFooter>
-                  Depósito Bancário ou Cartão de Crédito
-                </CardDeliveryFooter>
-              </CardDelivery>
-              <CardDelivery>
-                <ImageDelivery src={make} alt="tshirt palmieri uniformes" />
-                <ArrowCard src={arrow} />
-                <CardDeliveryDescription>
-                  Produzimos e separamos seu pedido.
-                </CardDeliveryDescription>
-                <CardDeliveryFooter>
-                  Produzimos com o melhor material e a melhor qualidade.
-                </CardDeliveryFooter>
-              </CardDelivery>
-              <CardDeliveryNoBorder>
-                <ImageDelivery src={brazil} alt="tshirt palmieri uniformes" />
-                <CardDeliveryDescription>
-                  Enviamos para todo o Brasil.
-                </CardDeliveryDescription>
-                <CardDeliveryFooter>
-                  Entrega via Transportadora.
-                </CardDeliveryFooter>
-              </CardDeliveryNoBorder>
-            </RowWrap>
-          </Jumbotron>
-
-          <Content>
-            <Title>CONHEÇA NOSSOS PROFISSIONAIS</Title>
-            {professionals.length ? (
-              <RowAround>
-                {professionals.map((prof) => (
-                  <CardShadow key={prof._id}>
-                    <CardImage
-                      src={`${urlPhoto}/${prof.avatar}`}
-                      alt={prof.name}
-                    />
-                    <CardTitle>{prof.name}</CardTitle>
-                    <CardDescriptionProf>{prof.func}</CardDescriptionProf>
-                  </CardShadow>
-                ))}
-              </RowAround>
-            ) : (
-              <h1>Nenhum profissional cadastrado"!</h1>
-            )}
-          </Content>
+          <div className="depoiments">
+            <TitleSecondary>DEPOIMENTOS</TitleSecondary>
+            <Carousel
+              slidesPerPage={2}
+              arrows
+              arrowLeft={
+                <MdKeyboardArrowLeft
+                  color="#666"
+                  size={"5em"}
+                  style={{ cursor: "pointer" }}
+                />
+              }
+              arrowLeftDisabled={
+                <MdKeyboardArrowLeft
+                  color="#666"
+                  size={"5em"}
+                  style={{ cursor: "pointer" }}
+                />
+              }
+              arrowRight={
+                <MdKeyboardArrowRight
+                  color="#666"
+                  size={"5em"}
+                  style={{ cursor: "pointer" }}
+                />
+              }
+              arrowRightDisabled={
+                <MdKeyboardArrowRight
+                  color="#666"
+                  size={"5em"}
+                  style={{ cursor: "pointer" }}
+                />
+              }
+              addArrowClickHandler
+              breakpoints={breakpointsConfig.depoiments}
+            >
+              <img
+                src={depoiments}
+                alt="Depoimentos"
+                className="img-depoimento"
+              />
+              <img
+                src={depoiments}
+                alt="Depoimentos"
+                className="img-depoimento"
+              />
+              <img
+                src={depoiments}
+                alt="Depoimentos"
+                className="img-depoimento"
+              />
+              <img
+                src={depoiments}
+                alt="Depoimentos"
+                className="img-depoimento"
+              />
+              <img
+                src={depoiments}
+                alt="Depoimentos"
+                className="img-depoimento"
+              />
+              <img
+                src={depoiments}
+                alt="Depoimentos"
+                className="img-depoimento"
+              />
+            </Carousel>
+          </div>
         </>
       )}
 

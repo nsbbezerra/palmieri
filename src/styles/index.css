@@ -14,6 +14,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: #fcfcfc;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -170,4 +174,21 @@ body {
   font-size: 25px;
   color: #1a1a1a;
   font-weight: 600;
+}
+
+.link-product {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 2rem;
+  padding-bottom: 5px;
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-weight: 500;
+  margin-top: -8px;
+}
+
+.link-product:hover {
+  text-decoration: underline;
 }

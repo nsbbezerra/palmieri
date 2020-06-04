@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import middle from "../assets/middle-web.png";
+
 export const Banner = styled.img`
   width: 100%;
 `;
@@ -12,22 +14,60 @@ export const Container = styled.div`
 export const Title = styled.h1`
   width: 100%;
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
   color: #1a1a1a;
-  border-bottom: 2px solid #edba00;
+  font-family: "Anton", sans-serif;
+`;
+
+export const TitleSecondary = styled.h1`
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  padding: 10px;
+  color: #edba00;
+  font-family: "Anton", sans-serif;
+`;
+
+export const TitleWhite = styled.h1`
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #f6f6f6;
+  display: block;
+`;
+
+export const TitleProduct = styled.h1`
+  width: 100%;
+  text-align: center;
+  font-size: 10rem;
+  font-weight: 800;
+  color: #edba00;
+  font-family: "Piedra", cursive;
+  display: block;
+`;
+
+export const SubTitle = styled.h2`
+  width: 100%;
+  color: #555;
+  margin-top: -15px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 40px;
 `;
 
 export const Card = styled.div`
-  background-color: #fff;
-  border: 1px solid #ddd;
   width: 250px;
   max-width: 250px;
   min-width: 250px;
-  border-radius: 2px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  margin-bottom: 40px;
   @media (max-width: 414px) {
     width: 190px;
     max-width: 190px;
@@ -42,7 +82,7 @@ export const CardShadow = styled.div`
   max-width: 250px;
   min-width: 250px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
+  border-radius: 4px;
   margin-bottom: 10px;
   @media (max-width: 414px) {
     width: 190px;
@@ -53,12 +93,29 @@ export const CardShadow = styled.div`
 
 export const CardImage = styled.img`
   width: 100%;
-  height: 200px;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
   @media (max-width: 414px) {
     height: 190px;
   }
+`;
+
+export const CardImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 350px;
+  margin-bottom: -5px;
+`;
+
+export const CardImageContainerCatalog = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  margin-bottom: -5px;
 `;
 
 export const Content = styled.div`
@@ -77,29 +134,18 @@ export const Content = styled.div`
 
 export const CardTitle = styled.div`
   width: 100%;
-  border-top: 0.5px solid #ddd;
-  border-bottom: 0.5px solid #ddd;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
   text-align: center;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 800;
+  font-size: 2.5rem;
   color: #1a1a1a;
-  background-color: #eee;
+  font-family: "Saira Extra Condensed", sans-serif;
 `;
 
 export const CardDescription = styled.div`
   width: 100%;
   padding: 10px;
   height: 100px;
-  color: #444;
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-`;
-
-export const CardDescriptionProf = styled.div`
-  width: 100%;
-  padding: 10px;
   color: #444;
   font-size: 1.2rem;
   line-height: 1.8rem;
@@ -122,16 +168,15 @@ export const PrimaryButton = styled.button`
   font-size: 1.3rem;
   font-weight: 600;
   color: #f6f6f6;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.4s;
 
   &:hover {
-    background-color: #333333;
+    opacity: 0.9;
   }
   &:active {
-    opacity: 0.8;
-    transition: none;
+    transform: scale(0.99);
   }
 `;
 
@@ -145,16 +190,15 @@ export const PrimaryButtonNotFull = styled.button`
   font-size: 1.3rem;
   font-weight: 600;
   color: #f6f6f6;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.4s;
 
   &:hover {
-    background-color: #333333;
+    opacity: 0.9;
   }
   &:active {
-    opacity: 0.8;
-    transition: none;
+    transform: scale(0.99);
   }
 `;
 
@@ -164,22 +208,20 @@ export const CardAction = styled.button`
   align-items: center;
   width: 100%;
   border: none;
-  background-color: #1a1a1a;
+  background-color: #edba00;
   height: 40px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #f6f6f6;
   cursor: pointer;
-  border-bottom-left-radius: 1px;
-  border-bottom-right-radius: 1px;
+  border-radius: 4px;
   transition: all 0.4s;
 
   &:hover {
-    background-color: #232323;
+    opacity: 0.9;
   }
   &:active {
-    opacity: 0.8;
-    transition: none;
+    transform: scale(0.99);
   }
 `;
 
@@ -194,15 +236,6 @@ export const TextContainer = styled.div`
   padding: 8px;
   border-bottom: 1px solid #444;
   text-align: center;
-`;
-
-export const SubTitle = styled.h2`
-  width: 100%;
-  color: #444;
-  line-height: 2.5rem;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 500;
 `;
 
 export const Description = styled.p`
@@ -226,136 +259,6 @@ export const RowWrap = styled.div`
   align-items: center;
   flex-wrap: wrap;
   margin-top: 20px;
-`;
-
-export const CardDelivery = styled.div`
-  background-color: #fff;
-  border-right: 1.5px solid #ccc;
-  width: 200px;
-  border-bottom: 1px solid #eee;
-`;
-
-export const CardDeliveryNoBorder = styled.div`
-  background-color: #fff;
-  width: 200px;
-`;
-
-export const ImageDelivery = styled.img`
-  width: 100%;
-  height: 200px;
-  padding: 40px;
-`;
-
-export const ArrowCard = styled.img`
-  width: 16px;
-  height: 48px;
-  position: relative;
-  margin-bottom: 130px;
-  margin-right: -100px;
-`;
-
-export const CardDeliveryDescription = styled.div`
-  width: 100%;
-  height: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #444;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-align: center;
-`;
-
-export const RowActionsCard = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const ButtonActionRowPrimary = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border: none;
-  background-color: #1a1a1a;
-  height: 40px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #f6f6f6;
-  cursor: pointer;
-  transition: all 0.4s;
-
-  &:hover {
-    background-color: #232323;
-  }
-  &:active {
-    opacity: 0.8;
-    transition: none;
-  }
-`;
-
-export const ButtonActionRowSecondary = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  border: none;
-  background-color: #edba00;
-  height: 40px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  cursor: pointer;
-  transition: all 0.4s;
-
-  &:hover {
-    background-color: #f8c200;
-  }
-  &:active {
-    opacity: 0.8;
-    transition: none;
-  }
-`;
-
-export const ButtonActionSecondary = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border: none;
-  background-color: #edba00;
-  height: 40px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  cursor: pointer;
-  transition: all 0.4s;
-
-  &:hover {
-    background-color: #f8c200;
-  }
-  &:active {
-    opacity: 0.8;
-    transition: none;
-  }
-`;
-
-export const CardDeliveryFooter = styled.div`
-  width: 100%;
-  height: 40px;
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.15rem;
-  text-align: center;
-  font-weight: 400;
-  color: #666;
 `;
 
 export const RowAround = styled.div`
@@ -387,9 +290,9 @@ export const SecondaryInput = styled.input`
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   width: 100%;
-  border-radius: 2px;
+  border-radius: 4px;
   font-style: italic;
-  background-color: #fff;
+  background-color: #f6f6f6;
 `;
 
 export const SecondaryTextArea = styled.textarea`
@@ -401,8 +304,136 @@ export const SecondaryTextArea = styled.textarea`
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   width: 100%;
-  border-radius: 2px;
+  border-radius: 4px;
   font-style: italic;
   resize: vertical;
-  background-color: #fff;
+  background-color: #f6f6f6;
+`;
+
+export const GridHeader = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: linear-gradient(
+    180deg,
+    rgba(240, 240, 240, 1) 0%,
+    rgba(221, 221, 221, 1) 100%
+  );
+  width: 100%;
+  margin-top: -5px;
+  @media (max-width: 570px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
+export const GridItem = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  @media (max-width: 1100px) {
+    padding: 10px;
+  }
+`;
+
+export const GridImg = styled.img`
+  height: 50px;
+  margin-right: 20px;
+  @media (max-width: 1000px) {
+    height: 35px;
+  }
+  @media (max-width: 790px) {
+    height: 25px;
+  }
+  @media (max-width: 380px) {
+    height: 20px;
+  }
+`;
+
+export const GridDesc = styled.span`
+  color: #444;
+  font-size: 1.8rem;
+  font-weight: 600;
+  @media (max-width: 1100px) {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 1000px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 790px) {
+    font-size: 1.1rem;
+  }
+  @media (max-width: 570px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 380px) {
+    font-size: 1.2rem;
+  }
+`;
+
+export const ContainerProducts = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
+export const Middle = styled.div`
+  padding: 30px;
+  position: relative;
+  background-image: url(${middle});
+  background-position: center;
+  background-size: cover;
+`;
+
+export const ContainerMiddle = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+`;
+
+export const DescProduct = styled.span`
+  font-family: "Anton", sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  display: block;
+  width: 80%;
+  margin-top: 40px;
+`;
+
+export const ContentMiddle = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const AcademyTitle = styled.span`
+  font-weight: 600;
+  font-size: 7rem;
+  color: #333;
+  font-family: "Anton", sans-serif;
+  text-align: center;
+  display: block;
+  margin-top: 5%;
+`;
+
+export const BtnAcademy = styled.button`
+  border: none;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active {
+    transform: scale(0.99);
+  }
 `;
