@@ -9,8 +9,9 @@
 
 .newsletter-title {
   width: 100%;
+  font-family: "Anton", sans-serif;
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   padding: 10px;
   margin-bottom: 20px;

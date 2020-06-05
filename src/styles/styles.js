@@ -8,7 +8,6 @@ export const Banner = styled.img`
 
 export const Container = styled.div`
   width: 100%;
-  margin-top: 50px;
 `;
 
 export const Title = styled.h1`
@@ -20,6 +19,18 @@ export const Title = styled.h1`
   margin-top: 40px;
   color: #1a1a1a;
   font-family: "Anton", sans-serif;
+  @media (max-width: 715px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 465px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 400px) {
+    margin-top: 20px;
+  }
+  @media (max-width: 360px) {
+    font-size: 2rem;
+  }
 `;
 
 export const TitleSecondary = styled.h1`
@@ -39,6 +50,36 @@ export const TitleWhite = styled.h1`
   font-weight: 700;
   color: #f6f6f6;
   display: block;
+  @media (max-width: 950px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 500px) {
+    font-size: 2rem;
+  }
+`;
+
+export const DescProduct = styled.span`
+  font-family: "Anton", sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  display: block;
+  width: 90%;
+  margin-top: 40px;
+  @media (max-width: 1250px) {
+    font-size: 3.5rem;
+  }
+  @media (max-width: 1050px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 840px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 710px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 490px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const TitleProduct = styled.h1`
@@ -49,6 +90,12 @@ export const TitleProduct = styled.h1`
   color: #edba00;
   font-family: "Piedra", cursive;
   display: block;
+  @media (max-width: 950px) {
+    font-size: 7rem;
+  }
+  @media (max-width: 500px) {
+    font-size: 5rem;
+  }
 `;
 
 export const SubTitle = styled.h2`
@@ -59,6 +106,18 @@ export const SubTitle = styled.h2`
   font-size: 1.8rem;
   font-weight: 500;
   margin-bottom: 40px;
+  @media (max-width: 715px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 465px) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 400px) {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 360px) {
+    font-size: 1.1rem;
+  }
 `;
 
 export const Card = styled.div`
@@ -95,9 +154,6 @@ export const CardImage = styled.img`
   width: 100%;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
-  @media (max-width: 414px) {
-    height: 190px;
-  }
 `;
 
 export const CardImageContainer = styled.div`
@@ -313,16 +369,9 @@ export const SecondaryTextArea = styled.textarea`
 export const GridHeader = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: linear-gradient(
-    180deg,
-    rgba(240, 240, 240, 1) 0%,
-    rgba(221, 221, 221, 1) 100%
-  );
+  background: #eee;
   width: 100%;
   margin-top: -5px;
-  @media (max-width: 570px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
 `;
 
 export const GridItem = styled.div`
@@ -331,23 +380,33 @@ export const GridItem = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 15px;
+  padding: 13px;
   @media (max-width: 1100px) {
     padding: 10px;
+  }
+  @media (max-width: 500px) {
+    padding: 7px;
   }
 `;
 
 export const GridImg = styled.img`
-  height: 50px;
+  height: 30px;
   margin-right: 20px;
   @media (max-width: 1000px) {
-    height: 35px;
-  }
-  @media (max-width: 790px) {
     height: 25px;
   }
-  @media (max-width: 380px) {
-    height: 20px;
+  @media (max-width: 790px) {
+    height: 22px;
+  }
+  @media (max-width: 613px) {
+    height: 18px;
+    margin-right: 10px;
+  }
+  @media (max-width: 480px) {
+    height: 15px;
+  }
+  @media (max-width: 395px) {
+    height: 12px;
   }
 `;
 
@@ -364,11 +423,17 @@ export const GridDesc = styled.span`
   @media (max-width: 790px) {
     font-size: 1.1rem;
   }
-  @media (max-width: 570px) {
-    font-size: 1.5rem;
+  @media (max-width: 650px) {
+    font-size: 1rem;
   }
-  @media (max-width: 380px) {
-    font-size: 1.2rem;
+  @media (max-width: 613px) {
+    font-size: 0.9rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+  }
+  @media (max-width: 395px) {
+    font-size: 0.3rem;
   }
 `;
 
@@ -394,15 +459,6 @@ export const ContainerMiddle = styled.div`
   grid-template-columns: repeat(2, 1fr);
 `;
 
-export const DescProduct = styled.span`
-  font-family: "Anton", sans-serif;
-  font-size: 4rem;
-  color: #fff;
-  display: block;
-  width: 80%;
-  margin-top: 40px;
-`;
-
 export const ContentMiddle = styled.div`
   position: relative;
   width: 100%;
@@ -415,7 +471,21 @@ export const AcademyTitle = styled.span`
   font-family: "Anton", sans-serif;
   text-align: center;
   display: block;
-  margin-top: 5%;
+  @media (max-width: 1000px) {
+    font-size: 6rem;
+  }
+  @media (max-width: 785px) {
+    font-size: 5rem;
+  }
+  @media (max-width: 650px) {
+    font-size: 4rem;
+  }
+  @media (max-width: 470px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 350px) {
+    font-size: 2rem;
+  }
 `;
 
 export const BtnAcademy = styled.button`
@@ -436,4 +506,91 @@ export const BtnAcademy = styled.button`
   &:active {
     transform: scale(0.99);
   }
+  @media (max-width: 1000px) {
+    font-size: 2.2rem;
+    padding: 8px;
+    margin-top: 25px;
+  }
+  @media (max-width: 785px) {
+    font-size: 2rem;
+    padding: 6px;
+    margin-top: 20px;
+  }
+  @media (max-width: 650px) {
+    font-size: 1.7rem;
+    padding: 5px;
+    margin-top: 20px;
+  }
+  @media (max-width: 470px) {
+    font-size: 1.3rem;
+    padding: 5px;
+    margin-top: 15px;
+  }
+  @media (max-width: 380px) {
+    font-size: 1.1rem;
+    padding: 5px;
+    margin-top: 10px;
+  }
+`;
+
+export const ContainerProductsPage = styled.div`
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-column-gap: 20px;
+`;
+
+export const BreadCrumb = styled.span`
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 2.5rem;
+  padding: 20px;
+  display: block;
+`;
+
+export const GridProductsPage = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: min-content;
+`;
+
+export const CardGridProduct = styled.div`
+  width: 300px;
+  border-radius: 4px;
+  height: 420px;
+  margin-bottom: 20px;
+`;
+
+export const ContainerImgProductPage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #888;
+  height: 350px;
+  padding: 5px;
+  border-top-left-radius: 3.5px;
+  border-top-right-radius: 3.5px;
+`;
+
+export const ImgProductPage = styled.img`
+  height: 100%;
+`;
+
+export const DescProductPage = styled.span`
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #333;
+  width: 100%;
+  text-align: center;
+  display: block;
+`;
+
+export const DescriptionProduct = styled.span`
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #555;
+  width: 100%;
+  text-align: center;
+  display: block;
 `;

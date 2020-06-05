@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Index from "../pages/index/index";
-import ProductsOne from "../pages/products/example-one";
+import ProductsOne from "../pages/products/products";
 import ComoFunciona from "../pages/comofunciona/index";
 import QuemSomos from "../pages/quemsomos/index";
 import Depoimentos from "../pages/depoimentos/index";

@@ -218,6 +218,12 @@
   }
 }
 
+@media (max-width: 715px) {
+  .portifolio {
+    padding: 15px 35px;
+  }
+}
+
 @media (max-width: 650px) {
   .photo-left,
   .photo-right {
@@ -257,6 +263,9 @@
   }
   .img-depoimento {
     padding: 10px;
+  }
+  .portifolio {
+    padding: 10px 20px;
   }
 }
 

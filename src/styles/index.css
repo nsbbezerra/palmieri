@@ -192,3 +192,51 @@ body {
 .link-product:hover {
   text-decoration: underline;
 }
+
+.product-check {
+  font-size: 2.5rem;
+  margin-left: 100px;
+  color: #4caf50;
+}
+
+.btn-link-products {
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 2.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-link-products:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 785px) {
+  .product-check {
+    font-size: 2rem;
+    margin-left: 90px;
+  }
+}
+@media (max-width: 650px) {
+  .product-check {
+    font-size: 1.7rem;
+    margin-left: 85px;
+  }
+}
+@media (max-width: 585px) {
+  .product-check {
+    font-size: 1.5rem;
+    margin-left: 60px;
+  }
+}
+@media (max-width: 450px) {
+  .product-check {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 350px) {
+  .product-check {
+    font-size: 1.2rem;
+    margin-left: 50px;
+  }
+}

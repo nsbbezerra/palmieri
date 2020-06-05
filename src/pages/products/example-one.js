@@ -130,10 +130,6 @@ export default function ExampleOne() {
         <>
           {JSON.stringify(product) !== "{}" ? (
             <>
-              <Banner
-                src={`${urlPhoto}/${product.banner}`}
-                alt={product.name}
-              />
               <Spaced />
               <Content>
                 {!product.cards.length && !product.lists.length ? (

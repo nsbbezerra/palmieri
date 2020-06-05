@@ -137,7 +137,6 @@ export default function IndexApp() {
         </>
       ) : (
         <>
-          <Banner src={banner} alt="Banner Palmieri Uniformes" />
           <GridHeader>
             <GridItem>
               <GridImg src={creditCard} />
@@ -231,42 +230,38 @@ export default function IndexApp() {
             }}
           >
             <ContainerMiddle>
-              <div style={{ width: "100%", padding: 20 }}>
+              <div
+                style={{
+                  width: "100%",
+                  padding: 20,
+                }}
+              >
                 <AcademyTitle>UNIFORMES PARA ACADEMIA</AcademyTitle>
-                <FaCheck
-                  style={{ marginLeft: 100, color: "#4caf50" }}
-                  fontSize={25}
-                />{" "}
-                <br />
-                <FaCheck
-                  style={{ marginLeft: 100, color: "#4caf50" }}
-                  fontSize={25}
-                />{" "}
-                <br />
-                <FaCheck
-                  style={{ marginLeft: 100, color: "#4caf50" }}
-                  fontSize={25}
-                />{" "}
-                <br />
-                <FaCheck
-                  style={{ marginLeft: 100, color: "#4caf50" }}
-                  fontSize={25}
-                />{" "}
-                <br />
-                <FaCheck
-                  style={{ marginLeft: 100, color: "#4caf50" }}
-                  fontSize={25}
-                />
+                <FaCheck className="product-check" /> <br />
+                <FaCheck className="product-check" /> <br />
+                <FaCheck className="product-check" /> <br />
+                <FaCheck className="product-check" /> <br />
+                <FaCheck className="product-check" />{" "}
                 <BtnAcademy onClick={createLink}>
                   SOLICITE UM ORÇAMENTO
                 </BtnAcademy>
               </div>
-              <img src={tshirtThree} style={{ width: "100%" }} />
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <img src={tshirtThree} style={{ width: "100%" }} />
+              </div>
             </ContainerMiddle>
           </div>
 
           <div className="portifolio">
-            <Title>Portifolio de Artes</Title>
+            <Title>PORTIFÓLIO DE ARTES</Title>
             <SubTitle>Nosso Portifólio de Artes</SubTitle>
             <Carousel
               slidesPerPage={3}
