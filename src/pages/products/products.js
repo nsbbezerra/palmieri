@@ -12,6 +12,7 @@ import {
   Banner,
   ContainerBreadCrumb,
   BtnMenuOpen,
+  Container,
 } from "../../styles/styles";
 import { Link } from "react-router-dom";
 import { IoMdArrowDropdown, IoMdArrowDropright } from "react-icons/io";
@@ -44,8 +45,13 @@ export default function Products() {
       }
     }
   }, [openMenu]);
+
+  function goToCalalog(id) {
+    history.push(`/catalogo/${id}`);
+  }
+
   return (
-    <div>
+    <Container>
       <Banner src={banner} alt="Palmieri Uniformes" />
       <ContainerBreadCrumb>
         <BreadCrumb>
@@ -245,7 +251,7 @@ export default function Products() {
           </Collapsible>
         </nav>
         <GridProductsPage>
-          <CardGridProduct>
+          <CardGridProduct onClick={() => goToCalalog("1")}>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />
             </ContainerImgProductPage>
@@ -282,6 +288,6 @@ export default function Products() {
           </CardGridProduct>
         </GridProductsPage>
       </ContainerProductsPage>
-    </div>
+    </Container>
   );
 }

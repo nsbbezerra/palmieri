@@ -4,7 +4,6 @@ import middle from "../assets/middle-web.png";
 
 export const Banner = styled.img`
   width: 100%;
-  margin-top: 35px;
 `;
 
 export const Container = styled.div`

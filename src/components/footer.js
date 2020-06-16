@@ -13,13 +13,12 @@ import { Link } from "react-router-dom";
 
 import instagram from "../assets/instagram.svg";
 import facebook from "../assets/facebook.svg";
-import globalConf from "../configs/global";
 import globalConfig from "../configs/global";
 
 export default function Footer({ products }) {
   function createLink() {
     let link = document.createElement("a");
-    link.href = `https://api.whatsapp.com/send?phone=${globalConfig.whatsapp}&text=Olá Palmieri Uniformes, tudo bem?`;
+    link.href = `https://api.whatsapp.com/send?phone=${globalConfig.whatsapp}&text=${globalConfig.message}`;
     link.target = "_blank";
     link.click();
   }
