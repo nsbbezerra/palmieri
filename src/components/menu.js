@@ -46,18 +46,9 @@ export default function Menu({ products }) {
               </Link>
             </li>
             <li className="app-menu-items">
-              <span className="link">
+              <Link to="/produtos" className="link">
                 <FaTags style={{ marginRight: 5 }} /> PRODUTOS
-              </span>
-              <ul className="app-sub-menu">
-                {products.map((prod) => (
-                  <li className="app-sub-menu-items" key={prod._id}>
-                    <Link to={`/produtos/${prod._id}`} className="sub-link">
-                      <FaTshirt style={{ marginRight: 5 }} /> {prod.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              </Link>
             </li>
             <li className="app-menu-items">
               <Link to="/quemsomos" className="link">

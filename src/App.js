@@ -4,16 +4,10 @@ import Footer from "./components/footer";
 import { BrowserRouter as Router } from "react-router-dom";
 import "@brainhubeu/react-carousel/lib/style.css";
 import RoutesApp from "./routes/index";
-import Carousel from "@brainhubeu/react-carousel";
 import api from "./configs/axios";
 import errorData from "./animations/error.json";
 import Modal from "react-modal";
 import Lottie from "react-lottie";
-
-import banner_one from "./assets/banner-site-1.png";
-import banner_two from "./assets/banner-site-2.png";
-import banner_three from "./assets/banner-site-3.png";
-import banner_four from "./assets/banner-site-4.png";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -53,30 +47,6 @@ function App() {
     <>
       <Router>
         <MenuApp products={allProducts} />
-        <div style={{ marginTop: "45px", width: "100%" }}>
-          <Carousel slidesPerPage={1} arrows={false} autoPlay={5000} infinite>
-            <img
-              src={banner_one}
-              alt="Palmieri Uniformes"
-              style={{ width: "100%" }}
-            />
-            <img
-              src={banner_two}
-              alt="Palmieri Uniformes"
-              style={{ width: "100%" }}
-            />
-            <img
-              src={banner_three}
-              alt="Palmieri Uniformes"
-              style={{ width: "100%" }}
-            />
-            <img
-              src={banner_four}
-              alt="Palmieri Uniformes"
-              style={{ width: "100%" }}
-            />
-          </Carousel>
-        </div>
         <RoutesApp />
         <Footer products={allProducts} />
       </Router>

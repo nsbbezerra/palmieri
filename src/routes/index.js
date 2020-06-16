@@ -17,7 +17,7 @@ export default function RoutesApp() {
         <Route exact path="/">
           <Index />
         </Route>
-        <Route path="/produtos/:id">
+        <Route path="/produtos">
           <ProductsOne />
         </Route>
         <Route path="/comofunciona">

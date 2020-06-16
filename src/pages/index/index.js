@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  Banner,
   Container,
   Title,
   Card,
@@ -34,7 +33,6 @@ import Modal from "react-modal";
 import { FaCheck } from "react-icons/fa";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
-import banner from "../../assets/capa.png";
 import creditCard from "../../assets/card.svg";
 import truck from "../../assets/truck.svg";
 import dollar from "../../assets/dollar.svg";
@@ -43,12 +41,14 @@ import tshirtOne from "../../assets/camisa-one-web.png";
 import tshirtTwo from "../../assets/camiseta-two-web.png";
 import tshirtThree from "../../assets/camiseta-three-web.png";
 import depoiments from "../../assets/depoimento.png";
+import text from "../../assets/text-web.png";
 
 import breakpointsConfig from "../../configs/sliderConfig";
 
 import api from "../../configs/axios";
 import errorData from "../../animations/error.json";
 import globalConfig from "../../configs/global";
+import Banner from "../../components/banner";
 
 export default function IndexApp() {
   const [loading, setLoading] = useState(false);
@@ -137,6 +137,7 @@ export default function IndexApp() {
         </>
       ) : (
         <>
+          <Banner />
           <GridHeader>
             <GridItem>
               <GridImg src={creditCard} />
@@ -211,10 +212,23 @@ export default function IndexApp() {
           </Content>
           <Middle>
             <ContentMiddle>
-              <TitleProduct>CONFIRA AQUI</TitleProduct>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  alt="Palmieri Uniformes"
+                  src={text}
+                  style={{ width: "50%" }}
+                />
+              </div>
               <TitleWhite>UNIFORME PARA EVENTOS</TitleWhite>
               <ContainerMiddle>
-                <img src={tshirtTwo} style={{ width: "80%", marginTop: 60 }} />
+                <img src={tshirtTwo} style={{ width: "30%" }} />
                 <DescProduct>
                   TRABALHAMOS PARA LEVAR QUALIDADE COM PREÇO JUSTO AOS NOSSOS
                   CLIENTES, BUSCAMOS SEMPRE ENTENDER E APRENDER COM CADA PEDIDO
@@ -241,7 +255,7 @@ export default function IndexApp() {
                 <FaCheck className="product-check" /> <br />
                 <FaCheck className="product-check" /> <br />
                 <FaCheck className="product-check" /> <br />
-                <FaCheck className="product-check" />{" "}
+                <FaCheck className="product-check" />
                 <BtnAcademy onClick={createLink}>
                   SOLICITE UM ORÇAMENTO
                 </BtnAcademy>

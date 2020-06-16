@@ -4,10 +4,12 @@ import middle from "../assets/middle-web.png";
 
 export const Banner = styled.img`
   width: 100%;
+  margin-top: 35px;
 `;
 
 export const Container = styled.div`
   width: 100%;
+  margin-top: 49px;
 `;
 
 export const Title = styled.h1`
@@ -60,11 +62,10 @@ export const TitleWhite = styled.h1`
 
 export const DescProduct = styled.span`
   font-family: "Anton", sans-serif;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: #fff;
   display: block;
   width: 90%;
-  margin-top: 40px;
   @media (max-width: 1250px) {
     font-size: 3.5rem;
   }
@@ -127,6 +128,12 @@ export const Card = styled.div`
   border-radius: 4px;
   transition: all 0.3s;
   margin-bottom: 40px;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.03);
+  }
   @media (max-width: 414px) {
     width: 190px;
     max-width: 190px;
@@ -372,6 +379,9 @@ export const GridHeader = styled.div`
   background: #eee;
   width: 100%;
   margin-top: -5px;
+  @media (max-width: 650px) {
+    display: none;
+  }
 `;
 
 export const GridItem = styled.div`
@@ -446,17 +456,16 @@ export const ContainerProducts = styled.div`
 `;
 
 export const Middle = styled.div`
-  padding: 30px;
-  position: relative;
+  padding: 20px;
   background-image: url(${middle});
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
 `;
 
 export const ContainerMiddle = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  padding: 20px;
 `;
 
 export const ContentMiddle = styled.div`
@@ -537,13 +546,9 @@ export const ContainerProductsPage = styled.div`
   display: grid;
   grid-template-columns: 300px 1fr;
   grid-column-gap: 20px;
-`;
-
-export const BreadCrumb = styled.span`
-  font-family: "Saira Extra Condensed", sans-serif;
-  font-size: 2.5rem;
-  padding: 20px;
-  display: block;
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const GridProductsPage = styled.div`
@@ -553,18 +558,28 @@ export const GridProductsPage = styled.div`
   height: min-content;
 `;
 
-export const CardGridProduct = styled.div`
+export const CardGridProduct = styled.button`
   width: 300px;
   border-radius: 4px;
   height: 420px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  background: transparent;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.03);
+  }
+  &:active {
+    transform: scale(1);
+  }
 `;
 
 export const ContainerImgProductPage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #888;
   height: 350px;
   padding: 5px;
   border-top-left-radius: 3.5px;
@@ -593,4 +608,32 @@ export const DescriptionProduct = styled.span`
   width: 100%;
   text-align: center;
   display: block;
+`;
+
+export const BreadCrumb = styled.span`
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 2.5rem;
+  display: block;
+  @media (max-width: 450px) {
+    font-size: 1rem !important;
+  }
+`;
+
+export const ContainerBreadCrumb = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+`;
+
+export const BtnMenuOpen = styled.button`
+  border: none;
+  background: transparent;
+  font-size: 2.7rem;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0.8;
+  }
 `;

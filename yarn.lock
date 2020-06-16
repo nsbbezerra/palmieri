@@ -8460,6 +8460,11 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
+react-collapsible@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/react-collapsible/-/react-collapsible-2.8.0.tgz#dce2ff7703d4456c5bb70cc1b53d3f80acf76526"
+  integrity sha512-QTxGyp4iL8N57FcU1RGt4wD7vqOTRYAHNukxtSeVMkZ+/d1WNWXRIakzhYhC/5TDERihPdp1IvKIJlrLLPyQ/A==
+
 react-content-loader@^5.0.4:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-5.0.4.tgz#1493491d2f6b309d281d84144a655417ea734486"
