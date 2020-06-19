@@ -16,7 +16,8 @@ import {
 } from "../../styles/styles";
 import { Link } from "react-router-dom";
 import { IoMdArrowDropdown, IoMdArrowDropright } from "react-icons/io";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaTshirt } from "react-icons/fa";
+import { AiOutlineMenuUnfold } from "react-icons/ai";
 import "./styles/style.css";
 import tshirt from "../../assets/camisa-one-web.png";
 import banner from "../../assets/banner-web.png";
@@ -74,6 +75,12 @@ export default function Products() {
 
       <ContainerProductsPage>
         <nav className="nav-sider" id="menu-product">
+          <span className="label-sider-title">
+            <AiOutlineMenuUnfold style={{ marginRight: "20px" }} /> MENU
+          </span>
+          <span className="label-sider">
+            <FaTshirt style={{ marginRight: "10px" }} /> TODOS OS PRODUTOS
+          </span>
           <Collapsible
             trigger={
               <span className="label-sider">
@@ -250,7 +257,7 @@ export default function Products() {
             </ul>
           </Collapsible>
         </nav>
-        <GridProductsPage>
+        <GridProductsPage style={{ marginBottom: "50px" }}>
           <CardGridProduct onClick={() => goToCalalog("1")}>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />

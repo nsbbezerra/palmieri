@@ -18,7 +18,10 @@ import {
   ContainerMiddle,
   Middle,
   ContentMiddle,
-  TitleProduct,
+  DepoimentContainer,
+  DepoimentContent,
+  DepoimentAvatar,
+  DepoimentAuthor,
   AcademyTitle,
   BtnAcademy,
   CardAction,
@@ -40,7 +43,6 @@ import draw from "../../assets/draw.svg";
 import tshirtOne from "../../assets/camisa-one-web.png";
 import tshirtTwo from "../../assets/camiseta-two-web.png";
 import tshirtThree from "../../assets/camiseta-three-web.png";
-import depoiments from "../../assets/depoimento.png";
 import text from "../../assets/text-web.png";
 
 import breakpointsConfig from "../../configs/sliderConfig";
@@ -162,7 +164,7 @@ export default function IndexApp() {
               Uniformes para diferentes utilidades, Escolha oque melhor lhe
               atender
             </SubTitle>
-            <ContainerProducts>
+            <ContainerProducts style={{ marginBottom: "60px" }}>
               <Card>
                 <CardImageContainer>
                   <CardImage src={tshirtOne} />
@@ -228,7 +230,7 @@ export default function IndexApp() {
               </div>
               <TitleWhite>UNIFORME PARA EVENTOS</TitleWhite>
               <ContainerMiddle>
-                <img src={tshirtTwo} style={{ width: "30%" }} />
+                <img src={tshirtTwo} style={{ width: "25%" }} />
                 <DescProduct>
                   TRABALHAMOS PARA LEVAR QUALIDADE COM PREÇO JUSTO AOS NOSSOS
                   CLIENTES, BUSCAMOS SEMPRE ENTENDER E APRENDER COM CADA PEDIDO
@@ -353,7 +355,7 @@ export default function IndexApp() {
           <div className="depoiments">
             <TitleSecondary>DEPOIMENTOS</TitleSecondary>
             <Carousel
-              slidesPerPage={2}
+              slidesPerPage={3}
               arrows
               arrowLeft={
                 <MdKeyboardArrowLeft
@@ -384,38 +386,92 @@ export default function IndexApp() {
                 />
               }
               addArrowClickHandler
-              breakpoints={breakpointsConfig.depoiments}
+              breakpoints={breakpointsConfig.products}
             >
-              <img
-                src={depoiments}
-                alt="Depoimentos"
-                className="img-depoimento"
-              />
-              <img
-                src={depoiments}
-                alt="Depoimentos"
-                className="img-depoimento"
-              />
-              <img
-                src={depoiments}
-                alt="Depoimentos"
-                className="img-depoimento"
-              />
-              <img
-                src={depoiments}
-                alt="Depoimentos"
-                className="img-depoimento"
-              />
-              <img
-                src={depoiments}
-                alt="Depoimentos"
-                className="img-depoimento"
-              />
-              <img
-                src={depoiments}
-                alt="Depoimentos"
-                className="img-depoimento"
-              />
+              <DepoimentContainer>
+                <DepoimentContent>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
+                  facilisis placerat. Donec sed lacinia metus, non finibus leo.
+                  Morbi eu justo in risus."
+                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
+                </DepoimentContent>
+                <DepoimentAvatar
+                  style={{
+                    backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
+                  }}
+                />
+              </DepoimentContainer>
+              <DepoimentContainer>
+                <DepoimentContent>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
+                  facilisis placerat. Donec sed lacinia metus, non finibus leo.
+                  Morbi eu justo in risus."
+                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
+                </DepoimentContent>
+                <DepoimentAvatar
+                  style={{
+                    backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
+                  }}
+                />
+              </DepoimentContainer>
+              <DepoimentContainer>
+                <DepoimentContent>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
+                  facilisis placerat. Donec sed lacinia metus, non finibus leo.
+                  Morbi eu justo in risus."
+                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
+                </DepoimentContent>
+                <DepoimentAvatar
+                  style={{
+                    backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
+                  }}
+                />
+              </DepoimentContainer>
+              <DepoimentContainer>
+                <DepoimentContent>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
+                  facilisis placerat. Donec sed lacinia metus, non finibus leo.
+                  Morbi eu justo in risus."
+                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
+                </DepoimentContent>
+                <DepoimentAvatar
+                  style={{
+                    backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
+                  }}
+                />
+              </DepoimentContainer>
+              <DepoimentContainer>
+                <DepoimentContent>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
+                  facilisis placerat. Donec sed lacinia metus, non finibus leo.
+                  Morbi eu justo in risus."
+                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
+                </DepoimentContent>
+                <DepoimentAvatar
+                  style={{
+                    backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
+                  }}
+                />
+              </DepoimentContainer>
+              <DepoimentContainer>
+                <DepoimentContent>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
+                  facilisis placerat. Donec sed lacinia metus, non finibus leo.
+                  Morbi eu justo in risus."
+                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
+                </DepoimentContent>
+                <DepoimentAvatar
+                  style={{
+                    backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
+                  }}
+                />
+              </DepoimentContainer>
             </Carousel>
           </div>
         </>

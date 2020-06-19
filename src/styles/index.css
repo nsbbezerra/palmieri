@@ -212,6 +212,12 @@ body {
   text-decoration: underline;
 }
 
+.depoiments {
+  background-color: #1a1a1a;
+  padding: 20px 30px;
+  margin-top: 60px;
+}
+
 @media (max-width: 785px) {
   .product-check {
     font-size: 2rem;

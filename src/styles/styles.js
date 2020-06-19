@@ -60,7 +60,8 @@ export const TitleWhite = styled.h1`
 `;
 
 export const DescProduct = styled.span`
-  font-family: "Anton", sans-serif;
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-weight: 600;
   font-size: 3.5rem;
   color: #fff;
   display: block;
@@ -126,17 +127,11 @@ export const Card = styled.div`
   min-width: 250px;
   border-radius: 4px;
   transition: all 0.3s;
-  margin-bottom: 40px;
   border: 1px solid #eee;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
   &:hover {
     transform: scale(1.03);
-  }
-  @media (max-width: 414px) {
-    width: 190px;
-    max-width: 190px;
-    min-width: 190px;
   }
 `;
 
@@ -149,11 +144,6 @@ export const CardShadow = styled.div`
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   margin-bottom: 10px;
-  @media (max-width: 414px) {
-    width: 190px;
-    max-width: 190px;
-    min-width: 190px;
-  }
 `;
 
 export const CardImage = styled.img`
@@ -447,11 +437,11 @@ export const GridDesc = styled.span`
 `;
 
 export const ContainerProducts = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 35px;
+  justify-items: center;
 `;
 
 export const Middle = styled.div`
@@ -551,17 +541,17 @@ export const ContainerProductsPage = styled.div`
 `;
 
 export const GridProductsPage = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  height: min-content;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+  justify-items: center;
 `;
 
 export const CardGridProduct = styled.button`
   width: 300px;
   border-radius: 4px;
   height: 420px;
-  margin-bottom: 40px;
   border: 1px solid #eee;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
@@ -610,9 +600,16 @@ export const DescriptionProduct = styled.span`
 `;
 
 export const BreadCrumb = styled.span`
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #444;
   font-family: "Saira Extra Condensed", sans-serif;
   font-size: 2.5rem;
   display: block;
+  @media (max-width: 700px) {
+    border: none;
+    padding-bottom: 0;
+  }
   @media (max-width: 450px) {
     font-size: 1rem !important;
   }
@@ -635,4 +632,52 @@ export const BtnMenuOpen = styled.button`
   &:hover {
     opacity: 0.8;
   }
+`;
+
+export const DepoimentContainer = styled.div`
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 450px) {
+    width: 250px;
+  }
+  @media (max-width: 390px) {
+    width: 210px;
+  }
+`;
+
+export const DepoimentContent = styled.div`
+  width: 100%;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  text-overflow: ellipsis;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 1.85rem;
+  font-style: italic;
+`;
+
+export const DepoimentAvatar = styled.div`
+  width: 125px;
+  height: 125px;
+  border: 5px solid #edba00;
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%;
+  margin-top: -65px;
+`;
+
+export const DepoimentAuthor = styled.span`
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  font-style: normal;
 `;

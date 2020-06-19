@@ -77,9 +77,6 @@ export default function Footer({ products }) {
           </div>
           <div className="others-media">
             <span className="footer-title">INSTITUCIONAL</span>
-            <Link to="/depoimentos" className="footer-links">
-              <IoIosShareAlt /> Depoimentos
-            </Link>
             <Link to="/contato" className="footer-links">
               <IoIosShareAlt /> Onde Estamos?
             </Link>
