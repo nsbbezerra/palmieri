@@ -1,29 +1,35 @@
 .quem-list {
-    list-style: none;
-    width: 100%;
+  list-style: none;
+  width: 100%;
 }
 
 .quem-list-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
 }
 
 .quem-list-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .quem-img {
-    width: 200px;
-    height: 200px;
-    padding: 15px;
+  width: 200px;
+  height: 200px;
+  padding: 15px;
 }
 
 .quem-description {
-    display: block;
-    text-align: justify;
-    font-size: 1.6rem;
+  display: block;
+  text-align: justify;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 650px) {
+  .quem-list-item {
+    flex-direction: column;
+  }
 }

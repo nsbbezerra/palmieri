@@ -16,6 +16,7 @@ import {
   SubTitle,
   TitleWhite,
   ContainerMiddle,
+  ContainerMiddleTwo,
   Middle,
   ContentMiddle,
   DepoimentContainer,
@@ -230,11 +231,11 @@ export default function IndexApp() {
               </div>
               <TitleWhite>UNIFORME PARA EVENTOS</TitleWhite>
               <ContainerMiddle>
-                <img src={tshirtTwo} style={{ width: "25%" }} />
+                <img src={tshirtTwo} style={{ width: "70%" }} />
                 <DescProduct>
-                  TRABALHAMOS PARA LEVAR QUALIDADE COM PREÇO JUSTO AOS NOSSOS
-                  CLIENTES, BUSCAMOS SEMPRE ENTENDER E APRENDER COM CADA PEDIDO
-                  E COM CADA PESSOA, ASSIM SEMPRE MELHORANDO NOSSOS PROCESSOS.
+                  Trabalhamos para levar qualidade com preço justo aos nossos
+                  clientes, buscamos sempre entender e aprender com cada pedido
+                  e com cada pessoa, assim sempre melhorando nossos processos.
                 </DescProduct>
               </ContainerMiddle>
             </ContentMiddle>
@@ -245,10 +246,10 @@ export default function IndexApp() {
                 "linear-gradient(180deg, rgba(252,252,252,1) 0%, rgba(221,221,221,1) 100%)",
             }}
           >
-            <ContainerMiddle>
+            <ContainerMiddleTwo>
               <div
                 style={{
-                  width: "100%",
+                  width: "90%",
                   padding: 20,
                 }}
               >
@@ -273,7 +274,7 @@ export default function IndexApp() {
               >
                 <img src={tshirtThree} style={{ width: "100%" }} />
               </div>
-            </ContainerMiddle>
+            </ContainerMiddleTwo>
           </div>
 
           <div className="portifolio">

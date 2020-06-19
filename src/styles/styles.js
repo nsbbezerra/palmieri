@@ -47,7 +47,7 @@ export const TitleSecondary = styled.h1`
 export const TitleWhite = styled.h1`
   width: 100%;
   text-align: center;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: #f6f6f6;
   display: block;
@@ -60,26 +60,28 @@ export const TitleWhite = styled.h1`
 `;
 
 export const DescProduct = styled.span`
-  font-family: "Saira Extra Condensed", sans-serif;
-  font-weight: 600;
-  font-size: 3.5rem;
+  font-weight: 500;
+  font-size: 3rem;
   color: #fff;
   display: block;
-  width: 90%;
+  width: 100%;
   @media (max-width: 1250px) {
-    font-size: 3.5rem;
-  }
-  @media (max-width: 1050px) {
     font-size: 3rem;
   }
-  @media (max-width: 840px) {
+  @media (max-width: 1050px) {
     font-size: 2.5rem;
   }
-  @media (max-width: 710px) {
+  @media (max-width: 840px) {
     font-size: 2rem;
+  }
+  @media (max-width: 710px) {
+    font-size: 1.8rem;
   }
   @media (max-width: 490px) {
     font-size: 1.5rem;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.1rem;
   }
 `;
 
@@ -445,7 +447,7 @@ export const ContainerProducts = styled.div`
 `;
 
 export const Middle = styled.div`
-  padding: 20px;
+  padding: 15px;
   background-image: url(${middle});
   background-position: bottom;
   background-size: cover;
@@ -453,8 +455,20 @@ export const Middle = styled.div`
 
 export const ContainerMiddle = styled.div`
   width: 100%;
-  display: flex;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 15px;
+  justify-items: center;
+  align-items: center;
+`;
+
+export const ContainerMiddleTwo = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  justify-items: center;
+  align-items: center;
 `;
 
 export const ContentMiddle = styled.div`
@@ -464,25 +478,25 @@ export const ContentMiddle = styled.div`
 
 export const AcademyTitle = styled.span`
   font-weight: 600;
-  font-size: 7rem;
+  font-size: 6rem;
   color: #333;
   font-family: "Anton", sans-serif;
   text-align: center;
   display: block;
   @media (max-width: 1000px) {
-    font-size: 6rem;
-  }
-  @media (max-width: 785px) {
     font-size: 5rem;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 785px) {
     font-size: 4rem;
   }
-  @media (max-width: 470px) {
+  @media (max-width: 650px) {
     font-size: 3rem;
   }
+  @media (max-width: 470px) {
+    font-size: 2.4rem;
+  }
   @media (max-width: 350px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -519,15 +533,24 @@ export const BtnAcademy = styled.button`
     padding: 5px;
     margin-top: 20px;
   }
+  @media (max-width: 515px) {
+    font-size: 1.5rem;
+  }
   @media (max-width: 470px) {
     font-size: 1.3rem;
     padding: 5px;
     margin-top: 15px;
   }
+  @media (max-width: 420px) {
+    font-size: 1.1rem;
+  }
   @media (max-width: 380px) {
     font-size: 1.1rem;
     padding: 5px;
     margin-top: 10px;
+  }
+  @media (max-width: 360px) {
+    font-size: 0.8rem;
   }
 `;
 
