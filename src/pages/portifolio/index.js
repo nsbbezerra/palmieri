@@ -6,7 +6,7 @@ import Lottie from "react-lottie";
 import animationData from "../../animations/loading-one.json";
 import { FaTimes } from "react-icons/fa";
 
-import banner from "../comofunciona/assets/banner.png";
+import banner from "../quemsomos/assets/banner.png";
 
 import api from "../../configs/axios";
 import errorData from "../../animations/error.json";
