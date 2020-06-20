@@ -7,7 +7,7 @@ import {
   Title,
   SubTitle,
   GridProductsPage,
-  CardGridProduct,
+  CardGridCatalog,
   ContainerImgProductPage,
   ImgProductPage,
   Spaced,
@@ -55,51 +55,51 @@ export default function Catalog() {
         </SubTitle>
 
         <GridProductsPage>
-          <CardGridProduct onClick={() => handleModal()}>
+          <CardGridCatalog onClick={() => handleModal()}>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />
             </ContainerImgProductPage>
-          </CardGridProduct>
-          <CardGridProduct>
+          </CardGridCatalog>
+          <CardGridCatalog>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />
             </ContainerImgProductPage>
-          </CardGridProduct>
-          <CardGridProduct>
+          </CardGridCatalog>
+          <CardGridCatalog>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />
             </ContainerImgProductPage>
-          </CardGridProduct>
-          <CardGridProduct>
+          </CardGridCatalog>
+          <CardGridCatalog>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />
             </ContainerImgProductPage>
-          </CardGridProduct>
-          <CardGridProduct>
+          </CardGridCatalog>
+          <CardGridCatalog>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />
             </ContainerImgProductPage>
-          </CardGridProduct>
-          <CardGridProduct>
+          </CardGridCatalog>
+          <CardGridCatalog>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />
             </ContainerImgProductPage>
-          </CardGridProduct>
-          <CardGridProduct>
+          </CardGridCatalog>
+          <CardGridCatalog>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />
             </ContainerImgProductPage>
-          </CardGridProduct>
-          <CardGridProduct>
+          </CardGridCatalog>
+          <CardGridCatalog>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />
             </ContainerImgProductPage>
-          </CardGridProduct>
-          <CardGridProduct>
+          </CardGridCatalog>
+          <CardGridCatalog>
             <ContainerImgProductPage>
               <ImgProductPage alt="Palmieri" src={tshirt} />
             </ContainerImgProductPage>
-          </CardGridProduct>
+          </CardGridCatalog>
         </GridProductsPage>
 
         <Spaced />

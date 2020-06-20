@@ -1,16 +1,16 @@
 .newsletter-container {
   width: 100%;
-  background-color: #edba00;
+  background-color: #eee;
   padding-top: 20px;
   padding-bottom: 30px;
 }
 
 .newsletter-title {
   width: 100%;
-  font-family: "Anton", sans-serif;
+  font-family: "Berlin Sans FB";
   text-align: center;
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: bold;
   padding: 10px;
   margin-bottom: 20px;
   color: #1a1a1a;
@@ -22,9 +22,9 @@
 
 .grid-inputs {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 15px;
-  margin-bottom: 15px;
+  grid-template-columns: 1fr;
+  grid-gap: 7px;
+  margin-bottom: 7px;
 }
 
 .newsletter-inputs-container {
@@ -47,7 +47,7 @@
 
 .btn-send {
   width: 100%;
-  height: 50px;
+  height: 40px;
   background-color: #1a1a1a;
   border-radius: 4px;
   border: none;
@@ -55,7 +55,7 @@
   justify-content: center;
   align-items: center;
   color: #f6f6f6;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.4s;
@@ -123,7 +123,8 @@
 
 .footer-title {
   display: block;
-  font-size: 2.2rem;
+  font-family: "Berlin Sans FB";
+  font-size: 2rem;
   font-weight: 600;
   color: #edba00;
   margin-bottom: 15px;
@@ -135,9 +136,9 @@
 
 .social-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .footer-links {
@@ -145,14 +146,14 @@
   color: #f6f6f6;
   display: block;
   line-height: 25px;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .obs-footer {
   color: #f6f6f6;
   display: block;
   line-height: 25px;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .footer-links:hover {
@@ -165,21 +166,20 @@
   color: #f6f6f6;
   text-align: center;
   border-top: 1px solid #edba00;
-  padding: 20px;
+  padding: 15px;
 }
 
 .grid-newslatter-container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
   justify-items: center;
-  align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .whatsapp-img {
-  width: 100px;
+  width: 60px;
   fill: white;
 }
 
@@ -192,7 +192,7 @@
   font-family: "Anton", sans-serif;
   border: none;
   border-radius: 3px;
-  padding: 10px;
+  padding: 10px 20px;
   cursor: pointer;
   transition: all 0.3s;
   color: #fff;
@@ -215,5 +215,17 @@
 @media screen and (max-width: 550px) {
   .grid-inputs {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .grid-newslatter-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 465px) {
+  .btn-whatsapp-grid {
+    font-size: 2rem;
+    width: 100%;
   }
 }

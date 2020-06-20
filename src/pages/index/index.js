@@ -3,6 +3,7 @@ import {
   Container,
   Title,
   Card,
+  CardShadow,
   CardImage,
   Content,
   CardTitle,
@@ -45,6 +46,7 @@ import tshirtOne from "../../assets/camisa-one-web.png";
 import tshirtTwo from "../../assets/camiseta-two-web.png";
 import tshirtThree from "../../assets/camiseta-three-web.png";
 import text from "../../assets/text-web.png";
+import shadow from "../../assets/shadow-web.png";
 
 import breakpointsConfig from "../../configs/sliderConfig";
 
@@ -159,8 +161,23 @@ export default function IndexApp() {
               <GridDesc>Criamos sua arte 100% grátis</GridDesc>
             </GridItem>
           </GridHeader>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              marginBottom: "-40px",
+            }}
+          >
+            <img
+              alt="Palmieri Uniformes"
+              src={shadow}
+              style={{ width: "100%", opacity: 0.7 }}
+            />
+          </div>
           <Content>
-            <Title>VEJA NOSSOS MODELOS DE UNIFORMES</Title>
+            <Title>VEJA NOSSOS MODELOS</Title>
             <SubTitle>
               Uniformes para diferentes utilidades, Escolha oque melhor lhe
               atender
@@ -214,143 +231,158 @@ export default function IndexApp() {
             </ContainerProducts>
           </Content>
           <Middle>
-            <ContentMiddle>
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <img
-                  alt="Palmieri Uniformes"
-                  src={text}
-                  style={{ width: "50%" }}
-                />
-              </div>
-              <TitleWhite>UNIFORME PARA EVENTOS</TitleWhite>
-              <ContainerMiddle>
-                <img src={tshirtTwo} style={{ width: "70%" }} />
-                <DescProduct>
-                  Trabalhamos para levar qualidade com preço justo aos nossos
-                  clientes, buscamos sempre entender e aprender com cada pedido
-                  e com cada pessoa, assim sempre melhorando nossos processos.
-                </DescProduct>
-              </ContainerMiddle>
-            </ContentMiddle>
+            <Content>
+              <ContentMiddle>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginBottom: "-15px",
+                  }}
+                >
+                  <img
+                    alt="Palmieri Uniformes"
+                    src={text}
+                    className="img-text"
+                  />
+                </div>
+                <TitleWhite>UNIFORME PARA EVENTOS</TitleWhite>
+                <ContainerMiddle>
+                  <img src={tshirtTwo} className="img-index-events" />
+                  <DescProduct>
+                    Trabalhamos para levar qualidade com preço justo aos nossos
+                    clientes, buscamos sempre entender e aprender com cada
+                    pedido e com cada pessoa, assim sempre melhorando nossos
+                    processos.
+                  </DescProduct>
+                </ContainerMiddle>
+              </ContentMiddle>
+            </Content>
           </Middle>
-          <div
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(252,252,252,1) 0%, rgba(221,221,221,1) 100%)",
-            }}
-          >
-            <ContainerMiddleTwo>
-              <div
-                style={{
-                  width: "90%",
-                  padding: 20,
-                }}
-              >
-                <AcademyTitle>UNIFORMES PARA ACADEMIA</AcademyTitle>
-                <FaCheck className="product-check" /> <br />
-                <FaCheck className="product-check" /> <br />
-                <FaCheck className="product-check" /> <br />
-                <FaCheck className="product-check" /> <br />
-                <FaCheck className="product-check" />
-                <BtnAcademy onClick={createLink}>
-                  SOLICITE UM ORÇAMENTO
-                </BtnAcademy>
-              </div>
-              <div
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <img src={tshirtThree} style={{ width: "100%" }} />
-              </div>
-            </ContainerMiddleTwo>
+          <div className="content-academia">
+            <Content>
+              <ContainerMiddleTwo>
+                <div
+                  style={{
+                    width: "100%",
+                    padding: 20,
+                  }}
+                >
+                  <AcademyTitle>UNIFORMES PARA ACADEMIA</AcademyTitle>
+                  <span className="product-check">
+                    <FaCheck color="#4caf50" style={{ marginRight: 15 }} />
+                    DESEMPENHO DRY FIT PREMIUM
+                  </span>
+                  <span className="product-check">
+                    <FaCheck color="#4caf50" style={{ marginRight: 15 }} />
+                    MODELAGEM EXCLUSIVA
+                  </span>
+                  <span className="product-check">
+                    <FaCheck color="#4caf50" style={{ marginRight: 15 }} />
+                    PERSONALIZADA COM SUA LOGO
+                  </span>
+                  <span className="product-check">
+                    <FaCheck color="#4caf50" style={{ marginRight: 15 }} />
+                    DESEMPENHO QUE AFASTA O SUOR DA PELE
+                  </span>
+
+                  <BtnAcademy onClick={createLink}>
+                    SOLICITE UM ORÇAMENTO
+                  </BtnAcademy>
+                </div>
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <img src={tshirtThree} style={{ width: "90%" }} />
+                </div>
+              </ContainerMiddleTwo>
+            </Content>
           </div>
 
           <div className="portifolio">
-            <Title>PORTIFÓLIO DE ARTES</Title>
-            <SubTitle>Nosso Portifólio de Artes</SubTitle>
-            <Carousel
-              slidesPerPage={3}
-              arrows
-              arrowLeft={
-                <MdKeyboardArrowLeft
-                  color="#666"
-                  size={"5em"}
-                  style={{ cursor: "pointer" }}
-                />
-              }
-              arrowLeftDisabled={
-                <MdKeyboardArrowLeft
-                  color="#666"
-                  size={"5em"}
-                  style={{ cursor: "pointer" }}
-                />
-              }
-              arrowRight={
-                <MdKeyboardArrowRight
-                  color="#666"
-                  size={"5em"}
-                  style={{ cursor: "pointer" }}
-                />
-              }
-              arrowRightDisabled={
-                <MdKeyboardArrowRight
-                  color="#666"
-                  size={"5em"}
-                  style={{ cursor: "pointer" }}
-                />
-              }
-              addArrowClickHandler
-              breakpoints={breakpointsConfig.products}
-            >
-              <Card>
-                <CardImageContainerCatalog>
-                  <CardImage src={tshirtThree} />
-                </CardImageContainerCatalog>
-                <CardAction>Veja Mais</CardAction>
-              </Card>
-              <Card>
-                <CardImageContainerCatalog>
-                  <CardImage src={tshirtThree} />
-                </CardImageContainerCatalog>
-                <CardAction>Veja Mais</CardAction>
-              </Card>
-              <Card>
-                <CardImageContainerCatalog>
-                  <CardImage src={tshirtThree} />
-                </CardImageContainerCatalog>
-                <CardAction>Veja Mais</CardAction>
-              </Card>
-              <Card>
-                <CardImageContainerCatalog>
-                  <CardImage src={tshirtThree} />
-                </CardImageContainerCatalog>
-                <CardAction>Veja Mais</CardAction>
-              </Card>
-              <Card>
-                <CardImageContainerCatalog>
-                  <CardImage src={tshirtThree} />
-                </CardImageContainerCatalog>
-                <CardAction>Veja Mais</CardAction>
-              </Card>
-              <Card>
-                <CardImageContainerCatalog>
-                  <CardImage src={tshirtThree} />
-                </CardImageContainerCatalog>
-                <CardAction>Veja Mais</CardAction>
-              </Card>
-            </Carousel>
+            <Content>
+              <Title>PORTIFÓLIO DE ARTES</Title>
+              <SubTitle>Nosso Portifólio de Artes</SubTitle>
+              <Carousel
+                slidesPerPage={3}
+                arrows
+                arrowLeft={
+                  <MdKeyboardArrowLeft
+                    color="#666"
+                    size={"5em"}
+                    style={{ cursor: "pointer" }}
+                  />
+                }
+                arrowLeftDisabled={
+                  <MdKeyboardArrowLeft
+                    color="#666"
+                    size={"5em"}
+                    style={{ cursor: "pointer" }}
+                  />
+                }
+                arrowRight={
+                  <MdKeyboardArrowRight
+                    color="#666"
+                    size={"5em"}
+                    style={{ cursor: "pointer" }}
+                  />
+                }
+                arrowRightDisabled={
+                  <MdKeyboardArrowRight
+                    color="#666"
+                    size={"5em"}
+                    style={{ cursor: "pointer" }}
+                  />
+                }
+                addArrowClickHandler
+                breakpoints={breakpointsConfig.products}
+              >
+                <CardShadow>
+                  <CardImageContainerCatalog>
+                    <CardImage src={tshirtOne} />
+                  </CardImageContainerCatalog>
+                  <CardAction>Veja Mais</CardAction>
+                </CardShadow>
+                <CardShadow>
+                  <CardImageContainerCatalog>
+                    <CardImage src={tshirtOne} />
+                  </CardImageContainerCatalog>
+                  <CardAction>Veja Mais</CardAction>
+                </CardShadow>
+                <CardShadow>
+                  <CardImageContainerCatalog>
+                    <CardImage src={tshirtOne} />
+                  </CardImageContainerCatalog>
+                  <CardAction>Veja Mais</CardAction>
+                </CardShadow>
+                <CardShadow>
+                  <CardImageContainerCatalog>
+                    <CardImage src={tshirtOne} />
+                  </CardImageContainerCatalog>
+                  <CardAction>Veja Mais</CardAction>
+                </CardShadow>
+                <CardShadow>
+                  <CardImageContainerCatalog>
+                    <CardImage src={tshirtOne} />
+                  </CardImageContainerCatalog>
+                  <CardAction>Veja Mais</CardAction>
+                </CardShadow>
+                <CardShadow>
+                  <CardImageContainerCatalog>
+                    <CardImage src={tshirtOne} />
+                  </CardImageContainerCatalog>
+                  <CardAction>Veja Mais</CardAction>
+                </CardShadow>
+              </Carousel>
+            </Content>
           </div>
 
           <div className="depoiments">
@@ -395,13 +427,13 @@ export default function IndexApp() {
                   Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
                   facilisis placerat. Donec sed lacinia metus, non finibus leo.
                   Morbi eu justo in risus."
-                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
                 </DepoimentContent>
                 <DepoimentAvatar
                   style={{
                     backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
                   }}
                 />
+                <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
               </DepoimentContainer>
               <DepoimentContainer>
                 <DepoimentContent>
@@ -409,13 +441,13 @@ export default function IndexApp() {
                   Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
                   facilisis placerat. Donec sed lacinia metus, non finibus leo.
                   Morbi eu justo in risus."
-                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
                 </DepoimentContent>
                 <DepoimentAvatar
                   style={{
                     backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
                   }}
                 />
+                <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
               </DepoimentContainer>
               <DepoimentContainer>
                 <DepoimentContent>
@@ -423,13 +455,13 @@ export default function IndexApp() {
                   Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
                   facilisis placerat. Donec sed lacinia metus, non finibus leo.
                   Morbi eu justo in risus."
-                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
                 </DepoimentContent>
                 <DepoimentAvatar
                   style={{
                     backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
                   }}
                 />
+                <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
               </DepoimentContainer>
               <DepoimentContainer>
                 <DepoimentContent>
@@ -437,41 +469,13 @@ export default function IndexApp() {
                   Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
                   facilisis placerat. Donec sed lacinia metus, non finibus leo.
                   Morbi eu justo in risus."
-                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
                 </DepoimentContent>
                 <DepoimentAvatar
                   style={{
                     backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
                   }}
                 />
-              </DepoimentContainer>
-              <DepoimentContainer>
-                <DepoimentContent>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
-                  facilisis placerat. Donec sed lacinia metus, non finibus leo.
-                  Morbi eu justo in risus."
-                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
-                </DepoimentContent>
-                <DepoimentAvatar
-                  style={{
-                    backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
-                  }}
-                />
-              </DepoimentContainer>
-              <DepoimentContainer>
-                <DepoimentContent>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse rhoncus euismod est ut tincidunt. Vivamus congue
-                  facilisis placerat. Donec sed lacinia metus, non finibus leo.
-                  Morbi eu justo in risus."
-                  <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
-                </DepoimentContent>
-                <DepoimentAvatar
-                  style={{
-                    backgroundImage: `url(https://blog.admooh.com/wp-content/uploads/2018/08/Capa-Profissional-de-Midia-Digital.png)`,
-                  }}
-                />
+                <DepoimentAuthor>Roberto Justus</DepoimentAuthor>
               </DepoimentContainer>
             </Carousel>
           </div>

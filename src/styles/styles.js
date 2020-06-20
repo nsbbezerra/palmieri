@@ -19,7 +19,7 @@ export const Title = styled.h1`
   padding: 10px;
   margin-top: 40px;
   color: #1a1a1a;
-  font-family: "Anton", sans-serif;
+  font-family: "Berlin Sans FB";
   @media (max-width: 715px) {
     font-size: 3rem;
   }
@@ -41,18 +41,19 @@ export const TitleSecondary = styled.h1`
   font-weight: 700;
   padding: 10px;
   color: #edba00;
-  font-family: "Anton", sans-serif;
+  font-family: "Berlin Sans FB";
 `;
 
 export const TitleWhite = styled.h1`
   width: 100%;
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #f6f6f6;
   display: block;
+  font-family: "Berlin Sans FB";
   @media (max-width: 950px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   @media (max-width: 500px) {
     font-size: 2rem;
@@ -60,14 +61,16 @@ export const TitleWhite = styled.h1`
 `;
 
 export const DescProduct = styled.span`
-  font-weight: 500;
-  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Saira Extra Condensed", sans-serif;
+  margin-top: 10px;
+  font-size: 2.9rem;
   color: #fff;
   display: block;
+  text-align: justify;
   width: 100%;
-  @media (max-width: 1250px) {
-    font-size: 3rem;
-  }
+  padding-right: 40px;
+  padding-left: 40px;
   @media (max-width: 1050px) {
     font-size: 2.5rem;
   }
@@ -77,11 +80,11 @@ export const DescProduct = styled.span`
   @media (max-width: 710px) {
     font-size: 1.8rem;
   }
-  @media (max-width: 490px) {
-    font-size: 1.5rem;
-  }
-  @media (max-width: 400px) {
-    font-size: 1.1rem;
+  @media (max-width: 675px) {
+    font-size: 2.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
   }
 `;
 
@@ -124,13 +127,13 @@ export const SubTitle = styled.h2`
 `;
 
 export const Card = styled.div`
-  width: 250px;
-  max-width: 250px;
-  min-width: 250px;
+  width: 200px;
+  max-width: 200px;
+  min-width: 200px;
   border-radius: 4px;
   transition: all 0.3s;
-  border: 1px solid #eee;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s;
   &:hover {
     transform: scale(1.03);
@@ -140,16 +143,16 @@ export const Card = styled.div`
 export const CardShadow = styled.div`
   background-color: #fff;
   border: 1px solid #ddd;
-  width: 250px;
-  max-width: 250px;
-  min-width: 250px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  max-width: 200px;
+  min-width: 200px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   margin-bottom: 10px;
 `;
 
 export const CardImage = styled.img`
-  width: 100%;
+  width: 90%;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
 `;
@@ -159,8 +162,9 @@ export const CardImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 350px;
+  height: 250px;
   margin-bottom: -5px;
+  padding: 5px;
 `;
 
 export const CardImageContainerCatalog = styled.div`
@@ -336,38 +340,41 @@ export const RowBetween = styled.div`
 `;
 
 export const SecondaryInput = styled.input`
-  padding: 9px;
+  padding: 5px;
   color: #444;
   border: 1px solid #ddd;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   width: 100%;
   border-radius: 4px;
-  font-style: italic;
-  background-color: #f6f6f6;
+  background-color: #fcfcfc;
 `;
 
 export const SecondaryTextArea = styled.textarea`
-  padding: 9px;
+  padding: 5px;
   color: #444;
   border: 1px solid #ddd;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   width: 100%;
   border-radius: 4px;
-  font-style: italic;
   resize: vertical;
-  background-color: #f6f6f6;
+  background-color: #fcfcfc;
 `;
 
 export const GridHeader = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: #eee;
+  background: linear-gradient(
+    180deg,
+    rgba(252, 252, 252, 1) 0%,
+    rgba(238, 238, 238, 1) 49%,
+    rgba(252, 252, 252, 1) 100%
+  );
   width: 100%;
   margin-top: -5px;
   @media (max-width: 650px) {
@@ -441,7 +448,7 @@ export const GridDesc = styled.span`
 export const ContainerProducts = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 35px;
   justify-items: center;
 `;
@@ -459,7 +466,13 @@ export const ContainerMiddle = styled.div`
   grid-template-columns: 1fr 2fr;
   grid-gap: 15px;
   justify-items: center;
-  align-items: center;
+  padding-right: 60px;
+  padding-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  @media (max-width: 675px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ContainerMiddleTwo = styled.div`
@@ -469,6 +482,9 @@ export const ContainerMiddleTwo = styled.div`
   grid-gap: 15px;
   justify-items: center;
   align-items: center;
+  @media (max-width: 675px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ContentMiddle = styled.div`
@@ -477,26 +493,26 @@ export const ContentMiddle = styled.div`
 `;
 
 export const AcademyTitle = styled.span`
-  font-weight: 600;
-  font-size: 6rem;
+  font-weight: bold;
+  font-size: 4.5rem;
   color: #333;
-  font-family: "Anton", sans-serif;
+  font-family: "Berlin Sans FB";
   text-align: center;
   display: block;
   @media (max-width: 1000px) {
-    font-size: 5rem;
-  }
-  @media (max-width: 785px) {
     font-size: 4rem;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 820px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 675px) {
     font-size: 3rem;
   }
   @media (max-width: 470px) {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
   }
   @media (max-width: 350px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -506,57 +522,47 @@ export const BtnAcademy = styled.button`
   border-radius: 20px;
   background-color: #4caf50;
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  padding: 10px;
+  padding: 8px;
   cursor: pointer;
   margin-top: 30px;
   transition: all 0.3s;
   &:hover {
-    opacity: 0.9;
+    transform: scale(1.02);
   }
   &:active {
-    transform: scale(0.99);
+    transform: scale(1);
   }
   @media (max-width: 1000px) {
     font-size: 2.2rem;
     padding: 8px;
     margin-top: 25px;
   }
+  @media (max-width: 820px) {
+    font-size: 1.8rem;
+  }
   @media (max-width: 785px) {
-    font-size: 2rem;
     padding: 6px;
     margin-top: 20px;
+  }
+  @media (max-width: 710px) {
+    font-size: 1.3rem;
   }
   @media (max-width: 650px) {
     font-size: 1.7rem;
     padding: 5px;
     margin-top: 20px;
   }
-  @media (max-width: 515px) {
-    font-size: 1.5rem;
-  }
   @media (max-width: 470px) {
-    font-size: 1.3rem;
     padding: 5px;
     margin-top: 15px;
-  }
-  @media (max-width: 420px) {
-    font-size: 1.1rem;
-  }
-  @media (max-width: 380px) {
-    font-size: 1.1rem;
-    padding: 5px;
-    margin-top: 10px;
-  }
-  @media (max-width: 360px) {
-    font-size: 0.8rem;
   }
 `;
 
 export const ContainerProductsPage = styled.div`
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 250px 1fr;
   grid-column-gap: 20px;
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
@@ -566,16 +572,32 @@ export const ContainerProductsPage = styled.div`
 export const GridProductsPage = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
   justify-items: center;
 `;
 
 export const CardGridProduct = styled.button`
-  width: 300px;
+  width: 200px;
   border-radius: 4px;
-  height: 420px;
-  border: 1px solid #eee;
+  height: 320px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  background: transparent;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.03);
+  }
+  &:active {
+    transform: scale(1);
+  }
+`;
+
+export const CardGridCatalog = styled.button`
+  width: 200px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
   background: transparent;
@@ -592,7 +614,7 @@ export const ContainerImgProductPage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 350px;
+  height: 250px;
   padding: 5px;
   border-top-left-radius: 3.5px;
   border-top-right-radius: 3.5px;
@@ -604,7 +626,7 @@ export const ImgProductPage = styled.img`
 
 export const DescProductPage = styled.span`
   font-family: "Saira Extra Condensed", sans-serif;
-  font-size: 2.3rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: #333;
   width: 100%;
@@ -614,7 +636,7 @@ export const DescProductPage = styled.span`
 
 export const DescriptionProduct = styled.span`
   font-family: "Saira Extra Condensed", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #555;
   width: 100%;
@@ -673,7 +695,7 @@ export const DepoimentContainer = styled.div`
 
 export const DepoimentContent = styled.div`
   width: 100%;
-  height: 250px;
+  height: 180px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 6px;
   padding: 10px;
@@ -681,14 +703,14 @@ export const DepoimentContent = styled.div`
   text-overflow: ellipsis;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
   font-family: "Saira Extra Condensed", sans-serif;
-  font-size: 1.85rem;
+  font-size: 1.5rem;
   font-style: italic;
 `;
 
 export const DepoimentAvatar = styled.div`
-  width: 125px;
-  height: 125px;
-  border: 5px solid #edba00;
+  width: 100px;
+  height: 100px;
+  border: 4px solid #edba00;
   background-position: center;
   background-size: cover;
   border-radius: 100%;
@@ -701,6 +723,7 @@ export const DepoimentAuthor = styled.span`
   text-align: center;
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-style: normal;
+  color: #fcfcfc;
 `;

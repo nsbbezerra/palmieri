@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./menu.css";
 import {
   FaHome,
-  FaTshirt,
   FaInfo,
   FaPhoneVolume,
   FaQuestion,
@@ -11,13 +10,18 @@ import {
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import icone from "../assets/icone.svg";
 import logo from "../assets/logo.svg";
 
 export default function Menu({ products }) {
   const [open, setOpen] = useState(false);
+  const history = useHistory();
+
+  function goToHome() {
+    history.push("/");
+  }
 
   return (
     <>
@@ -27,8 +31,14 @@ export default function Menu({ products }) {
             alt="Palmieri Uniformes ícone"
             src={icone}
             className="menu-icone"
+            onClick={() => goToHome()}
           />
-          <img alt="Palmieri Uniformes logo" src={logo} className="menu-logo" />
+          <img
+            alt="Palmieri Uniformes logo"
+            src={logo}
+            className="menu-logo"
+            onClick={() => goToHome()}
+          />
         </div>
         <div className="menu-right">
           <input type="checkbox" id="hamburger-menu" />
