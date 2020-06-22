@@ -669,7 +669,8 @@ export const DescriptionProduct = styled.span`
 export const BreadCrumb = styled.span`
   width: 100%;
   padding-bottom: 10px;
-  border-bottom: 1px solid #444;
+  color: "#444";
+  border-bottom: 1px solid #ddd;
   font-family: "Saira Extra Condensed", sans-serif;
   font-size: 2.5rem;
   display: block;

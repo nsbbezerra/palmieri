@@ -78,7 +78,8 @@ export default function Products() {
         <ContainerProductsPage>
           <nav className="nav-sider" id="menu-product">
             <span className="label-sider-title">
-              <AiOutlineMenuUnfold style={{ marginRight: "20px" }} /> MENU
+              <AiOutlineMenuUnfold style={{ marginRight: "20px" }} /> NOSSOS
+              PRODUTOS
             </span>
             <span className="label-sider">
               <FaTshirt style={{ marginRight: "10px" }} /> TODOS OS PRODUTOS
