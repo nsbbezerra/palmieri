@@ -111,9 +111,10 @@
   width: 100%;
   background-color: #1a1a1a;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
   grid-gap: 15px;
   padding: 30px 40px;
+  justify-content: center;
 }
 
 .container-footer-items,

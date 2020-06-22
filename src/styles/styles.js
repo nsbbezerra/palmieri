@@ -42,6 +42,18 @@ export const TitleSecondary = styled.h1`
   padding: 10px;
   color: #edba00;
   font-family: "Berlin Sans FB";
+  @media (max-width: 715px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 465px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 400px) {
+    margin-top: 20px;
+  }
+  @media (max-width: 360px) {
+    font-size: 2rem;
+  }
 `;
 
 export const TitleWhite = styled.h1`
@@ -85,6 +97,10 @@ export const DescProduct = styled.span`
     padding-left: 0;
     padding-right: 0;
     margin-top: 0;
+  }
+  @media (max-widt: 560px) {
+    padding-right: 10px;
+    padding-left: 10px;
   }
 `;
 
@@ -133,7 +149,7 @@ export const Card = styled.div`
   border-radius: 4px;
   transition: all 0.3s;
   border: 1px solid #ddd;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
   transition: all 0.3s;
   &:hover {
     transform: scale(1.03);
@@ -146,7 +162,6 @@ export const CardShadow = styled.div`
   width: 200px;
   max-width: 200px;
   min-width: 200px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   margin-bottom: 10px;
 `;
@@ -188,6 +203,10 @@ export const Content = styled.div`
     padding-left: 35px;
     padding-right: 35px;
   }
+  @media (max-width: 350px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 `;
 
 export const CardTitle = styled.div`
@@ -195,7 +214,7 @@ export const CardTitle = styled.div`
   padding-top: 5px;
   text-align: center;
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   color: #1a1a1a;
   font-family: "Saira Extra Condensed", sans-serif;
 `;
@@ -448,9 +467,10 @@ export const GridDesc = styled.span`
 export const ContainerProducts = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  grid-gap: 25px;
   justify-items: center;
+  justify-content: center;
 `;
 
 export const Middle = styled.div`
@@ -472,6 +492,8 @@ export const ContainerMiddle = styled.div`
   margin-bottom: 50px;
   @media (max-width: 675px) {
     grid-template-columns: 1fr;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 `;
 
@@ -496,6 +518,7 @@ export const AcademyTitle = styled.span`
   font-weight: bold;
   font-size: 4.5rem;
   color: #333;
+  margin-bottom: 20px;
   font-family: "Berlin Sans FB";
   text-align: center;
   display: block;
@@ -510,9 +533,6 @@ export const AcademyTitle = styled.span`
   }
   @media (max-width: 470px) {
     font-size: 2.1rem;
-  }
-  @media (max-width: 350px) {
-    font-size: 1.2rem;
   }
 `;
 
@@ -562,7 +582,7 @@ export const BtnAcademy = styled.button`
 
 export const ContainerProductsPage = styled.div`
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 230px 1fr;
   grid-column-gap: 20px;
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
@@ -572,9 +592,11 @@ export const ContainerProductsPage = styled.div`
 export const GridProductsPage = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
   grid-gap: 20px;
   justify-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
 `;
 
 export const CardGridProduct = styled.button`
@@ -582,9 +604,9 @@ export const CardGridProduct = styled.button`
   border-radius: 4px;
   height: 320px;
   border: 1px solid #ddd;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
   transition: all 0.3s;
-  background: transparent;
+  background: #fff;
   cursor: pointer;
   &:hover {
     transform: scale(1.03);

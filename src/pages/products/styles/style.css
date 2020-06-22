@@ -11,6 +11,7 @@
   padding-left: 10px;
   background-color: #fff;
   border-top-right-radius: 3px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
 }
 
 .sider-menu {
@@ -73,7 +74,7 @@
 }
 
 .tab-catalog {
-  background-color: rgb(236, 236, 236);
+  background-color: #fcfcfc;
   color: #1a1a1a;
   border-radius: 1px;
   height: min-content;
@@ -90,7 +91,7 @@
 
 .desc-tab-span {
   font-family: "Saira Extra Condensed", sans-serif !important;
-  font-size: 2.7rem;
+  font-size: 2.4rem;
   font-weight: 500;
   color: #444;
 }
@@ -107,19 +108,21 @@
 
 .medida-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  grid-gap: 25px;
+  justify-content: center;
+  justify-items: center;
 }
 
 .title-medida-product {
   font-family: "Saira Extra Condensed", sans-serif !important;
-  font-size: 2rem !important;
+  font-size: 1.8rem !important;
   font-weight: 700 !important;
 }
 
 .desc-medida-product {
   font-family: "Saira Extra Condensed", sans-serif !important;
-  font-size: 1.8rem !important;
+  font-size: 1.6rem !important;
 }
 
 .medida-item {
@@ -131,14 +134,16 @@
 }
 
 .medida-img {
-  height: 130px;
+  height: 100px;
 }
 
 .medida-table-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(380px, 380px));
   grid-gap: 15px;
   margin-top: 20px;
+  justify-content: center;
+  justify-items: center;
 }
 
 .medida-grid-table-item {
@@ -152,12 +157,12 @@
 .table-medida {
   width: 100%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .table-medida thead tr td {
   font-family: "Saira Extra Condensed", sans-serif !important;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 600;
   border-left: 1px solid rgb(161, 161, 161);
   border-top: 1px solid rgb(161, 161, 161);
@@ -166,8 +171,8 @@
 
 .table-medida tbody tr td {
   font-family: "Saira Extra Condensed", sans-serif !important;
-  font-size: 1.8rem;
-  padding: 3px;
+  font-size: 1.5rem;
+  padding: 1px;
   border-left: 1px solid rgb(161, 161, 161);
   border-bottom: 1px solid rgb(161, 161, 161);
 }
@@ -196,7 +201,7 @@
 
 .modal-container-medida {
   width: 100%;
-  background-color: #ddd;
+  background-color: #fcfcfc;
   border-radius: 3px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
   height: 95vh;
@@ -214,7 +219,7 @@
   color: #333;
   font-weight: 700;
   font-size: 16px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
@@ -313,9 +318,12 @@
     margin-left: -100%;
     transition: all 0.4s;
     box-shadow: 2px 20px 20px rgba(0, 0, 0, 0.2);
-    z-index: 200;
+    border: 0;
+    border-radius: 0;
+    z-index: 1000;
     top: 50px;
     bottom: 0;
+    left: 0;
   }
 }
 

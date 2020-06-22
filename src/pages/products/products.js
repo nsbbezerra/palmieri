@@ -13,6 +13,7 @@ import {
   ContainerBreadCrumb,
   BtnMenuOpen,
   Container,
+  Content,
 } from "../../styles/styles";
 import { Link } from "react-router-dom";
 import { IoMdArrowDropdown, IoMdArrowDropright } from "react-icons/io";
@@ -73,228 +74,230 @@ export default function Products() {
         </BtnMenuOpen>
       </ContainerBreadCrumb>
 
-      <ContainerProductsPage>
-        <nav className="nav-sider" id="menu-product">
-          <span className="label-sider-title">
-            <AiOutlineMenuUnfold style={{ marginRight: "20px" }} /> MENU
-          </span>
-          <span className="label-sider">
-            <FaTshirt style={{ marginRight: "10px" }} /> TODOS OS PRODUTOS
-          </span>
-          <Collapsible
-            trigger={
-              <span className="label-sider">
-                <IoMdArrowDropdown /> UNIFORMES ACADEMIA
-              </span>
-            }
-          >
-            <ul className="sub-item">
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-            </ul>
-          </Collapsible>
-          <Collapsible
-            trigger={
-              <span className="label-sider">
-                <IoMdArrowDropdown /> UNIFORMES ACADEMIA
-              </span>
-            }
-          >
-            <ul className="sub-item">
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-            </ul>
-          </Collapsible>
-          <Collapsible
-            trigger={
-              <span className="label-sider">
-                <IoMdArrowDropdown /> UNIFORMES ACADEMIA
-              </span>
-            }
-          >
-            <ul className="sub-item">
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-            </ul>
-          </Collapsible>
-          <Collapsible
-            trigger={
-              <span className="label-sider">
-                <IoMdArrowDropdown /> UNIFORMES ACADEMIA
-              </span>
-            }
-          >
-            <ul className="sub-item">
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-            </ul>
-          </Collapsible>
-          <Collapsible
-            trigger={
-              <span className="label-sider">
-                <IoMdArrowDropdown /> UNIFORMES ACADEMIA
-              </span>
-            }
-          >
-            <ul className="sub-item">
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-            </ul>
-          </Collapsible>
-          <Collapsible
-            trigger={
-              <span className="label-sider">
-                <IoMdArrowDropdown /> UNIFORMES ACADEMIA
-              </span>
-            }
-          >
-            <ul className="sub-item">
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-            </ul>
-          </Collapsible>
-          <Collapsible
-            trigger={
-              <span className="label-sider">
-                <IoMdArrowDropdown /> UNIFORMES ACADEMIA
-              </span>
-            }
-          >
-            <ul className="sub-item">
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-              <li className="sub-item-content">
-                <Link className="link-sider" to="/">
-                  <IoMdArrowDropright /> REGATAS SIMPLES
-                </Link>
-              </li>
-            </ul>
-          </Collapsible>
-        </nav>
-        <GridProductsPage style={{ marginBottom: "50px" }}>
-          <CardGridProduct onClick={() => goToCalalog("1")}>
-            <ContainerImgProductPage>
-              <ImgProductPage alt="Palmieri" src={tshirt} />
-            </ContainerImgProductPage>
-            <DescProductPage>REGATA CAUSAL MASCULINA</DescProductPage>
-            <DescriptionProduct>Descrição do produto</DescriptionProduct>
-          </CardGridProduct>
-          <CardGridProduct>
-            <ContainerImgProductPage>
-              <ImgProductPage alt="Palmieri" src={tshirt} />
-            </ContainerImgProductPage>
-            <DescProductPage>REGATA CAUSAL MASCULINA</DescProductPage>
-            <DescriptionProduct>Descrição do produto</DescriptionProduct>
-          </CardGridProduct>
-          <CardGridProduct>
-            <ContainerImgProductPage>
-              <ImgProductPage alt="Palmieri" src={tshirt} />
-            </ContainerImgProductPage>
-            <DescProductPage>REGATA CAUSAL MASCULINA</DescProductPage>
-            <DescriptionProduct>Descrição do produto</DescriptionProduct>
-          </CardGridProduct>
-          <CardGridProduct>
-            <ContainerImgProductPage>
-              <ImgProductPage alt="Palmieri" src={tshirt} />
-            </ContainerImgProductPage>
-            <DescProductPage>REGATA CAUSAL MASCULINA</DescProductPage>
-            <DescriptionProduct>Descrição do produto</DescriptionProduct>
-          </CardGridProduct>
-          <CardGridProduct>
-            <ContainerImgProductPage>
-              <ImgProductPage alt="Palmieri" src={tshirt} />
-            </ContainerImgProductPage>
-            <DescProductPage>REGATA CAUSAL MASCULINA</DescProductPage>
-            <DescriptionProduct>Descrição do produto</DescriptionProduct>
-          </CardGridProduct>
-        </GridProductsPage>
-      </ContainerProductsPage>
+      <Content>
+        <ContainerProductsPage>
+          <nav className="nav-sider" id="menu-product">
+            <span className="label-sider-title">
+              <AiOutlineMenuUnfold style={{ marginRight: "20px" }} /> MENU
+            </span>
+            <span className="label-sider">
+              <FaTshirt style={{ marginRight: "10px" }} /> TODOS OS PRODUTOS
+            </span>
+            <Collapsible
+              trigger={
+                <span className="label-sider">
+                  <IoMdArrowDropdown /> UNIFORMES ACADEMIA
+                </span>
+              }
+            >
+              <ul className="sub-item">
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+              </ul>
+            </Collapsible>
+            <Collapsible
+              trigger={
+                <span className="label-sider">
+                  <IoMdArrowDropdown /> UNIFORMES ACADEMIA
+                </span>
+              }
+            >
+              <ul className="sub-item">
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+              </ul>
+            </Collapsible>
+            <Collapsible
+              trigger={
+                <span className="label-sider">
+                  <IoMdArrowDropdown /> UNIFORMES ACADEMIA
+                </span>
+              }
+            >
+              <ul className="sub-item">
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+              </ul>
+            </Collapsible>
+            <Collapsible
+              trigger={
+                <span className="label-sider">
+                  <IoMdArrowDropdown /> UNIFORMES ACADEMIA
+                </span>
+              }
+            >
+              <ul className="sub-item">
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+              </ul>
+            </Collapsible>
+            <Collapsible
+              trigger={
+                <span className="label-sider">
+                  <IoMdArrowDropdown /> UNIFORMES ACADEMIA
+                </span>
+              }
+            >
+              <ul className="sub-item">
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+              </ul>
+            </Collapsible>
+            <Collapsible
+              trigger={
+                <span className="label-sider">
+                  <IoMdArrowDropdown /> UNIFORMES ACADEMIA
+                </span>
+              }
+            >
+              <ul className="sub-item">
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+              </ul>
+            </Collapsible>
+            <Collapsible
+              trigger={
+                <span className="label-sider">
+                  <IoMdArrowDropdown /> UNIFORMES ACADEMIA
+                </span>
+              }
+            >
+              <ul className="sub-item">
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+                <li className="sub-item-content">
+                  <Link className="link-sider" to="/">
+                    <IoMdArrowDropright /> REGATAS SIMPLES
+                  </Link>
+                </li>
+              </ul>
+            </Collapsible>
+          </nav>
+          <GridProductsPage>
+            <CardGridProduct onClick={() => goToCalalog("1")}>
+              <ContainerImgProductPage>
+                <ImgProductPage alt="Palmieri" src={tshirt} />
+              </ContainerImgProductPage>
+              <DescProductPage>REGATA CAUSAL MASCULINA</DescProductPage>
+              <DescriptionProduct>Descrição do produto</DescriptionProduct>
+            </CardGridProduct>
+            <CardGridProduct>
+              <ContainerImgProductPage>
+                <ImgProductPage alt="Palmieri" src={tshirt} />
+              </ContainerImgProductPage>
+              <DescProductPage>REGATA CAUSAL MASCULINA</DescProductPage>
+              <DescriptionProduct>Descrição do produto</DescriptionProduct>
+            </CardGridProduct>
+            <CardGridProduct>
+              <ContainerImgProductPage>
+                <ImgProductPage alt="Palmieri" src={tshirt} />
+              </ContainerImgProductPage>
+              <DescProductPage>REGATA CAUSAL MASCULINA</DescProductPage>
+              <DescriptionProduct>Descrição do produto</DescriptionProduct>
+            </CardGridProduct>
+            <CardGridProduct>
+              <ContainerImgProductPage>
+                <ImgProductPage alt="Palmieri" src={tshirt} />
+              </ContainerImgProductPage>
+              <DescProductPage>REGATA CAUSAL MASCULINA</DescProductPage>
+              <DescriptionProduct>Descrição do produto</DescriptionProduct>
+            </CardGridProduct>
+            <CardGridProduct>
+              <ContainerImgProductPage>
+                <ImgProductPage alt="Palmieri" src={tshirt} />
+              </ContainerImgProductPage>
+              <DescProductPage>REGATA CAUSAL MASCULINA</DescProductPage>
+              <DescriptionProduct>Descrição do produto</DescriptionProduct>
+            </CardGridProduct>
+          </GridProductsPage>
+        </ContainerProductsPage>
+      </Content>
     </Container>
   );
 }

@@ -228,6 +228,33 @@ export default function IndexApp() {
                   VEJA MAIS
                 </Link>
               </Card>
+              <Card>
+                <CardImageContainer>
+                  <CardImage src={tshirtOne} />
+                </CardImageContainer>
+                <CardTitle>CAMISETA FORMANDOS</CardTitle>
+                <Link to="/" className="link-product">
+                  VEJA MAIS
+                </Link>
+              </Card>
+              <Card>
+                <CardImageContainer>
+                  <CardImage src={tshirtOne} />
+                </CardImageContainer>
+                <CardTitle>CAMISETA FORMANDOS</CardTitle>
+                <Link to="/" className="link-product">
+                  VEJA MAIS
+                </Link>
+              </Card>
+              <Card>
+                <CardImageContainer>
+                  <CardImage src={tshirtOne} />
+                </CardImageContainer>
+                <CardTitle>CAMISETA FORMANDOS</CardTitle>
+                <Link to="/" className="link-product">
+                  VEJA MAIS
+                </Link>
+              </Card>
             </ContainerProducts>
           </Content>
           <Middle>

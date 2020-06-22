@@ -246,19 +246,21 @@ export default function Catalog() {
             </div>
           </TabPanel>
           <TabPanel>
-            <span className="desc-tab-span">
-              A Palmieri Uniformes a menos de um ano se localiza na cidade de
-              Pedro Afonso - TO vindo de Palmas - TO. Somos uma empresa com
-              visão de crescimento buscando sempre novidades e qualidade para
-              nossos cliente, temos nos destacados com fabricação de uniformes
-              para toda o brasil através da internet e estamos comprometidos não
-              apenas com fabricar camisetas, mas sim levar a melhor experiência
-              para todos fazem camisetas conosco. A empresa está no mercado a
-              mais de 4 anos e tem desenvolvidos ótimos produtos na região e
-              agradando muitas pessoas, nosso trabalho tem sido reconhecido cada
-              vez mais, o estado do tocantins ha muita concorrência e estamos
-              firmes e fortes até hoje.
-            </span>
+            <Content>
+              <span className="desc-tab-span">
+                A Palmieri Uniformes a menos de um ano se localiza na cidade de
+                Pedro Afonso - TO vindo de Palmas - TO. Somos uma empresa com
+                visão de crescimento buscando sempre novidades e qualidade para
+                nossos cliente, temos nos destacados com fabricação de uniformes
+                para toda o brasil através da internet e estamos comprometidos
+                não apenas com fabricar camisetas, mas sim levar a melhor
+                experiência para todos fazem camisetas conosco. A empresa está
+                no mercado a mais de 4 anos e tem desenvolvidos ótimos produtos
+                na região e agradando muitas pessoas, nosso trabalho tem sido
+                reconhecido cada vez mais, o estado do tocantins ha muita
+                concorrência e estamos firmes e fortes até hoje.
+              </span>
+            </Content>
           </TabPanel>
           <TabPanel>
             <div className="medida-video-content">
