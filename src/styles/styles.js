@@ -143,9 +143,9 @@ export const SubTitle = styled.h2`
 `;
 
 export const Card = styled.div`
-  width: 200px;
-  max-width: 200px;
-  min-width: 200px;
+  width: 250px;
+  max-width: 250px;
+  min-width: 250px;
   border-radius: 4px;
   transition: all 0.3s;
   border: 1px solid #ddd;
@@ -167,7 +167,8 @@ export const CardShadow = styled.div`
 `;
 
 export const CardImage = styled.img`
-  width: 90%;
+  padding: 7px;
+  max-height: 100%;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
 `;
@@ -193,6 +194,7 @@ export const CardImageContainerCatalog = styled.div`
 
 export const Content = styled.div`
   width: 100%;
+  max-width: 1380px;
   padding-left: 80px;
   padding-right: 80px;
   @media (max-width: 550px) {
@@ -385,20 +387,25 @@ export const SecondaryTextArea = styled.textarea`
   background-color: #fcfcfc;
 `;
 
-export const GridHeader = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+export const GridHeaderColor = styled.div`
+  width: 100%;
   background: linear-gradient(
     180deg,
     rgba(252, 252, 252, 1) 0%,
     rgba(238, 238, 238, 1) 49%,
     rgba(252, 252, 252, 1) 100%
   );
-  width: 100%;
   margin-top: -5px;
   @media (max-width: 650px) {
     display: none;
   }
+`;
+
+export const GridHeader = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  max-width: 1380px;
 `;
 
 export const GridItem = styled.div`
@@ -467,7 +474,7 @@ export const GridDesc = styled.span`
 export const ContainerProducts = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
   grid-gap: 25px;
   justify-items: center;
   justify-content: center;
@@ -592,7 +599,7 @@ export const ContainerProductsPage = styled.div`
 export const GridProductsPage = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
   grid-gap: 20px;
   justify-items: center;
   justify-content: center;
@@ -600,7 +607,7 @@ export const GridProductsPage = styled.div`
 `;
 
 export const CardGridProduct = styled.button`
-  width: 200px;
+  width: 280px;
   border-radius: 4px;
   height: 320px;
   border: 1px solid #ddd;
@@ -617,7 +624,7 @@ export const CardGridProduct = styled.button`
 `;
 
 export const CardGridCatalog = styled.button`
-  width: 200px;
+  width: 280px;
   border-radius: 4px;
   border: 1px solid #ddd;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -648,7 +655,7 @@ export const ImgProductPage = styled.img`
 
 export const DescProductPage = styled.span`
   font-family: "Saira Extra Condensed", sans-serif;
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #333;
   width: 100%;
@@ -658,7 +665,7 @@ export const DescProductPage = styled.span`
 
 export const DescriptionProduct = styled.span`
   font-family: "Saira Extra Condensed", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: #555;
   width: 100%;
@@ -749,4 +756,10 @@ export const DepoimentAuthor = styled.span`
   font-size: 1.6rem;
   font-style: normal;
   color: #fcfcfc;
+`;
+
+export const FixedLayout = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;

@@ -26,56 +26,58 @@ export default function Menu({ products }) {
   return (
     <>
       <nav className="menu">
-        <div className="menu-left">
-          <img
-            alt="Palmieri Uniformes ícone"
-            src={icone}
-            className="menu-icone"
-            onClick={() => goToHome()}
-          />
-          <img
-            alt="Palmieri Uniformes logo"
-            src={logo}
-            className="menu-logo"
-            onClick={() => goToHome()}
-          />
-        </div>
-        <div className="menu-right">
-          <input type="checkbox" id="hamburger-menu" />
-          <label
-            className="hamburger"
-            htmlFor="hamburger-menu"
-            onClick={() => setOpen(!open)}
-          >
-            {open === false ? <GiHamburgerMenu /> : <MdClose />}
-          </label>
-          <ul className="app-menu">
-            <li className="app-menu-items">
-              <Link to="/" className="link">
-                <FaHome style={{ marginRight: 5 }} /> INÍCIO
-              </Link>
-            </li>
-            <li className="app-menu-items">
-              <Link to="/produtos" className="link">
-                <FaTags style={{ marginRight: 5 }} /> PRODUTOS
-              </Link>
-            </li>
-            <li className="app-menu-items">
-              <Link to="/quemsomos" className="link">
-                <FaInfo style={{ marginRight: 5 }} /> SOBRE NÓS
-              </Link>
-            </li>
-            <li className="app-menu-items">
-              <Link to="/contato" className="link">
-                <FaPhoneVolume style={{ marginRight: 5 }} /> FALE CONOSCO
-              </Link>
-            </li>
-            <li className="app-menu-items">
-              <Link to="/comofunciona" className="link">
-                <FaQuestion style={{ marginRight: 5 }} /> COMO FUNCIONA
-              </Link>
-            </li>
-          </ul>
+        <div className="menu-fixed-layout">
+          <div className="menu-left">
+            <img
+              alt="Palmieri Uniformes ícone"
+              src={icone}
+              className="menu-icone"
+              onClick={() => goToHome()}
+            />
+            <img
+              alt="Palmieri Uniformes logo"
+              src={logo}
+              className="menu-logo"
+              onClick={() => goToHome()}
+            />
+          </div>
+          <div className="menu-right">
+            <input type="checkbox" id="hamburger-menu" />
+            <label
+              className="hamburger"
+              htmlFor="hamburger-menu"
+              onClick={() => setOpen(!open)}
+            >
+              {open === false ? <GiHamburgerMenu /> : <MdClose />}
+            </label>
+            <ul className="app-menu">
+              <li className="app-menu-items">
+                <Link to="/" className="link">
+                  <FaHome style={{ marginRight: 5 }} /> INÍCIO
+                </Link>
+              </li>
+              <li className="app-menu-items">
+                <Link to="/produtos" className="link">
+                  <FaTags style={{ marginRight: 5 }} /> PRODUTOS
+                </Link>
+              </li>
+              <li className="app-menu-items">
+                <Link to="/quemsomos" className="link">
+                  <FaInfo style={{ marginRight: 5 }} /> SOBRE NÓS
+                </Link>
+              </li>
+              <li className="app-menu-items">
+                <Link to="/contato" className="link">
+                  <FaPhoneVolume style={{ marginRight: 5 }} /> FALE CONOSCO
+                </Link>
+              </li>
+              <li className="app-menu-items">
+                <Link to="/comofunciona" className="link">
+                  <FaQuestion style={{ marginRight: 5 }} /> COMO FUNCIONA
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </>

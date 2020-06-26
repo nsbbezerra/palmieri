@@ -202,11 +202,13 @@
   border-radius: 3px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
   height: 95vh;
+  max-height: 1240px;
 }
 
 .modal-medida {
   width: 60%;
-  max-height: 97%;
+  height: 97%;
+  max-width: 1380px;
 }
 
 .modal-header-medida {
