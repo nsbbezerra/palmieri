@@ -12,6 +12,7 @@ import {
   ImgProductPage,
   Spaced,
   FixedLayout,
+  NotFound,
 } from "../../styles/styles";
 import { Tab, TabList, TabPanel, Tabs, TabPanels } from "@reach/tabs";
 import "@reach/tabs/styles.css";
@@ -19,21 +20,58 @@ import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
 
 import banner from "../../assets/banner-web.png";
-import tshirt from "../../assets/camisa-one-web.png";
 import first from "./assets/first.svg";
 import second from "./assets/second.svg";
 import third from "./assets/third.svg";
 import globalConfig from "../../configs/global";
+import api from "../../configs/axios";
 
-export default function Catalog() {
+import icone from "../../assets/icone.svg";
+import logo from "../../assets/logo.svg";
+
+export default function Catalog({ product, url }) {
   const [modalImg, setModalImg] = useState(false);
+  const [loadingModal, setLoadingModal] = useState(true);
+  const [productShow, setProductShow] = useState({});
+  const [catalog, setCatalog] = useState([]);
+  const [imgShow, setImgShow] = useState("");
 
   const { pathname } = useLocation();
+  const { id } = useParams();
+
+  useEffect(() => {
+    findCatalog();
+  }, [id]);
+
+  useEffect(() => {
+    if (product.length) {
+      handleProduct();
+    }
+  }, [product]);
+
+  async function findCatalog() {
+    await api
+      .get(`/catalog/${id}`)
+      .then((response) => {
+        setCatalog(response.data.catalog);
+        setLoadingModal(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  async function handleProduct() {
+    const result = await product.find((obj) => obj._id === id);
+    await setProductShow(result);
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  function handleModal() {
+  async function handleModal(imagem) {
+    await setImgShow(imagem);
     setModalImg(true);
   }
 
@@ -56,51 +94,23 @@ export default function Catalog() {
           </SubTitle>
 
           <GridProductsPage>
-            <CardGridCatalog onClick={() => handleModal()}>
-              <ContainerImgProductPage>
-                <ImgProductPage alt="Palmieri" src={tshirt} />
-              </ContainerImgProductPage>
-            </CardGridCatalog>
-            <CardGridCatalog>
-              <ContainerImgProductPage>
-                <ImgProductPage alt="Palmieri" src={tshirt} />
-              </ContainerImgProductPage>
-            </CardGridCatalog>
-            <CardGridCatalog>
-              <ContainerImgProductPage>
-                <ImgProductPage alt="Palmieri" src={tshirt} />
-              </ContainerImgProductPage>
-            </CardGridCatalog>
-            <CardGridCatalog>
-              <ContainerImgProductPage>
-                <ImgProductPage alt="Palmieri" src={tshirt} />
-              </ContainerImgProductPage>
-            </CardGridCatalog>
-            <CardGridCatalog>
-              <ContainerImgProductPage>
-                <ImgProductPage alt="Palmieri" src={tshirt} />
-              </ContainerImgProductPage>
-            </CardGridCatalog>
-            <CardGridCatalog>
-              <ContainerImgProductPage>
-                <ImgProductPage alt="Palmieri" src={tshirt} />
-              </ContainerImgProductPage>
-            </CardGridCatalog>
-            <CardGridCatalog>
-              <ContainerImgProductPage>
-                <ImgProductPage alt="Palmieri" src={tshirt} />
-              </ContainerImgProductPage>
-            </CardGridCatalog>
-            <CardGridCatalog>
-              <ContainerImgProductPage>
-                <ImgProductPage alt="Palmieri" src={tshirt} />
-              </ContainerImgProductPage>
-            </CardGridCatalog>
-            <CardGridCatalog>
-              <ContainerImgProductPage>
-                <ImgProductPage alt="Palmieri" src={tshirt} />
-              </ContainerImgProductPage>
-            </CardGridCatalog>
+            {!!catalog.length ? (
+              catalog.map((cat) => (
+                <CardGridCatalog
+                  onClick={() => handleModal(cat.image)}
+                  key={cat._id}
+                >
+                  <ContainerImgProductPage>
+                    <ImgProductPage
+                      alt={cat.imageDescription}
+                      src={`${url}/${cat.image}`}
+                    />
+                  </ContainerImgProductPage>
+                </CardGridCatalog>
+              ))
+            ) : (
+              <NotFound small={false}>CATÁLOGO NÃO ENCONTRADO</NotFound>
+            )}
           </GridProductsPage>
 
           <Spaced />
@@ -255,20 +265,11 @@ export default function Catalog() {
           <TabPanel>
             <FixedLayout>
               <Content>
-                <span className="desc-tab-span">
-                  A Palmieri Uniformes a menos de um ano se localiza na cidade
-                  de Pedro Afonso - TO vindo de Palmas - TO. Somos uma empresa
-                  com visão de crescimento buscando sempre novidades e qualidade
-                  para nossos cliente, temos nos destacados com fabricação de
-                  uniformes para toda o brasil através da internet e estamos
-                  comprometidos não apenas com fabricar camisetas, mas sim levar
-                  a melhor experiência para todos fazem camisetas conosco. A
-                  empresa está no mercado a mais de 4 anos e tem desenvolvidos
-                  ótimos produtos na região e agradando muitas pessoas, nosso
-                  trabalho tem sido reconhecido cada vez mais, o estado do
-                  tocantins ha muita concorrência e estamos firmes e fortes até
-                  hoje.
-                </span>
+                {JSON.stringify(productShow) === "{}" ? (
+                  ""
+                ) : (
+                  <span className="desc-tab-span">{productShow.slug}</span>
+                )}
               </Content>
             </FixedLayout>
           </TabPanel>
@@ -276,13 +277,17 @@ export default function Catalog() {
             <FixedLayout>
               <Content>
                 <div className="medida-video-content">
-                  <iframe
-                    className="video-medida"
-                    src="https://www.youtube.com/embed/4S_i-_32apM"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                  {JSON.stringify(productShow) === "{}" ? (
+                    ""
+                  ) : (
+                    <iframe
+                      className="video-medida"
+                      src={productShow.video}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  )}
                 </div>
               </Content>
             </FixedLayout>
@@ -294,7 +299,7 @@ export default function Catalog() {
         isOpen={modalImg}
         contentLabel="Rota para a API"
         className="modal-medida"
-        overlayClassName="overlay"
+        overlayClassName="overlay-two"
         ariaHideApp={false}
         onRequestClose={() => setModalImg(false)}
       >
@@ -310,7 +315,7 @@ export default function Catalog() {
           <div className="modal-medida-content">
             <img
               alt="Palmieri Uniformes"
-              src={tshirt}
+              src={`${url}/${imgShow}`}
               className="img-modal-medida"
             />
           </div>
@@ -326,6 +331,28 @@ export default function Catalog() {
               Solicite um Orçamento
             </button>
           </div>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={loadingModal}
+        contentLabel="Rota para a API"
+        className="modal"
+        overlayClassName="overlay"
+        ariaHideApp={false}
+      >
+        <div className="container-loading">
+          <img
+            alt="Palmieri Uniformes Icone"
+            src={icone}
+            className="icone-loading"
+          />
+          <img
+            alt="Palmieri Uniformes Logo"
+            src={logo}
+            className="logo-loading"
+          />
+          <span className="span-loading">CARREGANDO...</span>
         </div>
       </Modal>
     </Container>

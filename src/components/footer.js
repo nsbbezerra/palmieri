@@ -138,7 +138,7 @@ export default function Footer({ products }) {
             <span className="footer-title">CATÁLOGOS</span>
             {products.map((prod) => (
               <Link
-                to={`/portifolio/${prod._id}`}
+                to={`/catalogo/${prod._id}`}
                 className="footer-links"
                 key={prod._id}
               >

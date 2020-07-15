@@ -162,7 +162,10 @@ export const CardShadow = styled.div`
   width: 200px;
   max-width: 200px;
   min-width: 200px;
-  border-radius: 4px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   margin-bottom: 10px;
 `;
 
@@ -293,7 +296,8 @@ export const CardAction = styled.button`
   font-weight: 600;
   color: #f6f6f6;
   cursor: pointer;
-  border-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
   transition: all 0.4s;
 
   &:hover {
@@ -604,6 +608,7 @@ export const GridProductsPage = styled.div`
   justify-items: center;
   justify-content: center;
   margin-bottom: 50px;
+  height: max-content;
 `;
 
 export const CardGridProduct = styled.button`
@@ -724,13 +729,14 @@ export const DepoimentContainer = styled.div`
 `;
 
 export const DepoimentContent = styled.div`
-  width: 100%;
+  width: 300px;
   height: 180px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 6px;
   padding: 10px;
   text-align: center;
   text-overflow: ellipsis;
+  word-wrap: break-word;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
   font-family: "Saira Extra Condensed", sans-serif;
   font-size: 1.5rem;
@@ -762,4 +768,14 @@ export const FixedLayout = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+`;
+
+export const NotFound = styled.div`
+  width: 100%;
+  height: ${(props) => (props.small === true ? 30 : 250)}px;
+  color: ${(props) => (props.small === true ? "#fff" : "#333")};
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 2.5rem;
+  text-align: justify;
+  margin-top: 15px;
 `;

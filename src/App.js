@@ -5,88 +5,69 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "@brainhubeu/react-carousel/lib/style.css";
 import RoutesApp from "./routes/index";
 import api from "./configs/axios";
-import errorData from "./animations/error.json";
 import Modal from "react-modal";
-import Lottie from "react-lottie";
+
+import icone from "./assets/icone.svg";
+import logo from "./assets/logo.svg";
 
 function App() {
-  const [allProducts, setAllProducts] = useState([]);
-  const [messageErro, setErroMessage] = useState("");
-  const [erroStatus, setErroStatus] = useState("");
-  const [erroModal, setErroModal] = useState(false);
-
-  const errorOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: errorData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  const [loadingModal, setLoadingModal] = useState(true);
+  const [category, setCategory] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [urlImage, setUrlImage] = useState("");
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    findProducts();
+    finder();
   }, []);
 
-  async function findProducts() {
+  async function finder() {
     await api
-      .get("/products")
+      .get("/home")
       .then((response) => {
-        setAllProducts(response.data.products);
+        setLoadingModal(false);
+        setComments(response.data.comments);
+        setCategory(response.data.category);
+        setProducts(response.data.product);
+        setUrlImage(response.data.urlImage);
       })
       .catch((error) => {
-        setErroStatus("Sem conexão com o servidor");
-        setErroMessage(
-          "Não foi possível estabelecer uma conexão com o servidor"
-        );
-        setErroModal(true);
+        console.log(error);
       });
   }
 
   return (
     <>
       <Router>
-        <MenuApp products={allProducts} />
-        <RoutesApp />
-        <Footer products={allProducts} />
+        <MenuApp />
+        <RoutesApp
+          categories={category}
+          products={products}
+          url={urlImage}
+          comments={comments}
+        />
+        <Footer products={products} />
       </Router>
 
       <Modal
-        isOpen={erroModal}
+        isOpen={loadingModal}
         contentLabel="Rota para a API"
         className="modal"
         overlayClassName="overlay"
         ariaHideApp={false}
       >
-        <div className="modal-container">
-          <div className="modal-header">
-            <span>Conexão com Servidor</span>
-          </div>
-          <div className="modal-content">
-            <Lottie options={errorOptions} width={"40%"} />
-            <p
-              style={{
-                fontWeight: "700",
-                width: "100%",
-                textAlign: "center",
-                fontSize: 16,
-                color: "#f44336",
-              }}
-            >
-              {erroStatus}
-            </p>
-            <p
-              style={{
-                fontWeight: "400",
-                width: "100%",
-                textAlign: "center",
-                fontSize: 14,
-                color: "#333",
-              }}
-            >
-              <strong>Erro:</strong> {messageErro}
-            </p>
-          </div>
+        <div className="container-loading">
+          <img
+            alt="Palmieri Uniformes Icone"
+            src={icone}
+            className="icone-loading"
+          />
+          <img
+            alt="Palmieri Uniformes Logo"
+            src={logo}
+            className="logo-loading"
+          />
+          <span className="span-loading">CARREGANDO...</span>
         </div>
       </Modal>
     </>

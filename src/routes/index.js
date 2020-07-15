@@ -10,15 +10,20 @@ import Contact from "../pages/contacts/index";
 import Portifolio from "../pages/portifolio/index";
 import Catalogo from "../pages/products/catalog";
 
-export default function RoutesApp() {
+export default function RoutesApp({ products, categories, url, comments }) {
   return (
     <>
       <Switch>
         <Route exact path="/">
-          <Index />
+          <Index
+            category={categories}
+            product={products}
+            url={url}
+            comments={comments}
+          />
         </Route>
         <Route path="/produtos">
-          <ProductsOne />
+          <ProductsOne category={categories} product={products} url={url} />
         </Route>
         <Route path="/comofunciona">
           <ComoFunciona />
@@ -30,10 +35,7 @@ export default function RoutesApp() {
           <Contact />
         </Route>
         <Route path="/catalogo/:id">
-          <Catalogo />
-        </Route>
-        <Route path="/portifolio/:id">
-          <Portifolio />
+          <Catalogo product={products} url={url} />
         </Route>
         <Route path="*">
           <NotFound />
