@@ -155,7 +155,10 @@ export default function Products({ product, category, url }) {
               {!productShow.length ? (
                 found === true ? (
                   product.map((prod) => (
-                    <CardGridProduct onClick={() => goToCalalog(prod._id)}>
+                    <CardGridProduct
+                      onClick={() => goToCalalog(prod._id)}
+                      key={prod._id}
+                    >
                       <ContainerImgProductPage>
                         <ImgProductPage
                           alt={prod.imageDescription}

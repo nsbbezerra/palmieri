@@ -161,6 +161,21 @@ body {
   margin-top: 20px;
 }
 
+.span-loading-two {
+  display: block;
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 4rem;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.green {
+  color: #43a047 !important;
+}
+
+.red {
+  color: #f44336 !important;
+}
 .modal-container {
   background-color: #fff;
   border-radius: 3px;
