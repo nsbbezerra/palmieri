@@ -26,14 +26,35 @@ import banner from "../../assets/banner-web.png";
 import Collapsible from "react-collapsible";
 
 export default function Products({ product, category, url }) {
-  console.log(product);
-
   const [openMenu, setOpenMenu] = useState(false);
   const { pathname } = useLocation();
   const [productShow, setProductShow] = useState([]);
   const [found, setFound] = useState(true);
+  const [breadCrumbName, setBreadCrumbName] = useState("");
 
   const history = useHistory();
+  const { prod } = useParams();
+
+  useEffect(() => {
+    handleAdmin(prod);
+  }, [prod]);
+
+  async function handleAdmin(pro) {
+    if (pro === "todos") {
+      handleAll();
+      setBreadCrumbName("TODOS OS PRODUTOS");
+    } else {
+      const result = await category.find((obj) => obj._id === prod);
+      if (result) {
+        setBreadCrumbName(result.name);
+      }
+      handleCategory(pro);
+    }
+  }
+
+  function goToCategory(id) {
+    history.push(`/produtos/${id}`);
+  }
 
   function router(rt) {
     history.push(`${rt}`);
@@ -90,7 +111,7 @@ export default function Products({ product, category, url }) {
                 HOME/
               </button>
               <button className="btn-link-products">PRODUTOS/</button>
-              <button className="btn-link-products">REGATAS/</button>
+              <button className="btn-link-products">{breadCrumbName}</button>
             </BreadCrumb>
             <BtnMenuOpen
               id="btn-open-menu"
@@ -111,7 +132,10 @@ export default function Products({ product, category, url }) {
                 PRODUTOS
               </span>
               {!!category.length ? (
-                <span className="label-sider" onClick={() => handleAll()}>
+                <span
+                  className="label-sider"
+                  onClick={() => goToCategory("todos")}
+                >
                   <FaTshirt style={{ marginRight: "10px" }} /> TODOS OS PRODUTOS
                 </span>
               ) : (
@@ -124,7 +148,7 @@ export default function Products({ product, category, url }) {
                       trigger={
                         <span
                           className="label-sider"
-                          onClick={() => handleCategory(cat._id)}
+                          onClick={() => goToCategory(cat._id)}
                         >
                           <IoMdArrowDropdown /> {cat.name}
                         </span>

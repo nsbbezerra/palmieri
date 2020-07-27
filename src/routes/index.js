@@ -7,7 +7,6 @@ import ComoFunciona from "../pages/comofunciona/index";
 import QuemSomos from "../pages/quemsomos/index";
 import NotFound from "../pages/notFound/index";
 import Contact from "../pages/contacts/index";
-import Portifolio from "../pages/portifolio/index";
 import Catalogo from "../pages/products/catalog";
 
 export default function RoutesApp({ products, categories, url, comments }) {
@@ -22,7 +21,7 @@ export default function RoutesApp({ products, categories, url, comments }) {
             comments={comments}
           />
         </Route>
-        <Route path="/produtos">
+        <Route path="/produtos/:prod">
           <ProductsOne category={categories} product={products} url={url} />
         </Route>
         <Route path="/comofunciona">

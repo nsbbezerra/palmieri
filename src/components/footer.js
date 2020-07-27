@@ -249,6 +249,7 @@ export default function Footer({ products }) {
                 href="https://www.instagram.com/palmieriuniformes/"
                 target="_blank"
                 className="icons-social"
+                rel="noopener noreferrer"
               >
                 <img
                   alt="social media"
@@ -260,6 +261,7 @@ export default function Footer({ products }) {
                 href="https://www.facebook.com/Palmieri-Uniformes-2099607197005471/"
                 target="_blank"
                 className="icons-social"
+                rel="noopener noreferrer"
               >
                 <img
                   alt="social media"

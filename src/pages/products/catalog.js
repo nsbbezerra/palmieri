@@ -87,7 +87,7 @@ export default function Catalog({ product, url }) {
       <Banner alt="Palmieri Uniformes" src={banner} />
       <FixedLayout>
         <Content>
-          <Title>CAMISETA MANGA CURTA</Title>
+          <Title>{productShow.name}</Title>
           <SubTitle>
             Catálogo de modelos prontos para você personalizar suas camisetas
             promocionais de acordo com a sua necessidade.
@@ -281,6 +281,7 @@ export default function Catalog({ product, url }) {
                     ""
                   ) : (
                     <iframe
+                      title="Youtube"
                       className="video-medida"
                       src={productShow.video}
                       frameBorder="0"

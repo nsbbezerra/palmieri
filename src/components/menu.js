@@ -57,7 +57,7 @@ export default function Menu({ products }) {
                 </Link>
               </li>
               <li className="app-menu-items">
-                <Link to="/produtos" className="link">
+                <Link to="/produtos/todos" className="link">
                   <FaTags style={{ marginRight: 5 }} /> PRODUTOS
                 </Link>
               </li>

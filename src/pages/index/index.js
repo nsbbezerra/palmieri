@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Title,
@@ -132,7 +132,7 @@ export default function IndexApp({ category, product, url, comments }) {
                     />
                   </CardImageContainer>
                   <CardTitle>{cat.name}</CardTitle>
-                  <Link to="/" className="link-product">
+                  <Link to={`/produtos/${cat._id}`} className="link-product">
                     VEJA MAIS
                   </Link>
                 </Card>
@@ -160,7 +160,11 @@ export default function IndexApp({ category, product, url, comments }) {
               </div>
               <TitleWhite>UNIFORME PARA EVENTOS</TitleWhite>
               <ContainerMiddle>
-                <img src={tshirtTwo} className="img-index-events" />
+                <img
+                  src={tshirtTwo}
+                  className="img-index-events"
+                  alt="Palmieri Uniformes"
+                />
                 <DescProduct>
                   Trabalhamos para levar qualidade com preço justo aos nossos
                   clientes, buscamos sempre entender e aprender com cada pedido
@@ -212,7 +216,11 @@ export default function IndexApp({ category, product, url, comments }) {
                   alignItems: "center",
                 }}
               >
-                <img src={tshirtThree} style={{ width: "90%" }} />
+                <img
+                  src={tshirtThree}
+                  style={{ width: "90%" }}
+                  alt="Palmieri Uniformes"
+                />
               </div>
             </ContainerMiddleTwo>
           </Content>
