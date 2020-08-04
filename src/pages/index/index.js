@@ -3,7 +3,6 @@ import {
   Container,
   Title,
   Card,
-  CardShadow,
   CardImage,
   Content,
   CardTitle,
@@ -26,12 +25,12 @@ import {
   DepoimentAuthor,
   AcademyTitle,
   BtnAcademy,
-  CardAction,
-  CardImageContainerCatalog,
   FixedLayout,
   TitleSecondary,
   GridHeaderColor,
   NotFound,
+  ContainerImgCatalogPage,
+  ImgCatalogPage,
 } from "../../styles/styles";
 import Carousel from "@brainhubeu/react-carousel";
 import { useLocation, useHistory, Link } from "react-router-dom";
@@ -51,7 +50,13 @@ import breakpointsConfig from "../../configs/sliderConfig";
 import globalConfig from "../../configs/global";
 import Banner from "../../components/banner";
 
-export default function IndexApp({ category, product, url, comments }) {
+export default function IndexApp({
+  category,
+  product,
+  url,
+  comments,
+  catalog,
+}) {
   if (product.length > 10) {
     product.length = 10;
   }
@@ -232,7 +237,7 @@ export default function IndexApp({ category, product, url, comments }) {
           <Content>
             <Title>PORTIFÓLIO DE ARTES</Title>
             <SubTitle>Nosso Portifólio de Artes</SubTitle>
-            {!!product.length ? (
+            {!!catalog.length ? (
               <Carousel
                 slidesPerPage={3}
                 arrows
@@ -267,24 +272,22 @@ export default function IndexApp({ category, product, url, comments }) {
                 addArrowClickHandler
                 breakpoints={breakpointsConfig.products}
               >
-                {!!product.length
-                  ? product.map((prod) => (
-                      <CardShadow key={prod._id}>
-                        <CardImageContainerCatalog>
-                          <CardImage
-                            src={`${url}/${prod.thumbnail}`}
-                            alt={prod.imageDescription}
-                          />
-                        </CardImageContainerCatalog>
-                        <CardAction onClick={() => goToCatalog(prod._id)}>
-                          Veja Mais
-                        </CardAction>
-                      </CardShadow>
+                {!!catalog.length
+                  ? catalog.map((prod) => (
+                      <ContainerImgCatalogPage
+                        key={prod._id}
+                        onClick={() => goToCatalog(prod._id)}
+                      >
+                        <ImgCatalogPage
+                          alt={prod.imageDescription}
+                          src={`${url}/${prod.image}`}
+                        />
+                      </ContainerImgCatalogPage>
                     ))
                   : ""}
               </Carousel>
             ) : (
-              <NotFound small={false}>NENHUM PRODUTO ENCONTRADO</NotFound>
+              <NotFound small={false}>NENHUM CATÁLOGO ENCONTRADO</NotFound>
             )}
           </Content>
         </FixedLayout>

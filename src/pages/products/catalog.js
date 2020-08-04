@@ -8,8 +8,8 @@ import {
   SubTitle,
   GridProductsPage,
   CardGridCatalog,
-  ContainerImgProductPage,
-  ImgProductPage,
+  ContainerImgCatalogPage,
+  ImgCatalogPage,
   Spaced,
   FixedLayout,
   NotFound,
@@ -20,9 +20,6 @@ import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
 
 import banner from "../../assets/banner-web.png";
-import first from "./assets/first.svg";
-import second from "./assets/second.svg";
-import third from "./assets/third.svg";
 import globalConfig from "../../configs/global";
 import api from "../../configs/axios";
 
@@ -100,12 +97,12 @@ export default function Catalog({ product, url }) {
                   onClick={() => handleModal(cat.image)}
                   key={cat._id}
                 >
-                  <ContainerImgProductPage>
-                    <ImgProductPage
+                  <ContainerImgCatalogPage>
+                    <ImgCatalogPage
                       alt={cat.imageDescription}
                       src={`${url}/${cat.image}`}
                     />
-                  </ContainerImgProductPage>
+                  </ContainerImgCatalogPage>
                 </CardGridCatalog>
               ))
             ) : (
@@ -127,138 +124,49 @@ export default function Catalog({ product, url }) {
           <TabPanel>
             <FixedLayout>
               <Content>
-                <h3 className="medida-title">COMO TIRAR SUAS MEDIDAS</h3>
-                <div className="medida-grid">
-                  <div className="medida-item">
-                    <img
-                      className="medida-img"
-                      alt="Palmieri Uniformes"
-                      src={first}
-                    />
-                    <h4 className="title-medida-product">ALTURA</h4>
-                    <p className="desc-medida-product">
-                      Use uma roupa sua semelhante àquela que você quer comprar.
-                      Coloque-a esticada sobre uma superfície plana. Meça o
-                      comprimento total.
-                    </p>
-                  </div>
-                  <div className="medida-item">
-                    <img
-                      className="medida-img"
-                      alt="Palmieri Uniformes"
-                      src={second}
-                    />
-                    <h4 className="title-medida-product">MANGA</h4>
-                    <p className="desc-medida-product">
-                      Use uma peça sua como referência, similar àquela que você
-                      quer comprar. Meça da costura do ombro ao final do punho.
-                    </p>
-                  </div>
-                  <div className="medida-item">
-                    <img
-                      className="medida-img"
-                      alt="Palmieri Uniformes"
-                      src={third}
-                    />
-                    <h4 className="title-medida-product">CINTURA</h4>
-                    <p className="desc-medida-product">
-                      Pare com os pés juntos. Em seguida, meça a parte mais
-                      estreita do corpo entre o peito e o quadril.
-                    </p>
-                  </div>
-                </div>
-                <div className="medida-table-grid">
-                  <div className="medida-grid-table-item">
-                    <h4 className="title-medida-product">MODELO MASCULINO</h4>
-                    <table className="table-medida" cellSpacing="0">
-                      <thead>
-                        <tr>
-                          <td>TAMANHO</td>
-                          <td>ALTURA (cm)</td>
-                          <td>MANGA (cm)</td>
-                          <td>CINTURA (cm)</td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>P</td>
-                          <td>66</td>
-                          <td>16</td>
-                          <td>47</td>
-                        </tr>
-                        <tr>
-                          <td>M</td>
-                          <td>69</td>
-                          <td>18</td>
-                          <td>53</td>
-                        </tr>
-                        <tr>
-                          <td>G</td>
-                          <td>71</td>
-                          <td>19</td>
-                          <td>53</td>
-                        </tr>
-                        <tr>
-                          <td>GG</td>
-                          <td>75</td>
-                          <td>20</td>
-                          <td>58</td>
-                        </tr>
-                        <tr>
-                          <td>EXG</td>
-                          <td>82</td>
-                          <td>22</td>
-                          <td>60</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="medida-grid-table-item">
-                    <h4 className="title-medida-product">MODELO FEMININO</h4>
-                    <table className="table-medida" cellSpacing="0">
-                      <thead>
-                        <tr>
-                          <td>TAMANHO</td>
-                          <td>ALTURA (cm)</td>
-                          <td>MANGA (cm)</td>
-                          <td>CINTURA (cm)</td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>P</td>
-                          <td>66</td>
-                          <td>16</td>
-                          <td>47</td>
-                        </tr>
-                        <tr>
-                          <td>M</td>
-                          <td>69</td>
-                          <td>18</td>
-                          <td>53</td>
-                        </tr>
-                        <tr>
-                          <td>G</td>
-                          <td>71</td>
-                          <td>19</td>
-                          <td>53</td>
-                        </tr>
-                        <tr>
-                          <td>GG</td>
-                          <td>75</td>
-                          <td>20</td>
-                          <td>58</td>
-                        </tr>
-                        <tr>
-                          <td>EXG</td>
-                          <td>82</td>
-                          <td>22</td>
-                          <td>60</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                {!!productShow.models ? (
+                  <>
+                    <h3 className="medida-title">COMO TIRAR SUAS MEDIDAS</h3>
+                    <div className="medida-grid">
+                      {productShow.models.map((mod) => (
+                        <div className="medida-item" key={mod._id}>
+                          <img
+                            className="medida-img"
+                            alt="Palmieri Uniformes"
+                            src={`${url}/${mod.image}`}
+                          />
+                          <h4 className="title-medida-product">{mod.title}</h4>
+                          <p className="desc-medida-product">{mod.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="medida-table-grid">
+                      {!!productShow.table.length ? (
+                        <>
+                          {productShow.table.map((tab) => (
+                            <div
+                              className="medida-grid-table-item"
+                              key={tab._id}
+                            >
+                              <img
+                                alt="Palmieri Uniformes"
+                                src={`${url}/${tab.image}`}
+                                style={{ width: "100%", maxWidth: "100%" }}
+                              />
+                            </div>
+                          ))}
+                        </>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <NotFound small={true}>MODELAGEM NÃO ENCONTRADA</NotFound>
+                  </>
+                )}
               </Content>
             </FixedLayout>
           </TabPanel>
@@ -280,14 +188,22 @@ export default function Catalog({ product, url }) {
                   {JSON.stringify(productShow) === "{}" ? (
                     ""
                   ) : (
-                    <iframe
-                      title="Youtube"
-                      className="video-medida"
-                      src={productShow.video}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                    <>
+                      {productShow.video !== "" ? (
+                        <iframe
+                          title="Youtube"
+                          className="video-medida"
+                          src={productShow.video}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      ) : (
+                        <NotFound small={true} style={{ color: "black" }}>
+                          VÍDEO INDISPONÍVEL
+                        </NotFound>
+                      )}
+                    </>
                   )}
                 </div>
               </Content>

@@ -646,6 +646,7 @@ export const CardGridCatalog = styled.button`
 
 export const ContainerImgProductPage = styled.div`
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   height: 250px;
@@ -654,8 +655,23 @@ export const ContainerImgProductPage = styled.div`
   border-top-right-radius: 3.5px;
 `;
 
+export const ContainerImgCatalogPage = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-top-left-radius: 3.5px;
+  border-top-right-radius: 3.5px;
+`;
+
 export const ImgProductPage = styled.img`
   height: 100%;
+  max-height: 100%;
+`;
+
+export const ImgCatalogPage = styled.img`
+  max-width: 100%;
 `;
 
 export const DescProductPage = styled.span`

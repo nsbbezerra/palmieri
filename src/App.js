@@ -16,6 +16,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [urlImage, setUrlImage] = useState("");
   const [comments, setComments] = useState([]);
+  const [catalog, setCatalog] = useState([]);
 
   useEffect(() => {
     finder();
@@ -25,11 +26,13 @@ function App() {
     await api
       .get("/home")
       .then((response) => {
+        console.log(response);
         setLoadingModal(false);
         setComments(response.data.comments);
         setCategory(response.data.category);
         setProducts(response.data.product);
         setUrlImage(response.data.urlImage);
+        setCatalog(response.data.catalogs);
       })
       .catch((error) => {
         console.log(error);
@@ -45,6 +48,7 @@ function App() {
           products={products}
           url={urlImage}
           comments={comments}
+          catalog={catalog}
         />
         <Footer products={products} />
       </Router>

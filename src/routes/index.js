@@ -9,7 +9,13 @@ import NotFound from "../pages/notFound/index";
 import Contact from "../pages/contacts/index";
 import Catalogo from "../pages/products/catalog";
 
-export default function RoutesApp({ products, categories, url, comments }) {
+export default function RoutesApp({
+  products,
+  categories,
+  url,
+  comments,
+  catalog,
+}) {
   return (
     <>
       <Switch>
@@ -19,6 +25,7 @@ export default function RoutesApp({ products, categories, url, comments }) {
             product={products}
             url={url}
             comments={comments}
+            catalog={catalog}
           />
         </Route>
         <Route path="/produtos/:prod">
