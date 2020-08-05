@@ -31,6 +31,7 @@ import {
   NotFound,
   ContainerImgCatalogPage,
   ImgCatalogPage,
+  CardGridCatalogIndex,
 } from "../../styles/styles";
 import Carousel from "@brainhubeu/react-carousel";
 import { useLocation, useHistory, Link } from "react-router-dom";
@@ -237,57 +238,64 @@ export default function IndexApp({
           <Content>
             <Title>PORTIFÓLIO DE ARTES</Title>
             <SubTitle>Nosso Portifólio de Artes</SubTitle>
-            {!!catalog.length ? (
-              <Carousel
-                slidesPerPage={3}
-                arrows
-                arrowLeft={
-                  <MdKeyboardArrowLeft
-                    color="#666"
-                    size={"5em"}
-                    style={{ cursor: "pointer" }}
-                  />
-                }
-                arrowLeftDisabled={
-                  <MdKeyboardArrowLeft
-                    color="#666"
-                    size={"5em"}
-                    style={{ cursor: "pointer" }}
-                  />
-                }
-                arrowRight={
-                  <MdKeyboardArrowRight
-                    color="#666"
-                    size={"5em"}
-                    style={{ cursor: "pointer" }}
-                  />
-                }
-                arrowRightDisabled={
-                  <MdKeyboardArrowRight
-                    color="#666"
-                    size={"5em"}
-                    style={{ cursor: "pointer" }}
-                  />
-                }
-                addArrowClickHandler
-                breakpoints={breakpointsConfig.products}
-              >
-                {!!catalog.length
-                  ? catalog.map((prod) => (
-                      <ContainerImgCatalogPage
-                        key={prod._id}
-                        onClick={() => goToCatalog(prod._id)}
-                      >
-                        <ImgCatalogPage
-                          alt={prod.imageDescription}
-                          src={`${url}/${prod.image}`}
-                        />
-                      </ContainerImgCatalogPage>
-                    ))
-                  : ""}
-              </Carousel>
-            ) : (
+            {catalog === undefined ? (
               <NotFound small={false}>NENHUM CATÁLOGO ENCONTRADO</NotFound>
+            ) : (
+              <>
+                {!!catalog.length ? (
+                  <Carousel
+                    slidesPerPage={3}
+                    arrows
+                    arrowLeft={
+                      <MdKeyboardArrowLeft
+                        color="#666"
+                        size={"5em"}
+                        style={{ cursor: "pointer" }}
+                      />
+                    }
+                    arrowLeftDisabled={
+                      <MdKeyboardArrowLeft
+                        color="#666"
+                        size={"5em"}
+                        style={{ cursor: "pointer" }}
+                      />
+                    }
+                    arrowRight={
+                      <MdKeyboardArrowRight
+                        color="#666"
+                        size={"5em"}
+                        style={{ cursor: "pointer" }}
+                      />
+                    }
+                    arrowRightDisabled={
+                      <MdKeyboardArrowRight
+                        color="#666"
+                        size={"5em"}
+                        style={{ cursor: "pointer" }}
+                      />
+                    }
+                    addArrowClickHandler
+                    breakpoints={breakpointsConfig.products}
+                  >
+                    {catalog === undefined || !catalog.length
+                      ? ""
+                      : catalog.map((prod) => (
+                          <CardGridCatalogIndex key={prod._id}>
+                            <ContainerImgCatalogPage
+                              onClick={() => goToCatalog(prod.product)}
+                            >
+                              <ImgCatalogPage
+                                alt={prod.imageDescription}
+                                src={`${url}/${prod.image}`}
+                              />
+                            </ContainerImgCatalogPage>
+                          </CardGridCatalogIndex>
+                        ))}
+                  </Carousel>
+                ) : (
+                  ""
+                )}
+              </>
             )}
           </Content>
         </FixedLayout>

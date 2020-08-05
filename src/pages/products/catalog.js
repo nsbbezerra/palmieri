@@ -26,12 +26,15 @@ import api from "../../configs/axios";
 import icone from "../../assets/icone.svg";
 import logo from "../../assets/logo.svg";
 
-export default function Catalog({ product, url }) {
+export default function Catalog({ product, url, models, tables }) {
   const [modalImg, setModalImg] = useState(false);
   const [loadingModal, setLoadingModal] = useState(true);
   const [productShow, setProductShow] = useState({});
   const [catalog, setCatalog] = useState([]);
   const [imgShow, setImgShow] = useState("");
+
+  const [table, setTable] = useState([]);
+  const [model, setModel] = useState([]);
 
   const { pathname } = useLocation();
   const { id } = useParams();
@@ -54,13 +57,17 @@ export default function Catalog({ product, url }) {
         setLoadingModal(false);
       })
       .catch((error) => {
-        console.log(error);
+        return;
       });
   }
 
   async function handleProduct() {
     const result = await product.find((obj) => obj._id === id);
+    const findModels = await models.filter((obj) => obj.product === id);
+    const findTables = await tables.filter((obj) => obj.product === id);
     await setProductShow(result);
+    await setModel(findModels);
+    await setTable(findTables);
   }
 
   useEffect(() => {
@@ -124,11 +131,11 @@ export default function Catalog({ product, url }) {
           <TabPanel>
             <FixedLayout>
               <Content>
-                {!!productShow.models ? (
+                {!!model.length ? (
                   <>
                     <h3 className="medida-title">COMO TIRAR SUAS MEDIDAS</h3>
                     <div className="medida-grid">
-                      {productShow.models.map((mod) => (
+                      {model.map((mod) => (
                         <div className="medida-item" key={mod._id}>
                           <img
                             className="medida-img"
@@ -142,9 +149,9 @@ export default function Catalog({ product, url }) {
                     </div>
 
                     <div className="medida-table-grid">
-                      {!!productShow.table.length ? (
+                      {!!table ? (
                         <>
-                          {productShow.table.map((tab) => (
+                          {table.map((tab) => (
                             <div
                               className="medida-grid-table-item"
                               key={tab._id}
@@ -164,7 +171,9 @@ export default function Catalog({ product, url }) {
                   </>
                 ) : (
                   <>
-                    <NotFound small={true}>MODELAGEM NÃO ENCONTRADA</NotFound>
+                    <NotFound small={true} style={{ color: "black" }}>
+                      MODELAGEM NÃO ENCONTRADA
+                    </NotFound>
                   </>
                 )}
               </Content>

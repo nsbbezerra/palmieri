@@ -142,7 +142,7 @@
 .medida-table-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 380px));
-  grid-gap: 15px;
+  grid-gap: 50px;
   margin-top: 20px;
   justify-content: center;
   justify-items: center;

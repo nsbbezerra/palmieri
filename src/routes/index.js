@@ -15,6 +15,8 @@ export default function RoutesApp({
   url,
   comments,
   catalog,
+  models,
+  tables,
 }) {
   return (
     <>
@@ -41,7 +43,12 @@ export default function RoutesApp({
           <Contact />
         </Route>
         <Route path="/catalogo/:id">
-          <Catalogo product={products} url={url} />
+          <Catalogo
+            product={products}
+            url={url}
+            models={models}
+            tables={tables}
+          />
         </Route>
         <Route path="*">
           <NotFound />

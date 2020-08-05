@@ -644,6 +644,21 @@ export const CardGridCatalog = styled.button`
   }
 `;
 
+export const CardGridCatalogIndex = styled.button`
+  width: 280px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  transition: all 0.3s;
+  background: transparent;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.03);
+  }
+  &:active {
+    transform: scale(1);
+  }
+`;
+
 export const ContainerImgProductPage = styled.div`
   display: flex;
   width: 100%;
